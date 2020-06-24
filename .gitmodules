@@ -1,0 +1,9 @@
+[submodule "storefront-reference-architecture"]
+	path = storefront-reference-architecture
+	url = git@github.com:SalesforceCommerceCloud/storefront-reference-architecture.git
+[submodule "sgmf-scripts"]
+	path = sgmf-scripts
+	url = git@github.com:SalesforceCommerceCloud/sgmf-scripts.git
+[submodule "sfcc-ci"]
+	path = sfcc-ci
+	url = git@github.com:SalesforceCommerceCloud/sfcc-ci.git
