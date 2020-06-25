@@ -1,0 +1,9 @@
+<isif condition="${!empty(pdict.BannerContentAssetId)}">
+	<iscontentasset aid="${pdict.BannerContentAssetId}" />
+<iselse>
+	<isslot id="sitewide-content-banner" description="Site Wide Content" context="global" />
+</isif>
+
+
+
+

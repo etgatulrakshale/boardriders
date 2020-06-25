@@ -1,0 +1,86 @@
+.sitewide-banner-content{
+  .sitewide-content-background{
+    border-bottom: solid 1px $white;
+    padding: 0 20px;
+  }
+  .sitewide-content-wrapper{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    max-width: 100%;
+    margin: 0 auto;
+    
+    &.text-only-banner{
+      padding: 0;
+
+      .text-section{
+        padding: 10px 0;
+      }
+    }
+    
+    @include media-breakpoint-down(md) {
+      &.mobile-hidden{
+        display: none;
+      }
+    }
+    
+    @include media-breakpoint-up(md) {
+      &.desktop-hidden{
+        display: none;
+      }
+    }
+  }
+
+  .sitewide-banner-link{
+    vertical-align: middle;
+  }
+  
+  .text-section{
+    text-align: center;
+  
+    &.left-align{
+      text-align: left;
+    }
+    
+    h3{
+      font-size: .8125rem;
+    }
+    
+    h5{
+      font-size: 7.8px;
+      font-weight: 100;
+      margin: 2px 0 0;
+      letter-spacing: .5px;
+    }
+  }
+
+  .button-section{
+    display: flex;
+
+    &.right-align{
+      justify-content: flex-end;
+    }
+    
+    a{
+      display: inline-block;
+      width: 50%;
+      max-width: 180px;
+      padding: 8px 0px 6px;
+      font-size: .875rem;
+      font-weight: normal;
+      text-align: center;
+      transition: .4s;
+      &:hover{
+        opacity: .7;
+      }
+    }
+  }
+
+  .one-third-wide{
+    flex-basis: 33.33%;
+  }
+
+  .half-wide{
+    flex-basis: 50%;
+  }
+}
