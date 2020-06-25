@@ -1,0 +1,279 @@
+///// sds_dingsregular
+
+@font-face {
+    font-family: 'sds_dingsregular';
+    src: url('../fonts/sds/billabongdings-webfont.eot');
+    src: url('../fonts/sds/billabongdings-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sds/billabongdings-webfont.woff2') format('woff2'),
+         url('../fonts/sds/billabongdings-webfont.woff') format('woff'),
+         url('../fonts/sds/billabongdings-webfont.ttf') format('truetype'),
+         url('../fonts/sds/billabongdings-webfont.svg#billabong_dingsregular') format('svg');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Steelfish';
+  src: url('../fonts/steelfish/steelfish.eot');
+  src: url('../fonts/steelfish/steelfish.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/steelfish/steelfish.woff') format('woff'),
+    url('../fonts/steelfish/steelfish.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/gotham/Gotham-Bold.eot");
+  src: local("../fonts/gotham/Gotham-Bold"),
+    url("../fonts/gotham/Gotham-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/gotham/Gotham-Bold.woff") format("woff"),
+    url("../fonts/gotham/Gotham-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/gotham/Gotham-Book.eot");
+  src: local("Gotham-Book"),
+    url("../fonts/gotham/Gotham-Book.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/gotham/Gotham-Book.woff") format("woff"),
+    url("../fonts/gotham/Gotham-Book.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/gotham/Gotham-Black.eot");
+  src: local("Gotham-Black"),
+    url("../fonts/gotham/Gotham-Black.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/gotham/Gotham-Black.woff") format("woff"),
+    url("../fonts/gotham/Gotham-Black.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/gotham/Gotham-BookItalic.eot");
+  src: local("Gotham-BookItalic"),
+    url("../fonts/gotham/Gotham-BookItalic.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/gotham/Gotham-BookItalic.woff") format("woff"),
+    url("../fonts/gotham/Gotham-BookItalic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/gotham/Gotham-BoldItalic.eot");
+  src: local("Gotham-BoldItalic"),
+    url("../fonts/gotham/Gotham-BoldItalic.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/gotham/Gotham-BoldItalic.woff") format("woff"),
+    url("../fonts/gotham/Gotham-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/gotham/Gotham-Medium.eot");
+  src: local("Gotham Medium"), 
+    url("../fonts/gotham/Gotham-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/gotham/Gotham-Medium.woff") format("woff"),
+    url("../fonts/gotham/Gotham-Medium.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+// font icon styles
+.sds--icons{
+    display: inline-block;
+    font-family: "sds_dingsregular";
+    font-style: normal;
+    font-size: inherit;
+    text-rendering: auto;
+    text-transform: initial;
+    -webkit-font-smoothing: antialiased;
+    line-height: 12pt;
+    text-transform: inherit !important;
+}
+
+
+i.sds-icon-search{
+    &:before {
+        content: "F";
+        text-transform: uppercase !important;
+    }
+}
+i.sds-icon-user{
+    &:before {
+        content: "u";
+        text-transform: lowercase !important;
+    }
+}
+i.sds-icon-cart{
+    &:before {
+        content: "c";
+        text-transform: lowercase !important;
+    }
+}
+i.sds-icon-star{
+    &:before {
+        content: "s";
+         text-transform: lowercase !important;
+   }
+}
+i.sds-icon-star-solid{
+    &:before {
+        content: "S";
+        text-transform: uppercase !important;
+    }
+}
+i.sds-icon-x{
+    &:before {
+        content: "X";
+        text-transform: uppercase !important;
+    }
+}
+i.sds-icon-home{
+        background-image: url('../images/icons/icon-home.png');
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-transform: uppercase !important;
+        height: 21px;
+        width: 21px;
+        display: inline-block;
+        margin: 0 0 0 -30px;
+
+    &:before {
+      display: none;
+    }
+}
+
+i.sds-icon-x-svg {
+  &:before {
+      content: "";
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      background-image: url('../images/x.svg');
+  }
+}
+
+i.sds-icon-eye{
+    &:before {
+        content: "e";
+        text-transform: lowercase !important;
+    }
+}
+i.sds-icon-eye-close{
+    &:before {
+        content: "Q";
+        text-transform: uppercase !important;
+    }
+}
+i.sds-icon-heart{
+    &:before {
+        content: "h";
+        text-transform: lowercase !important;
+    }
+}
+i.sds-icon-heart-solid{
+    &:before {
+        content: "H";
+        text-transform: uppercase !important;
+    }
+}
+
+i.sds-icon-ruler{
+    &:before {
+      content: "M";
+      text-transform: uppercase !important;
+    }
+}
+
+i.sds-icon-zoom{
+    &:before {
+      content: "K";
+      text-transform: uppercase !important;
+    }
+}
+
+i.sds-icon-map{
+      &:before {
+        content: "E";
+        text-transform: uppercase !important;
+   }
+}
+
+// type
+h1{
+  font-size:calcrem(50);
+  font-weight: 300;
+  margin:0;
+  text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+    font-size:calcrem(40);
+  }
+}
+
+h2{
+  font-size:calcrem(30);
+  font-weight: 300;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: calcrem(1.2);
+  margin:0;
+}
+
+h3{
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: calcrem(20);
+  letter-spacing: calcrem(1.2);
+  margin:0;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+h1, h2, h3 {
+  &.jumbo {
+    font-family: $font-steelfish;
+  }
+}
+
+h1.jumbo {
+  font-size: $h1-font-size-jumbo;
+}
+
+@mixin h1Jumbo() {
+  font-size: $h1-font-size-jumbo;
+  font-family: $font-steelfish;
+  letter-spacing: .3rem;
+  line-height: 1.1em;
+}
+
+h2.jumbo {
+  font-size: $h2-font-size-jumbo;
+}
+
+@mixin h2Jumbo() {
+  font-size: $h2-font-size-jumbo;
+  font-family: $font-steelfish;
+  letter-spacing: $banners-letter-spacing;
+}
+
+
+
+h3.jumbo {
+  font-size: $h3-font-size-jumbo;
+}
+

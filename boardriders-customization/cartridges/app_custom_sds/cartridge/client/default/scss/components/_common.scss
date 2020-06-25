@@ -1,0 +1,13 @@
+@import "~base/components/common";
+@import "../variables";
+
+body {
+	letter-spacing: 0.0625rem;
+	font-family: $font-gotham;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-weight: 300;
+    margin: 0;
+}

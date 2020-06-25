@@ -28,8 +28,15 @@
     "postcss-loader": "^2.1.5",
     "sass-loader": "^7.0.3"
   },
+  "paths": {
+    "base": "../storefront-reference-architecture/cartridges/app_storefront_base/"
+  },
   "browserslist": [
     "last 2 versions",
     "ie >= 10"
-  ]
+  ],
+  "dependencies": {
+    "grunt": "^1.0.4",
+    "jquery": "^3.5.1"
+  }
 }
