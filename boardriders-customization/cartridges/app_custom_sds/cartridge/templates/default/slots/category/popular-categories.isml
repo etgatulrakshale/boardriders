@@ -1,0 +1,10 @@
+<isif condition="${slotcontent != null}">
+	<div id="popular-categories">
+		<h2>Popular Categories</h2>
+		<div class="popular-categories category-slot row">
+			<isloop items="${slotcontent.content}" var="category" status="loopstate">
+				<isinclude template="rendering/content/popular-category" />
+			</isloop>
+		</div>
+	</div>
+</isif>

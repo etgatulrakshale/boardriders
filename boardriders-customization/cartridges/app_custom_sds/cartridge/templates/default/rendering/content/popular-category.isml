@@ -1,0 +1,30 @@
+<div class="popular-category category-${loopstate.count} col-lg-4 col-12">
+  <isif condition="${"popularImage" in category.custom && !empty(category.custom.popularImage)}">
+    <div class="bg-img <isif condition="${category.custom.popularImageMobile}">popular-image-desktop</isif>"
+    >
+      <img class="img-responsive" src="${category.custom.popularImage.getURL()}" alt="${category.displayName}"/>
+    </div>
+  </isif>
+
+  <isif condition="${category.custom.popularImageMobile != null}">
+    <div class="bg-img popular-image-mobile">
+      <img class="popular-mobile-image img-responsive" src="${category.custom.popularImageMobile.getURL()}" alt="${category.displayName}"/>
+    </div>
+  </isif>
+
+  <div class="category-content">
+    <isif condition="${"popularLogo" in category.custom && !empty(category.custom.popularLogo)}">
+    <div class="match-height-row">
+      <img class="logo img-responsive" src="${category.custom.popularLogo.getURL()}" alt="${category.displayName}"/>
+    </div>
+    <iselse>
+      <h3 class="cat-name"><isprint value="${category.displayName}" encoding="off"/></h3>
+    </isif>
+    <!-- <isprint value="${category.custom.popularTitle}" encoding="off"/> -->
+    <div class="match-height-row">
+    <a href="${URLUtils.http('Search-Show', 'cgid', category.ID)}" aria-label="${category.displayName}" class="button" title="${category.displayName}">
+      <isprint value="${category.custom.popularCtaText}" encoding="off"/>
+    </a>
+    </div>
+  </div>
+</div>

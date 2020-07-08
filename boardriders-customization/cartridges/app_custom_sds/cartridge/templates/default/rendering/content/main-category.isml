@@ -1,0 +1,16 @@
+<isif condition="${"mainImage" in category.custom && !empty(category.custom.mainImage)}">
+
+  <isset name="catMainImage" value="${category.custom.mainImageMobile && session.custom.device == 'mobile' ? category.custom.mainImageMobile.getURL() : category.custom.mainImage.getURL()}" scope="page" />
+  
+  <div class="home-main-category col-lg-6 col-12">
+  	<img class="img-responsive" src="${catMainImage}" alt="${category.displayName}"/>
+    <div class="home-main-content">
+      <div class="home-main-center">          
+        <h3><isprint value="${category.custom.mainCtaTitle}" encoding="off"/></h3>
+        <a class="button" aria-label="${category.displayName}" href="${URLUtils.http('Search-Show', 'cgid', category.ID)}" title="${category.displayName}">
+          <isprint value="${category.custom.mainCtaText}" encoding="off"/>
+        </a>
+      </div>
+    </div>
+  </div>
+</isif>
