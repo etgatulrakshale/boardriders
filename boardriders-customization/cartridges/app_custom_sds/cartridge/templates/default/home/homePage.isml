@@ -31,7 +31,7 @@
     
    	<div id="home-main-4">
 		<isslot id="home-main-4" description="Popular Categories" context="global" />
-	</div> 
+	</div>   
     <div>
     	<isinclude template="home/popupModal"/> 
     </div>
