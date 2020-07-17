@@ -4,6 +4,7 @@
         assets.addJs('/js/productTile.js');
         assets.addCss('/css/homePage.css');
     </isscript>
+   
 
 	<div id="home-main-1">
 		<isslot id="home-main" description="Full Width Slider" context="global" />
@@ -30,8 +31,10 @@
     
    	<div id="home-main-4">
 		<isslot id="home-main-4" description="Popular Categories" context="global" />
-	</div>
-    
+	</div> 
+    <div>
+    	<isinclude template="home/popupModal"/> 
+    </div>
     <div class="home-email-signup">
         <div class="container">
             <form role="form">
@@ -47,6 +50,6 @@
                     <div class="col-sm-7 email-description">${Resource.msg('description.form.emailsignup', 'homePage', null)}</div>
                 </div>
             </form>
-        </div>
+        </div> 
     </div>
 </isdecorate>
