@@ -1,0 +1,10 @@
+<isif condition="${slotcontent.content != null}">
+	<div class="row">
+		<span class="horizontal-carousel" data-slot-id="${slotcontent.slotID}"></span>
+		<isloop items="${slotcontent.content}" var="product">
+			<div class="col-6 col-sm-3 producttile">
+				<isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'pview', 'tile', 'ratings', false, 'swatches', false)}"/>
+			</div>
+		</isloop>
+	</div>
+</isif>

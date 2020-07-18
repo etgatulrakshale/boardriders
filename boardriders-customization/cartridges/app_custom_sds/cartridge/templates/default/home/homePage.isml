@@ -1,0 +1,52 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/productTile.js');
+        assets.addCss('/css/homePage.css');
+    </isscript>
+
+	<div id="home-main-1">
+		<isslot id="home-main" description="Full Width Slider" context="global" />
+	</div>
+	
+	<div id="home-main-2">
+		<isslot id="home-main-2" description="Main Categories" context="global" />
+	</div>	
+	
+	<div class="container">
+		<div id="home-main-3">
+			<h2>NEW</h2>
+			<ul class="categories-slider">
+				<li class="new active">new</li>
+				<li class="mens">mens</li>
+				<li class="womens">womens</li>
+				<li class="youth">youth</li>
+			</ul>
+			<isslot id="home-main-3" description="Top Level Category Recommendations Carousel" context="global" />
+		</div>
+	</div>
+    
+    <hr/>
+    
+   	<div id="home-main-4">
+		<isslot id="home-main-4" description="Popular Categories" context="global" />
+	</div>
+    
+    <div class="home-email-signup">
+        <div class="container">
+            <form role="form">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="hpEmailSignUp" placeholder="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}" aria-label="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}">
+                            <span class="input-group-append">
+                                <button type="submit" class="btn btn-primary subscribe-email" data-href="${URLUtils.url('EmailSubscribe-Subscribe')}">${Resource.msg('button.form.emailsignup', 'homePage', null)} </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-7 email-description">${Resource.msg('description.form.emailsignup', 'homePage', null)}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</isdecorate>

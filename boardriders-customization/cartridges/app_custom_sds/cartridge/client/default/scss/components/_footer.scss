@@ -1,0 +1,117 @@
+@import "./variables";
+
+.full-bleed {
+    background-color: rgb(39, 39, 39);
+    padding: 0px 20px;
+}
+
+.footer--util {
+    background-color: #ffffff;
+    //padding: calcrem(50) 0 3.75rem;
+    color: #000;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;   
+}
+
+.global-footer {
+    clear: both;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.footer-container {
+    padding: 6.25rem 0 3.75rem;
+    @media screen and (max-width: 768px) {
+    	padding: 0;
+	}
+	button {
+	    width: 100%;
+	    padding: 1.25rem 1.25rem;
+	    text-align: left;
+	    background-color: transparent;
+	    border-top: 1px solid rgba(255, 255, 255, 0.1);
+	    &:after {
+		    content: '+';
+		    font-size: 1.5rem;
+		    float: right;
+		}
+	}        
+    h3 {
+        text-transform: uppercase;
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0 0 1.25rem 0;
+        margin: 0;
+        letter-spacing: 0.125rem;
+        font-weight: bold;
+        min-height: 60px;
+        @media screen and (max-width: 768px) {
+		    display: none;
+		}
+    }
+    .footer-item {
+        padding: 1.25rem 0 2.5rem;
+        height: 100%;
+        display: block;
+        @media screen and (max-width: 768px) {
+		    display: none;
+		    padding: 0 1.25rem 2.5rem;
+		}
+        &.logo {
+            svg {
+                width: 100%;
+                max-width: 6.25rem;
+                height: auto;
+            }
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            display: block;
+            float: none;
+            position: relative;
+            >li {
+                display: block;
+                float: none;
+                font-weight: 200;
+                text-transform: uppercase;
+                font-size: 0.6875rem;
+                line-height: 2.3em;
+            }
+        }
+        a {
+            color: rgba(#fff, 0.52);
+        }
+    }
+}
+
+.copyright-icons {
+    border-top: 1px solid rgba(#fff, 0.2);
+    padding: 1.875rem 0;
+    font-weight: 200;
+    letter-spacing: 0.0625rem;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    font-style: normal;
+    color: rgba(#fff, 0.3);
+    text-align: center;
+    .ini {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+            &.copyright {
+                padding: 0 2.5rem 0 0;
+            }
+            &.cc-icons {
+			    height: 26px;
+			    width: 290px;
+			    background-image: url(../images/cc-bottom.png);
+			    background-size: contain;
+			    background-repeat: no-repeat;
+			}
+        }
+    }
+}

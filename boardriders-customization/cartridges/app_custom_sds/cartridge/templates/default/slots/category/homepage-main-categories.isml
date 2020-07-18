@@ -1,0 +1,10 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<iscache type="relative" hour="24"/>
+
+<isif condition="${slotcontent != null}">
+	<div id="homepage-main-categories" class="row">
+		<isloop items="${slotcontent.content}" var="category" status="loopstate">
+			<isinclude template="rendering/content/main-category" />
+		</isloop>
+	</div>
+</isif>

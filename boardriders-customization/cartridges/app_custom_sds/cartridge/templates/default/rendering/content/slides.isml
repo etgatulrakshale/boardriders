@@ -1,0 +1,7 @@
+<div class="slide slide-${loopState.count} slide-align-${contentAsset.custom.slides_TextAlign.value}">
+    <isif condition="${contentAsset.custom.slides_Image != null}">		
+		<div class="slide-bg slide-bg-desktop">
+			<img class="img-responsive" src="${contentAsset.custom.slides_Image.URL}" />
+		</div>
+	</isif>
+</div>

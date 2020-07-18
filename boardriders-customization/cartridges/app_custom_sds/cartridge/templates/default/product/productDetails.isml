@@ -1,0 +1,147 @@
+<isdecorate template="common/layout/page">
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/productDetail.js');
+        assets.addCss('/css/product/detail.css');
+    </isscript>
+
+    <isset name="product" value="${pdict.product}" scope="page" />
+    <isset name="isQuickView" value="${false}" scope="page" />
+    <isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
+    <isobject object="${product.raw}" view="detail" />
+        <div class="full-side-padding product-detail product-wrapper" id="pdpMain" data-pid="${product.id}">
+            <div class="row">
+                <div class="col-12">
+                    <!--Breadcrumbs-->
+                    <div class="product-breadcrumb d-md-none">
+                        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+                    </div>
+
+                    <!-- Product Name -->
+                    <div class="row">
+                        <div class="d-md-none col-sm-12">
+                            <h1 class="product-name">${product.productName}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+			<!--Breadcrumbs-->
+            <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+			
+            <div class="row">
+            	<!-- Product Images Carousel -->
+            	<isinclude template="product/components/imageThumbnail" />
+            
+                <!-- Product Images Carousel -->
+                <isinclude template="product/components/imageCarousel" />
+
+                <div class="col-12 col-sm-4">
+	                <div id="sidebar-right">
+						<div class="product-detail container--padding">
+							<div class="product-titling">
+			                    <!--Product Brand -->
+			                    <h3 class="product-brand" itemprop="brand">RVCA</h3>
+			                    
+			                    <!-- Product Name -->
+			                   	<h1 class="product-name">${product.productName}</h1>
+		                    </div>
+		                    
+		                    <div class="pricing-row">
+		                    	<div class="product-price">
+									<isset name="price" value="${product.price}" scope="page" />
+		                        	<isinclude template="product/components/pricing/main" />
+	                            </div>		                    	
+		                    </div>
+		                    
+		                    <div class="product-afterpay-message">
+								<div class="afterpay-message">
+									<span class="afterpay-message-text">or four payments of AUD 20.00 with </span>
+									<span class="afterpay-image-bg">
+										<a href="${URLUtils.url('Page-Show', 'cid', 'afterpay')}"><img class="afterpay-image" src="${URLUtils.staticURL('/images/afterpay-logo.png')}" alt="Afterpay"></a>
+									</span>
+									<span class="afterpay-image-bg">
+										<a href="${URLUtils.url('Page-Show', 'cid', 'afterpay')}" id="learnmore">Learn more</a>
+									</span>
+								</div>
+							</div>
+		                    
+		                    <div class="attributes product-variations">
+		                        <!-- Attributes and Quantity -->
+		                        <isinclude template="product/components/mainAttributes" />
+		
+		                        <isset name="isBundle" value="${false}" scope="page" />
+		                        <isset name="loopState" value="{count: 1}" scope="page" />
+		                        
+		                        <div class="product-variations">
+		                        	<ul>
+				                    	<isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+				                        	<isinclude template="product/components/variationAttribute" />
+				                        </isloop>
+			                        </ul>
+		                        </div>
+		                        
+		                        <isif condition="${attributeStatus.last && !isBundle}">
+                                    <!-- Quantity Drop Down Menu -->
+                                    <div class="attribute quantity">
+                                        <isinclude template="product/components/quantity" />
+                                    </div>
+                                </isif>
+		
+		                        <isif condition="${!product.variationAttributes}">
+		                            <div class="row">
+		                                <div class="col-12">
+		                                    <div class="simple-quantity">
+		                                        <isinclude template="product/components/quantity" />
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </isif>
+		
+		                        <div class="product-options">
+		                            <isif condition="${product.options && product.options.length > 0}">
+		                                <isinclude template="product/components/options" />
+		                            </isif>
+		                        </div>
+		
+		                        <!-- Product Availability -->
+		                        <isinclude template="product/components/productAvailability" />
+		
+		                        <!-- Applicable Promotions -->
+		                        <div class="row">
+		                            <div class="col-12 promotions">
+		                                <isinclude template="product/components/promotions" />
+		                            </div>
+		                        </div>
+		                        
+		                        <isset name="loopState" value="{count: 1}" scope="page" />
+            					<isinclude template="product/components/descriptionAndDetails" />
+		                        
+		                        <!-- Cart and [Optionally] Apple Pay -->
+	                            <isinclude template="product/components/addToCartProduct" />
+		
+		                        <!-- Social Sharing Icons -->
+		                        <div class="row">
+		                            <isinclude template="product/components/socialIcons" />
+		                        </div>
+		                    </div>
+	                    </div>
+	                </div>
+	                </div>
+                </div>
+            </div>
+            
+            <div>
+                <isslot id="cts-recommendations-m" description="Complete the set products" context="global" context-object="${pdict.product.raw}" />
+            </div>
+
+            <div class="recommendations">
+                <isslot id="product-recommendations-m" description="Recommended products" context="global" context-object="${pdict.product.raw}" />
+            </div>
+            
+            <isinclude template="product/components/recentlyView" />
+            
+        </div>
+    </isobject>
+</isdecorate>
