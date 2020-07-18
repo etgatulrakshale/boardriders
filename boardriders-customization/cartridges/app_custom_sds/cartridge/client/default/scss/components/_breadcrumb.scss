@@ -1,0 +1,53 @@
+.breadcrumb {
+	font-size: 0.675rem;
+	line-height: 1.5em;
+	padding: 25px 0;
+	text-transform: uppercase;
+	font-weight: 500;
+	text-align: left;
+	margin:0 auto;
+
+	.breadcrumb-element {
+		&:after {
+			content: "/";
+			margin-left: .6em;
+			margin-right: .3em;
+		}
+		&:last-child {
+			&:after {
+				content: '';
+			}
+		}
+		&:last-of-type:after {
+			content: '';
+		}
+	}
+
+	a {
+		color: $grey10;
+		text-transform: uppercase;
+
+		&:hover {
+			color: $btn-hover !important;
+		}
+	}
+	li {
+		display: inline;
+		list-style: none outside none;
+	}
+}
+
+// BREADCRUMBS PDP
+.pt_product-details {
+  .breadcrumb a {
+    color: $grey10;
+  }
+
+  .breadcrumb-element:after {
+    color: $grey10;
+  }
+
+  .breadcrumb-element:last-child {
+    color: $grey10;
+  }
+}

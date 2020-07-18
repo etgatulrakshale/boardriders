@@ -1,0 +1,48 @@
+<footer id="footercontent">
+    <div class="full-bleed">
+		<div class="global-footer">
+			<div class="footer-container">
+				<div class="row">
+					<div class="col-md-2 col-12 d-none d-md-block">
+						<div class="footer-item logo">
+							<iscontentasset aid="footer-logo"/>
+						</div>
+					</div>
+					<div class="col-md-2 col-12">
+						<button class="footer-accordion-button d-md-none">Brands</button>
+						<div class="footer-item">
+							<iscontentasset aid="footer-brands"/>
+						</div>
+					</div>
+					<div class="col-md-2 col-12">
+						<button class="footer-accordion-button d-md-none">Shop</button>
+						<div class="footer-item">
+							<iscontentasset aid="footer-shop"/>
+						</div>
+					</div>
+					<div class="col-md-2 col-12">
+						<button class="footer-accordion-button d-md-none">Account</button>
+						<div class="footer-item">
+							<iscontentasset aid="footer-account"/>
+						</div>
+					</div>
+					<div class="col-md-2 col-12">
+						<button class="footer-accordion-button d-md-none">Support</button>
+						<div class="footer-item">
+							<iscontentasset aid="footer-support"/>
+						</div>
+					</div>
+					<div class="col-md-2 col-12">
+						<button class="footer-accordion-button d-md-none">Company</button>
+						<div class="footer-item">
+							<iscontentasset aid="footer-company"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright-icons">
+				<iscontentasset aid="footer-copy"/>
+			</div>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,23 @@
+<div class="description-and-detail">
+    <div class="row product-attributes collapsible-xs">
+        <isinclude template="product/components/attributes" />
+    </div>
+
+	<div class="product-info">
+	    <div class="drawers">
+	    	<div class="drawer">
+			    <div class="drawer-label">${Resource.msg('label.description', 'product', null)}</div>
+		        <div class="drawer-content">
+		        	<isinclude template="product/components/description" />
+		        </div>
+		    </div>
+	
+		    <div class="drawer">
+		        <div class="drawer-label">${Resource.msg('label.details', 'product', null)}</div>
+		        <div class="drawer-content">
+		       		<isinclude template="product/components/details" />
+		       	</div>
+		    </div>
+		</div>
+    </div>
+</div>

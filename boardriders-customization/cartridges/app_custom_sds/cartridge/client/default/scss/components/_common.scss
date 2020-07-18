@@ -2,13 +2,15 @@
 
 body {
 	letter-spacing: 0.0625rem;
-	font-family: $font-gotham;
+	font-family: Gotham, Roboto, Helvetica, Arial, sans-serif !important
 }
 
 h3 {
     text-transform: uppercase;
-    font-weight: 300;
     margin: 0;
+    display: block;
+    font-size: 1.17em;
+    font-weight: bold;
 }
 
 .row {
@@ -25,7 +27,7 @@ h3 {
 	width: 100%;
 }
 
-.button {
+button, .button {
 	background-color: $button-black;
     color: $white;
     cursor: pointer;
@@ -47,4 +49,23 @@ h3 {
     	color: $white;
     	text-decoration: none;
     }
+}
+
+*:focus {
+    outline: none;
+}
+
+.full-side-padding {
+	padding: 0 20px;
+}
+
+.custom-select {
+	background: url(../images/dropdown-arrow.png) no-repeat right 0.75rem center/8px 10px;
+    border-color: $grey12;
+}
+
+.custom-select:focus, .form-control:focus {
+    border: 1px solid $grey12;
+    outline: 0;
+    box-shadow: none;
 }
