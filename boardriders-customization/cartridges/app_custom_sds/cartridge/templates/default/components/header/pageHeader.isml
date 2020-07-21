@@ -1,63 +1,149 @@
-<header>
-    <isinclude template="/components/header/skipNav" />
-    <div class="header-banner slide-up d-none">
-        <div class="container">
-            <div class="d-flex justify-content-between">
-                <div></div>
-                <div class="content">
-                    <isslot id="header-banner-m" description="Slot above the site header" context="global" />
+<div class="global-header">
+    <div class="header--top-bar d-lg-flex d-block justify-content-between align-items-center px-3">
+        <div class="top-bar--left d-flex">
+            <div class="each-col header--store-locator mr-3">
+                <a href="https://www.sds.com.au/stores" title="Store Locator">
+                    <span>Store Locator</span>
+                </a>
+            </div>
+            <div class="each-col header--help">
+                <a href="https://www.sds.com.au/help">
+                    <span>Help</span>
+                </a>
+            </div>
+        </div>
+        <div class="header--banner-slot d-lg-flex d-block">
+            <div class="html-slot-container">
+                <p class="mb-0 text-center pt-lg-0 pt-1">Shipping carriers are currently experiencing delays.
+                    <a href="https://www.sds.com.au/shipping-info.html/"><b>More Details</b></a>.
+                </p>
+            </div>
+            <span class="xmeout d-none"><i class="sds--icons sds-icon-x" aria-hidden="true"></i></span>
+        </div>
+        <div class="top-bar--right d-flex">
+            <div class="each-col header--customer-login-utility mr-3">
+                <a href='${URLUtils.url('Login-Show')}' title="User: Login">
+                    <i class="sds--icons sds-icon-user"></i>
+                    <span>Login</span>
+                </a>
+            </div>
+            <div class="each-col header--customer-register">
+                <a href='${URLUtils.url('Login-Register')}' title="Go to: Register">
+                    <span>Register</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="header--primary d-flex justify-content-between align-items-center px-3" role="banner">
+    <div class="mobile-nav--button d-block d-md-none">
+            <div class="sds-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="header--primary-logo">
+            <a href="/home" title="Surf Dive N Ski Home">
+                <img src="${URLUtils.staticURL('images/logo-white.svg')}"
+                    alt="Surf Dive N Ski">
+                <span class="visually-hidden d-none">Surf Dive N Ski</span>
+            </a>
+        </div>
+        <nav class="header--primary-naviation pt-3 d-none d-md-block" id="navigation">
+        <iscontentasset aid="sds-main-menu" />
+        </nav>
+        <div class="header--utility-container d-flex align-items-center">
+            <div class="header--search mr-4 d-lg-block d-none">
+                <form role="search" action="/search" method="get" name="simpleSearch" class="simple--search-form"
+                    novalidate="novalidate">
+                    <fieldset>
+                        <button type="submit" class="search-btn">
+                            <span class="visually-hidden">Search</span>
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                        <label class="visually-hidden" for="q">Search Catalog</label>
+                        <input type="text" id="q" name="q" value="" placeholder=" Search" autocomplete="off"
+                            class="valid" aria-invalid="false">
+                        <input type="hidden" name="lang" value="en_AU">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="header--account-util-icons mr-lg-5 mr-3">
+                <div class="each-col header--customer-register">
+                    <a href="https://www.sds.com.au/account" title="Go to: Register">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </a>
                 </div>
-                <div class="close-button">
-                    <button type="button" class="close" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+            </div>
+
+            <div class="header--mincart ">
+                <div id="mini-cart">
+                    <a class="mini-cart-link mini-cart-empty" href="https://www.sds.com.au/cart" title="View Cart">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <span class="minicart-quantity">(0)</span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-    <nav role="navigation">
-        <div class="header container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="navbar-header brand">
-                        <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
-                            <img class="hidden-md-down" src="${URLUtils.staticURL('/images/logo.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
-                            <img class="d-lg-none" src="${URLUtils.staticURL('/images/logo-small.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
-                        </a>
-                    </div>
-                    <div class="navbar-header">
-                        <div class="pull-left">
-                            <div class="hidden-md-down">
-                                <isinclude url="${URLUtils.url('Account-Header')}" />
-                                <isinclude url="${URLUtils.url('Page-Locale')}" />
-                            </div>
-                            <button class="navbar-toggler d-md-none" type="button" aria-controls="sg-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                                &#9776; <span class="hidden-xs-down">Menu</span>
-                            </button>
-                        </div>
-                        <div class="pull-right">
-                            <div class="search hidden-xs-down">
-                                <isinclude template="components/header/search" />
-                            </div>
-                            <div class="minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
-                                <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown d-none d-md-block" id="sg-navbar-collapse">
-            <div class="container">
-                <div class="row">
-                    <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
-                </div>
-            </div>
-        </div>
-        <div class="search-mobile d-sm-none">
-            <isinclude template="components/header/search" />
-        </div>
-    </nav>
-</header>
+    <div class="sticky--search-box d-block d-lg-none d-flex justify-content-between align-items-center w-100 px-3 px-md-5">
+   <form role="search" action="/search" method="get" name="stickySearch" class="sticky--search-form w-100"
+     novalidate="novalidate">
+     <fieldset>
+       <label class="visually-hidden" for="q">Search Catalog</label>
+       <input type="text" id="q" name="q" value="" placeholder=" Search" class="valid w-100 pl-3" aria-invalid="false">
+       <input type="hidden" name="lang" value="en_AU">
+       <button type="submit" class="search-btn">
+         <span class="visually-hidden">Search</span>
+         <i class="fa fa-search" aria-hidden="true"></i>
+       </button>
+     </fieldset>
+   </form>
+</div>
 
-<isinclude template="components/header/sitewide-content-banner"/>
+<nav class="header--mobile-naviation">
+	<iscontentasset aid="sds-mobile-menu" />
+</nav>
+
+</div>
+<script>
+$( window ).scroll(function() {
+  var scroll = $(window).scrollTop();
+    if (scroll >= 60){
+        $(".global-header").addClass('sticky-header');
+    } else{
+        $(".global-header").removeClass('sticky-header');
+    }
+});
+$('.header--mobile-naviation .top-level-link').click(function() {
+        $(".top-level-link").closest("li").find(".level-2-menu").slideUp("fast");
+        if($(this).closest("li").hasClass("active")){
+            $(this).closest("li").removeClass('active');
+        }else{
+            $(".top-level-link").closest("li").removeClass('active');
+            $(this).closest("li").find(".level-2-menu").slideDown();
+            $(this).closest("li").addClass('active');
+        }
+    });
+    $('.header--mobile-naviation .submenu-level-link').click(function() {
+        $(".submenu-level-link").closest("li").find(".level-3-menu ").slideUp("fast");
+        if($(this).closest("li").hasClass("active")){
+            $(this).closest("li").removeClass('active');
+        }else{
+            $(".submenu-level-link").closest("li").removeClass('active');
+            $(this).closest("li").find(".level-3-menu ").slideDown();
+            $(this).closest("li").addClass('active');
+        }
+    });
+
+    $('.sds-menu-toggle').click(function() {
+        if($(this).hasClass("active")){
+            $(".header--mobile-naviation").hide();
+            $(this).removeClass('active');
+        }else{
+            $(".header--mobile-naviation").show();
+            $(this).addClass('active');
+        }
+    });
+</script>
