@@ -6,7 +6,6 @@ $(document).ready(function () {
     processInclude(require('base/components/cookie'));
     processInclude(require('base/components/consentTracking'));
     processInclude(require('./components/footer'));
-    processInclude(require('./components/header'));
     processInclude(require('base/components/miniCart'));
     processInclude(require('base/components/collapsibleItem'));
     processInclude(require('base/components/search'));
