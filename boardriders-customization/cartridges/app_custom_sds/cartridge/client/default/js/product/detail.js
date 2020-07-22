@@ -66,8 +66,20 @@ module.exports = {
             var $box = $(this).closest('.drawer');
             $('.drawer-label').removeClass('open');
             $box.siblings().find('.drawer-content').stop().slideUp();
-            $(this).addClass('open');
+            if($(this).hasClass('open')){
+            	console.log("1111");
+            	$(this).removeClass('open');
+            }
+            else {
+            	console.log("2222");
+            	$(this).addClass('open');
+            }
             $box.find('.drawer-content').stop().slideToggle();
+        });
+        
+        $('.pdp-image-carousel').slick({
+        	dots: true,
+        	arrows: false
         });
     },
 

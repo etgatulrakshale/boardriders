@@ -2,7 +2,7 @@
 	<h2>Recently Viewed</h2>
 	<div class="search-result-items tiles-container row">
 		<isloop items="${pdict.LastVisitedProducts}" var="product" begin="0" end="5">
-			<div class="image-container col-2">
+			<div class="image-container col-md-2 col-6">
 				<div class="product-image">
 			    	<a class="thumb-link" href="https://www.sds.com.au/treets-long-sleeve-shirt/RV-R372190.html?dwvar_RV-R372190_color=BRX&amp;cgid=" title="TREETS LONG SLEEVE SHIRT">
 			       		<img class="img-responsive" src="https://www.sds.com.au/dw/image/v2/BCBZ_PRD/on/demandware.static/-/Sites-bbg-master-catalog/default/dw279bf2e7/images/hi-res/RV-R372190-BRX-1.jpg?sw=460&amp;sh=575" alt="TREETS LONG SLEEVE SHIRT">

@@ -18,3 +18,4 @@ require('base/thirdParty/bootstrap');
 require('base/components/spinner');
 require('./thirdparty/jquery.zoom');
 require('./thirdparty/jquery.stickit');
+require('./thirdparty/slick');
