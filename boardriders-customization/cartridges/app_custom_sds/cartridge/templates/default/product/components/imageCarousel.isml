@@ -1,0 +1,38 @@
+<isset name="iValue" value="${1}" scope="page" />
+
+<div class="primary-images col-12 col-sm-6 d-none d-md-block">
+	<div id="content">
+	    <div id="pdpCarousel-${product.id}" class="row" data-interval="0" data-prev="${Resource.msg('button.previous', 'common', null)}" data-next="${Resource.msg('button.next', 'common', null)}">
+		    <isloop items="${product.images['large']}" var="image" status="loopStatus">
+	    		<isif condition="${loopStatus.odd}">
+	    			<isif condition="${!loopStatus.first}">
+						<isset name="iValue" value="${iValue + 1}" scope="page" />
+					</isif>
+					<div class="page-section row" id="${iValue.toFixed()}">
+					<div class="product-one zoomproduct col-6">
+	    				<img src="${image.url}" class="img-responsive" alt="${image.alt} image number ${image.index}" data-hiresimg="${image.url}" itemprop="image" />
+	    			</div>
+				</isif>
+				
+				<isif condition="${loopStatus.last && loopStatus.odd}">
+					</div> 
+	    		<iselseif condition="${loopStatus.even}">
+	    			<div class="product-two zoomproduct col-6">
+	    				<img src="${image.url}" class="img-responsive" alt="${image.alt} image number ${image.index}" itemprop="image" />
+	    			</div>	
+	    			</div>
+	    		</isif>
+		    </isloop>
+	    </div>
+    </div>
+</div>
+
+<div class="primary-images col-12 d-block d-md-none">
+	<div class="product-primary-image">
+	  <div class="pdp-image-carousel">    
+	    <isloop items="${product.images['large']}" var="image" status="loopStatus">      
+	          <img src="${image.url}" class="img-responsive" alt="${image.alt} image number ${image.index}" data-hiresimg="${image.url}" itemprop="image" />
+	    </isloop>
+	  </div>
+	</div>
+</div>

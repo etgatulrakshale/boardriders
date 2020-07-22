@@ -1,6 +1,6 @@
 <isset name="jValue" value="${1}" scope="page" />
 
-<div class="thumbnail-image">
+<div class="thumbnail-image d-none d-md-block">
 	<div id="sidebar">
 		<nav class="navigation" id="mainNav">
 			<isloop items="${product.images['small']}" var="image" status="loopStatus">
