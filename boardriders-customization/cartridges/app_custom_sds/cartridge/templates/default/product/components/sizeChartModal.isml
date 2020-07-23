@@ -1,0 +1,105 @@
+<!-- Modal -->
+<div class="modal fade" id="sizeChartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+		<div class="">
+		    <h2 class="heading">Size Charts</h2>
+		    
+		    <ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">MENS CLOTHING</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu1">MENS FOOTWEAR</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu2">MENS WETSUITS</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu3">WOMENS CLOTHING</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu4">WOMENS FOOTWEAR</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu5">WOMENS WETSUITS</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu6">BOYS & GROMS CLOTHING</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu7">GIRLS & TODDLERS CLOTHING</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu8">TEENS WETSUITS</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu9">GROMS & TODDLERS WETSUITS</a></li>
+			</ul>
+			
+			<div class="tab-content">
+    			<div id="home" class="container tab-pane active">
+    				<img class="Footware img-responsive" src="${URLUtils.staticURL('/images/1st.png')}" alt="footware">
+				</div>
+				<div id="menu1" class="container tab-pane fade"><br>
+			      <h3>Menu 1</h3>
+			      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			    </div>
+			    <div id="menu2" class="container tab-pane fade"><br>
+			      <h3>Menu 2</h3>
+			      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+			    </div>
+			    <div id="menu3" class="container tab-pane fade"><br>
+			      <h3>Menu 3</h3>
+			      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+			    </div>
+			</div>
+			
+			<div class="tips">
+				<p><strong>Hint:</strong> For the most accurate results, measure yourself in your undergarments.</p>
+				<ul>
+					<li><strong>Neck:</strong> Measure around the base of your neck, inserting your forefinger between the tape and your neck to allow ease in fit.</li>
+					<li><strong>Chest:</strong> Measure around the fullest part of your chest, keeping tape firmly under your armpits and around your shoulder blades.</li>
+					<li><strong>Waist:</strong> Measure around your waist, slightly below your natural waist, where you normally wear your pants. Insert your forefinger between the tape and your body to allow ease in fit.</li>
+					<li><strong>Sleeve Length:</strong> Bend your arm slightly. Measure from center back neck, across your shoulder, down to your elbow, down to your wrist.</li>
+					<li><strong>Hip:</strong> Measure around the fullest part of your hips, inserting your forefinger between the tape and your hip to allow ease in fit.</li>
+					<li><strong>Inseam:</strong> Measure a similar pant that fits you well. Measure along the inseam, from the crotch seam to the bottom of the hem.</li>
+				</ul>
+			</div>
+			
+			<div class="nofit">
+			    <h2>Doesn't Fit?</h2>
+			    <p>If it doesn't fit, return it within 28 days, as long as it's unworn, unwashed and unaltered.<br>
+			    <a href="https://www.sds.com.au/returns.html">See Returns Policy</a></p>
+			    <h2>Between Sizes?</h2>
+			    <p>If your measurements are in between those listed in the size chart, pick the next larger size.</p>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+
+
+<style>
+.modal-dialog p {
+    line-height: 1.6em;
+    margin: 1em 0;
+}
+
+.modal-dialog ul li {
+    padding: 0 .5em;
+}
+
+.modal-dialog img {
+	padding: .5em 1em;
+}
+
+.modal-dialog .tips ul li {
+    list-style: square outside none;
+    padding: .5em 1em;
+}
+
+.nofit {
+	text-align: center;
+}
+
+.nofit h2 {
+	font-size: 1.8em
+}
+.heading {
+	font-style: normal;
+    font-weight: 400;
+    margin: 0 0 40px 0;
+    text-align: center;
+}
+
+.nav-tabs {
+	margin-bottom: 15px;
+	border-bottom: none;
+}
+
+.nav-tabs li.active {
+    border-bottom: 2px solid #457ce1;
+}
+</style>

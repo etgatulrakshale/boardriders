@@ -138,8 +138,9 @@
                 <isslot id="product-recommendations-m" description="Recommended products" context="global" context-object="${pdict.product.raw}" />
             </div>
             
-            
+            <isinclude template="product/components/sizeChartModal" />
             
         </div>
+        
     </isobject>
 </isdecorate>
