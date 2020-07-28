@@ -1,43 +1,10 @@
-<div class="modal fade" id="popupModal overlay" tabindex="-1" role="dialog" aria-labelledby="popupModal">
+ <isinclude template="/components/modules" sf-toolkit="off" />
+ <div class="modal fade" id="popupModal" tabindex="-1" role="dialog" aria-labelledby="popupModal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title popup-title">Popup</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
             <div class="modal-body">
-                <div class="quicksilver-popup"><!-- Image block -->
-					<div class="right qs-image-block"><img alt="" src="https://www.sds.com.au/on/demandware.static/-/Library-Sites-BillabongGroupSharedLibrary/default/dw4078b457/*FY20/Wk24/pop-up-image.jpg" title="" /></div>
-						<div class="left qs-content-area">
-						<div class="qs-title">
-							<h2>Welcome To Surf Dive 'n&nbsp;Ski</h2>
-						</div>
-						<div class="qs-offer-text">
-							<p>Just for you - 20% off your FIRST order&nbsp;&amp; access to Surf Dive 'n&nbsp;Ski exclusives.</p>
-						</div>
-						<form action="#" id="qs-email-signup" method="post" name="email-alert-signup" novalidate="novalidate">
-							<div class="qs-email-block"><input class="input-text email" id="qs-email-address" name="email" placeholder="Enter Email address" type="text" value="" /> <span class="error qs-invalid-email-msg">Please Enter a Valid Email Address</span> <span class="error qs-email-exists-msg">The email address has already been used</span></div>
-							<div class="form-group radio gender"><label class="input-radio"><input class="radio" name="newsletter_gender" type="radio" value="F" /><span class="label">Female</span></label> <label class="input-radio"><input class="radio" name="newsletter_gender" type="radio" value="M" /><span class="label">Male</span></label> <span class="error qs-invalid-gender-msg">Please Select Gender</span></div>
-							<div class="qs-button-block"><button class="btn btn--black" name="qs-submit" type="submit">20% OFF? Let's DO IT.</button></div>
-						</form>
-						<div class="qs-message">
-							<p>*Enter your email address to get the latest Surf Dive 'n&nbsp;Ski news and exclusive offers through email and direct mail. 20% discount excludes sale items, gift cards,&nbsp;e-gift cards &amp; GoPro. You must spend over $100 in order to qualify for the discount. Discount is taken off the order total excluding any non-eligible styles. The code is valid for online use only and is redeemable once per user. Promo code must be entered at checkout. Valid in Australia only. These offer terms may be withdrawn or altered at any time and cannot be combined with any other discount, offer or promotion. You can unsubscribe at any time by clicking on the unsubscribe link at the bottom of our email or by contacting us.</p>
-						</div>
-						</div>
-						<div class="qs-success-message" style="display:none!important">
-					<div class="inner-block">
-					<div class="first">You're in!</div>
-					<div class="last">Thanks for signing up. Check your inbox, there's a 20% OFF code waiting for you!</div>
-				</div>
-				</div>
-				</div>
+                <iscontentasset aid="popup-modal"/>
             </div>
         </div>
     </div>
 </div>
-<isscript>
-	$(window).on('load',function(){
-    	$('#popupModal').modal('show');
-    	quickSilverPopup();
-	});
-</isscript>

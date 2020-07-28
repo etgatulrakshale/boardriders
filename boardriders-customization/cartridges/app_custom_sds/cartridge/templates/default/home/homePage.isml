@@ -1,4 +1,5 @@
 <isdecorate template="common/layout/page">
+
     <isscript>
         var assets = require('*/cartridge/scripts/assets.js');
         assets.addJs('/js/productTile.js');
@@ -31,10 +32,14 @@
     
    	<div id="home-main-4">
 		<isslot id="home-main-4" description="Popular Categories" context="global" />
-	</div>   
-    <div>
-    	<isinclude template="home/popupModal"/> 
-    </div>
+	</div>
+	   
+	<div id="overlay" class="ui-widget-overlay ui-front" style="z-index: 100;"></div>
+	 
+    <div class="popupmodal"> 
+		<isinclude template="home/popupModal"/> 
+	</div> 
+	   
     <div class="home-email-signup">
         <div class="container">
             <form role="form">
