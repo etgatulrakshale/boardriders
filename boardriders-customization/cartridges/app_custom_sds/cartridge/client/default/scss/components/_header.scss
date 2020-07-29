@@ -1,6 +1,7 @@
-@import "variables";
+@import "../variables";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins/breakpoints";
+@import "~base/product/detail";
 
 .global-header {
 	img {
