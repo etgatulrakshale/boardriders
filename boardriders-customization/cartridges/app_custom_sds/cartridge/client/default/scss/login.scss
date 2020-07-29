@@ -1,0 +1,250 @@
+@import "variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "~base/components/formFields";
+
+// Login Page SCSS
+
+.login-page {
+  background-image: url("../images/hero.png");
+    .account-login, .account-create, .account-check-order {
+        height: 100%;
+        .account-login-expand, .account-create-expand, .account-check-order-expand {
+            display:none;
+        }
+        .account-login-close, .account-create-close, .account-check-order-close {
+            display:none;
+        }
+        @include media-breakpoint-down(lg) {
+            height: 100%;
+        }
+        @include media-breakpoint-down(sm) {
+            padding: 20px 65px!important;
+            margin: 20px !important;
+            .account-login-expand, .account-create-expand, .account-check-order-expand {
+                display: block;
+                font-size: 22px;
+                float: right;
+                position: absolute;
+                right: 44px;
+                top: 32%;
+                font-weight: bold;
+                color: #000;
+            }
+            .account-login-close, .account-create-close, .account-check-order-close {
+                display: none;
+                font-size: 22px;
+                float: right;
+                position: absolute;
+                right: 44px;
+                top: 5%;
+                font-weight: 200;
+                color: #000;
+            }
+            .account-active {
+                display: none;
+            }
+            .account-deactive {
+                display: block;
+            }
+            .account-login-content, .account-create-content, .account-check-order-content {
+                display:none;
+            }
+            .account-content-active {
+                display:block;
+            }
+        }
+    }
+    .login-head {
+        a {
+        	color: #ffffff;
+            &:hover{
+                    color: #006095 !important;
+                    transition: 0.3s;
+            }
+        }
+    }
+    .form-group{
+        margin-bottom: 30px;
+        .form-control-label {
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #202020;
+            padding-left: 20px;
+            &:before {
+                content: "*";
+                color: #9c9c9c;
+                font-size: 1rem;
+                float: right;
+                padding-left: 5px;
+                font-weight: 300;
+            }
+        }
+        .form-control{
+            border: 0;
+            border-bottom: 2px solid #e4e4e4;
+            z-index: 1;
+            border-radius: 0;
+            transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+}
+.forgot-password {
+    #password-reset {
+        color: #202020;
+    }
+}
+.account-login {
+    .button-success {
+        background-color:#272727;
+        color: #ffffff;
+        &:hover {
+            background-color: #005E35;
+        }
+    }
+}
+.account-login-head, .account-create-head, .account-check-order {
+    .account-expand {
+        display: none;
+    }
+    @include media-breakpoint-down(sm) {
+        height: 60px;
+        font-size: 15px;
+            h3 {
+                font-size: 15px;
+                line-height: 30px;
+                position: relative;
+                width: 100%;
+                text-align: center;
+                left: 0%;
+            }
+    }
+}
+
+// Register Page SCSS
+
+.register-page {
+    .register-head {
+        background-color: #171717;
+        a {
+            &:hover {
+                color: #006095 !important;
+                transition: 0.3s;
+            }
+        }
+        .register-main-head {
+            margin: 0;
+            padding-bottom: 70px;
+            text-align: center;
+            .register-main-head-title {
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 0.5rem;
+                font-size: 4.5rem;
+                font-weight: 200;
+                font-family: Steelfish, Roboto, Helvetica, Arial, sans-serif;
+                @include media-breakpoint-down(sm) {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+    .register-account-form {
+        .register-account-form-block {
+            width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            @include media-breakpoint-down(sm) {
+                width:80%;
+            }
+                .registation-header {
+                    font-size: 20px;
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+                .form-group{
+                    text-align: left;
+                    .form-control-label {
+                        font-size: 18px;
+                        font-weight: 300;
+                        letter-spacing: 2px;
+                        color: #202020;
+                        padding-left: 20px;
+                        &:before {
+                            content: "*";
+                            color: #9c9c9c;
+                            font-size: 1rem;
+                            float: right;
+                            padding-left: 5px;
+                            font-weight: 300;
+                        }
+                    }
+                    .form-control{
+                        border: 0;
+                        border-bottom: 2px solid #e4e4e4;
+                        z-index: 1;
+                        border-radius: 0;
+                        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+                        &:focus {
+                            box-shadow: none;
+                        }
+                    }
+                }
+                .custom-checkbox {
+                    .custom-control-label {
+                        &:before {
+                            content: '';
+                            width: 20px;
+                            height: 20px;
+                            border: 1px solid #e4e4e4;
+                            background-color: #ffffff;
+                            padding: 0;
+                            z-index: 1;
+                            top: 50%;
+                            transform: translate(0, -50%);
+                        }
+                        span {
+                            font-size: 12px;
+                            font-weight: 200;
+                            color: aliceblue;
+                            float: right;
+                            a {
+                                text-decoration: underline;
+                                font-weight: 300;
+                                color: #202020;
+                            }
+                        }
+                    }
+                }
+                .register-button {
+                    background-color: #ccc;
+                    border-color: #ccc;
+                    color: #666;
+                    opacity: 0.5;
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+                .checkout-active {
+                    background-color: #006095;
+                    &:hover {
+                        background-color: #006095;
+                    }
+                }
+            .privacy-policy {
+                font-weight: 200;
+                font-size: 0.75rem;
+                color: #9c9c9c;
+                a{
+                    text-decoration: none;
+                    color: #202020;
+                }
+            }
+        }
+    }
+}
