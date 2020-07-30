@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-md bg-inverse p-md-2 px-0 position-static">
+    <div class="menu-group mx-md-auto m-0 w-100" role="navigation">
+        <ul class="menu-category level-1 d-md-flex d-block list-unstyled" role="menu">
+            <isif condition="${pdict.categories}">
+                <isloop items="${pdict.categories}" var="category">
+                    <isif condition="${category.subCategories}">
+                        <li class="nav--new main-menu-link nav--${category.id} px-md-2 px-0" role="presentation">
+                            <a class="level-1-cat px-md-2 pb-md-5 p-0" href="<isprint value="${category.url}" encoding="htmldoublequote"/>" id="${category.id}" class="has-sub-menu nav--a-new">
+                            	<span class="top-level-link">${category.name}</span>
+                            </a>
+                            <isset name="menuItem" value="${category}" scope="page" />
+                            <div class="level-2 col-12 level-2-menu">
+                            	<isinclude template="components/header/menuItem" />
+                            </div>
+                        </li>
+                    <iselse/>
+                        <li class="nav--new main-menu-link" role="presentation">
+                            <a href="<isprint value="${category.url}" encoding="htmldoublequote"/>" id="${category.id}" class="has-sub-menu nav--a-new">${category.name}</a>
+                        </li>
+                    </isif>
+                </isloop>
+            </isif>
+        </ul>
+    </div>
+</nav>
