@@ -26,9 +26,11 @@
         <isslot id="home-product-set-m" description="Link to a Product Set." context="global" />
     </div>
     
-    <div>
-    	<isinclude template="home/pop" />
-	</div>
+    <div class="popmodal"> 
+		<isinclude template="home/pop"/>
+	</div> 
+	
+	
     <div class="home-email-signup">
         <div class="container">
             <form role="form">
