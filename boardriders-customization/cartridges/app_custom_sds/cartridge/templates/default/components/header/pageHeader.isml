@@ -20,7 +20,7 @@
             </div>
             <span class="xmeout d-none"><i class="sds--icons sds-icon-x" aria-hidden="true"></i></span>
         </div>
-        <div class="top-bar--right d-flex">
+        <div class="top-bar--right d-flex px-3">
             <div class="each-col header--customer-login-utility mr-3">
                 <a href='${URLUtils.url('Login-Show')}' title="User: Login">
                     <i class="sds--icons sds-icon-user"></i>
@@ -44,15 +44,15 @@
             </div>
         </div>
         <div class="header--primary-logo">
-            <a href="/home" title="Surf Dive N Ski Home">
+            <a href="${URLUtils.url('Home-Show')}" title="Surf Dive N Ski Home">
                 <img src="${URLUtils.staticURL('images/logo-white.svg')}"
                     alt="Surf Dive N Ski">
                 <span class="visually-hidden d-none">Surf Dive N Ski</span>
             </a>
         </div>
-        <nav class="header--primary-naviation pt-3 d-none d-md-block" id="navigation">
-        <iscontentasset aid="sds-main-menu" />
-        </nav>
+        <div class="header--primary-naviation pt-3 d-none d-md-block m-auto" id="navigation">
+        	<isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
+        </div>
         <div class="header--utility-container d-flex align-items-center">
             <div class="header--search mr-4 d-lg-block d-none">
                 <form role="search" action="/search" method="get" name="simpleSearch" class="simple--search-form"
@@ -102,48 +102,8 @@
    </form>
 </div>
 
-<nav class="header--mobile-naviation">
-	<iscontentasset aid="sds-mobile-menu" />
-</nav>
+<div class="header--mobile-naviation">
+	<isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
+</div>
 
 </div>
-<script>
-$( window ).scroll(function() {
-  var scroll = $(window).scrollTop();
-    if (scroll >= 60){
-        $(".global-header").addClass('sticky-header');
-    } else{
-        $(".global-header").removeClass('sticky-header');
-    }
-});
-$('.header--mobile-naviation .top-level-link').click(function() {
-        $(".top-level-link").closest("li").find(".level-2-menu").slideUp("fast");
-        if($(this).closest("li").hasClass("active")){
-            $(this).closest("li").removeClass('active');
-        }else{
-            $(".top-level-link").closest("li").removeClass('active');
-            $(this).closest("li").find(".level-2-menu").slideDown();
-            $(this).closest("li").addClass('active');
-        }
-    });
-    $('.header--mobile-naviation .submenu-level-link').click(function() {
-        $(".submenu-level-link").closest("li").find(".level-3-menu ").slideUp("fast");
-        if($(this).closest("li").hasClass("active")){
-            $(this).closest("li").removeClass('active');
-        }else{
-            $(".submenu-level-link").closest("li").removeClass('active');
-            $(this).closest("li").find(".level-3-menu ").slideDown();
-            $(this).closest("li").addClass('active');
-        }
-    });
-
-    $('.sds-menu-toggle').click(function() {
-        if($(this).hasClass("active")){
-            $(".header--mobile-naviation").hide();
-            $(this).removeClass('active');
-        }else{
-            $(".header--mobile-naviation").show();
-            $(this).addClass('active');
-        }
-    });
-</script>

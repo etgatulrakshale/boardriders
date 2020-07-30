@@ -1,0 +1,45 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+<ul class="menu-horizontal list-unstyled mb-0 d-md-flex d-block" role="menu" aria-hidden="true" aria-label="${category.id}">
+    <isset name="mainCategory" value="${menuItem}" scope="page" />
+    <isloop items="${menuItem.subCategories}" var="category">
+        <isif condition="${category.subCategories}">
+            <li class="level-2-li-featured py-md-4 px-md-2 px-0" role="presentation">
+                <a href="${category.url}" id="${category.id}" class="level-2--header has-sub-menu mb-1" role="button">
+                	<span class="submenu-level-link">${category.name}</span>
+                </a>
+                <isset name="menuItem" value="${category}" scope="page" />
+                <ul class="level-3 level-3-menu list-unstyled" role="menu" aria-hidden="true" aria-label="${category.id}">
+				    <isloop items="${menuItem.subCategories}" var="category">
+				        <isif condition="${category.subCategories}">
+				            <li role="presentation" class="my-1">
+				                <a class="text-capitalize" href="${category.url}" id="${category.id}" role="button">${category.name}</a>
+				                <isset name="menuItem" value="${category}" scope="page" />
+				            </li>
+				        <iselse/>
+				            <li role="presentation" class="my-1">
+				                <a class="text-capitalize" href="${category.url}" id="${category.id}" role="menuitem">${category.name}</a>
+				            </li>
+				        </isif>
+				    </isloop>
+				</ul>
+            </li>							
+        <iselse/>
+            <li class="menu-horizontal list-unstyled mb-0 d-md-flex d-block" role="presentation">
+                <a href="${category.url}" id="${category.id}" role="menuitem" class="dropdown-link" tabindex="-1">
+                	<span class="submenu-level-link">${category.name}</span>
+                </a>
+            </li>
+        </isif>
+    </isloop>
+    <div class="banner d-md-block d-none">
+	    	<isif condition="${!empty(mainCategory.headerBanner) && mainCategory.headerBanner != null }">
+				<isprint value="${mainCategory.headerBanner}" encoding="off"/>
+			<iselse>
+				<isif condition="${!empty(mainCategory.headerBannerID) && mainCategory.headerBannerID != null }">
+						<iscontentasset aid="${mainCategory.headerBannerID}" />
+				<iselse>
+				</isif>	    
+			</isif>
+	</div>
+</ul>
+
