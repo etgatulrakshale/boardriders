@@ -50,9 +50,11 @@ module.exports = {
 		  if ($(this).hasClass("active")) {
 		    $(".header--mobile-naviation").hide();
 		    $(this).removeClass('active');
+		  	$('.global-header').removeClass('fixed-head');
 		  } else {
 		  	$(".header--mobile-naviation").show();
 		  	$(this).addClass('active');
+		  	$('.global-header').addClass('fixed-head'); 
 		  }
 		});
     }

@@ -14,12 +14,31 @@
                             </div>
                         </li>
                     <iselse/>
-                        <li class="nav--new main-menu-link" role="presentation">
-                            <a href="<isprint value="${category.url}" encoding="htmldoublequote"/>" id="${category.id}" class="has-sub-menu nav--a-new">${category.name}</a>
+                        <li class="nav--new main-menu-link nav--${category.id} px-md-2 px-0" role="presentation">
+                            <a class="level-1-cat px-md-2 pb-md-5 p-3" href="<isprint value="${category.url}" encoding="htmldoublequote"/>" id="${category.id}" class="has-sub-menu nav--a-new">
+								<span class="${category.name}">${category.name}</span>
+							</a>
                         </li>
                     </isif>
                 </isloop>
             </isif>
+            <div class="d-md-none d-block">
+            	<li>
+            		<a class="level-1-cat p-3" href="https://www.sds.com.au/wishlist">
+            			<span>Your Wish List</span>
+            		</a>
+            	</li>
+				<li>
+					<a class="level-1-cat p-3" href="https://www.sds.com.au/stores" title="Store Locator">
+						<span>Store Locator</span>
+					</a>
+				</li>
+				<li>
+					<a class="level-1-cat p-3" href="https://www.sds.com.au/help">
+						<span>Help</span>
+					</a>
+				</li>
+            </div>
         </ul>
     </div>
 </nav>

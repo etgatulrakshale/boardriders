@@ -3,8 +3,8 @@
     <isset name="mainCategory" value="${menuItem}" scope="page" />
     <isloop items="${menuItem.subCategories}" var="category">
         <isif condition="${category.subCategories}">
-            <li class="level-2-li-featured py-md-4 px-md-2 px-0" role="presentation">
-                <a href="${category.url}" id="${category.id}" class="level-2--header has-sub-menu mb-1" role="button">
+            <li class="level-2-li-featured py-md-4 px-md-2 px-0 mx-auto text-left" role="presentation">
+                <a href="${category.url}" id="${category.id}" class="level-2--header has-sub-menu mb-1 pb-md-3 p-0" role="button">
                 	<span class="submenu-level-link">${category.name}</span>
                 </a>
                 <isset name="menuItem" value="${category}" scope="page" />
@@ -22,7 +22,7 @@
 				        </isif>
 				    </isloop>
 				</ul>
-            </li>							
+            </li>					
         <iselse/>
             <li class="menu-horizontal list-unstyled mb-0 d-md-flex d-block" role="presentation">
                 <a href="${category.url}" id="${category.id}" role="menuitem" class="dropdown-link" tabindex="-1">
