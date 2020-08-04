@@ -3,9 +3,14 @@
 @import "bootstrap/scss/mixins/breakpoints";
 @import "~base/product/detail";
 
+.header--mobile-naviation {
+	display: none;
+}
 .global-header {
 	img {
 		width: 100%;
+    	max-width: 190px;
+	    min-width: 130px;
 	}
 	a {
 		color: #FFFFFF;
@@ -18,7 +23,7 @@
 .header--top-bar {
 	background-color: #202020;
 	color: #FFFFFF;
-	height: 30px;
+	height: 32px;
 	font-size: 12px;
 }
 .header--primary {
@@ -35,6 +40,9 @@
 .visually-hidden {
 	display: none;
 }
+.site-search {
+	width: auto !important;
+}
 .header--primary-naviation {
 	.main-menu-link {
 		padding: 0 15px;
@@ -42,13 +50,16 @@
 	li {
 		a {
 			text-transform: uppercase;
-			font-size: 14px;
-			font-weight: bold;
+			font-size: 11px;
+		    font-weight: 300;
 			padding-bottom: 50px;
 		}
 	}
+	.top-level-link {
+	    font-size: 11px;
+	}
 }
-.search-btn {
+.search-button {
 	background: transparent;
 	border: 0;
 	position: absolute;
@@ -61,10 +72,11 @@
 		outline:none;
 	}
 	i {
-	    position: absolute;
-	    top: 14%;
 	    color: black;
-	    font-size: 18px;
+	    position: absolute;
+	    right: 15%;
+	    top: 13%;
+	    margin: auto;
 	}
 }
 .header--search {
@@ -105,7 +117,7 @@
 		img {
 			width: 100%;
 			height: auto;
-			max-width: 400px;
+			max-width: 300px;
 			vertical-align: top;
 		}
 	}
@@ -280,22 +292,36 @@
 	}
 	.sticky--search-box {
 		background-color: #272727;
-		padding-bottom: 25px;
-		input {
-			height: 60px;
-			border: 0;
-			border-radius: 25px;
-			background-color: #FFFFFF;
+		padding-bottom: 35px;
+		.site-search {
+			width: 100% !important;
 		}
-		.search-btn {
+		input {
+			height: 60px !important;
+		    border: 0;
+		    padding: 0px 25px !important;
+		    border-radius: 25px;
+		    font-size: 12px !important;
+		    color: #9c9c9c !important;
+		    background-color: #FFFFFF;
+		    font-size: 13px;
+		}
+		.sticky--search-form {
+			position: relative;
+		}
+		.search-button {
 			background: transparent;
 			border: 0;
 			position: absolute;
 			right: 10px;
 			top: 15px;
-		}
-		.sticky--search-form {
-			position: relative;
+			i {
+			    color: black;
+			    position: absolute;
+			    float: right;
+			    right: 15%;
+			    top: 20%;
+			}
 		}
 	}
 	.megamenu--container-asset--right {
@@ -317,7 +343,7 @@
 		width: 30%;
 	}
 	.header--primary {
-		height: 68px;
+		height: 69px;
 	}
 }
 @media screen and (max-width: 768px) {
@@ -328,20 +354,20 @@
 	.nav--sale {
 		.has-sub-menu {
 			.top-level-link {
-				font-weight: bold;
 				color: #DE3333;
-				padding-bottom: 15px;
-				&:hover {
-					border-bottom: 1px solid #3a3a3a;
-				}
-			}
-			span {
-				padding-bottom: 5px;
-				&:hover {
-					border-bottom: 1px solid #3a3a3a;
-				}
+    			font-weight: bold;
 			}
 		}	
+	}
+	.fixed-head {
+		.header--primary {
+			position: fixed;
+			width: 100%;
+			z-index: 999;
+			top: 0;
+			height: 60px;
+			transition: max-height 200ms ease-in;
+		}
 	}
 	.header--top-bar {
 		display: none !important;
@@ -361,9 +387,9 @@
 	}
 	.sticky--search-box {
 		input {
-			height: 50px;
+			height: 50px !important;
 		}
-		.search-btn {
+		.search-button {
 			top: 10px;
 		}
 	}
@@ -430,6 +456,13 @@
 			text-transform: uppercase;
 			padding: 15px;
 			border-bottom: 1px solid #3a3a3a;
+			&:before {
+				content: '+';
+				font-size: 1.5rem;
+				position: absolute;
+				right: 15px;
+				top: 15px;
+			}
 		}
 		.submenu-level-link {
 			display: block;
@@ -437,6 +470,13 @@
 			color: #202020;
 			text-transform: uppercase;
 			padding: 15px;
+			&:before {
+				content: '+';
+				font-size: 1.5rem;
+				position: absolute;
+				right: 15px;
+				top: 15px;
+			}
 		}
 		.level-2 {
 		    display: block;
@@ -453,40 +493,22 @@
 		}
 		li {
 			position: relative;
-			.menu-list-indicate-icon {
-				.top-level-link {
-					.menuexpand {
-						display: block;
-						font-size: 1.5rem;
-						position: absolute;
-						right: 15px;
-						top: 15px;
-					}
-				}
-			}
 		}
 		.active {
-			.menu-list-indicate-icon {
-				.top-level-link {
-					.menuexpand {
-						display: none;
-					}
-					.menuclosed {
-						display: block !important;
-						font-family: 'sds_dingsregular';
-						text-transform: none;
-						font-size: 1rem;
-						padding-right: 2px;
-						position: absolute;
-						right: 15px;
-						top: 15px;
-					}
-				}
-			}
 			.top-level-link {
 				background-color: #006A9F;
 				color: #fff;
 				border-bottom: 1px solid #006A9F;
+				&:before {
+					content: 'x';
+					font-family: 'sds_dingsregular';
+					text-transform: none;
+					font-size: 1rem;
+					padding-right: 2px;
+					position: absolute;
+					right: 15px;
+					top: 15px;
+				}
 			}
 			a {
 				color: #202020;
@@ -508,43 +530,20 @@
 				}
 			}
 		}
-	}
-	.level-2-menu.active {
-		display: block;
-	}
-	.level-2-menu {
-		.menu-list-indicate-icon {
+		.level-2-li-featured.active {
 			.submenu-level-link {
-				.menuexpand {
-					display: block;
-					font-size: 1.5rem;
+				&:before {
+					content: 'x';
+					color: #006A9F;
+				    font-weight: bold;
+					font-size: 16px;
+					font-family: 'sds_dingsregular';
+					text-transform: none;
+					font-size: 1rem;
+					padding-right: 2px;
 					position: absolute;
 					right: 15px;
 					top: 15px;
-				}
-				.menuclosed {
-				    color: #006A9F;
-				    font-weight: bold;
-				    font-size: 16px;
-				}
-			}
-		}
-		.active {
-			.menu-list-indicate-icon {
-				.submenu-level-link {
-					.menuexpand {
-						display: none;
-					}
-					.menuclosed {
-						display: block !important;
-						font-family: 'sds_dingsregular';
-						text-transform: none;
-						font-size: 1rem;
-						padding-right: 2px;
-						position: absolute;
-						right: 15px;
-						top: 15px;
-					}
 				}
 			}
 		}

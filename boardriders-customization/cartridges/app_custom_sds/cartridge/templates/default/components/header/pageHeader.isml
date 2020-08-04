@@ -43,31 +43,19 @@
                 <span></span>
             </div>
         </div>
-        <div class="header--primary-logo">
+        <div class="header--primary-logo w-25">
             <a href="${URLUtils.url('Home-Show')}" title="Surf Dive N Ski Home">
                 <img src="${URLUtils.staticURL('images/logo-white.svg')}"
                     alt="Surf Dive N Ski">
                 <span class="visually-hidden d-none">Surf Dive N Ski</span>
             </a>
         </div>
-        <div class="header--primary-naviation pt-3 d-none d-md-block m-auto" id="navigation">
+        <div class="header--primary-naviation pt-2 d-none d-md-block m-auto" id="navigation">
         	<isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
         </div>
         <div class="header--utility-container d-flex align-items-center">
-            <div class="header--search mr-4 d-lg-block d-none">
-                <form role="search" action="/search" method="get" name="simpleSearch" class="simple--search-form"
-                    novalidate="novalidate">
-                    <fieldset>
-                        <button type="submit" class="search-btn">
-                            <span class="visually-hidden">Search</span>
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </button>
-                        <label class="visually-hidden" for="q">Search Catalog</label>
-                        <input type="text" id="q" name="q" value="" placeholder=" Search" autocomplete="off"
-                            class="valid" aria-invalid="false">
-                        <input type="hidden" name="lang" value="en_AU">
-                    </fieldset>
-                </form>
+            <div class="header--search mr-4 d-lg-block d-none pt-2">
+                <isinclude template="components/header/search" />
             </div>
             <div class="header--account-util-icons mr-lg-5 mr-3">
                 <div class="each-col header--customer-register">
@@ -87,19 +75,8 @@
             </div>
         </div>
     </div>
-    <div class="sticky--search-box d-block d-lg-none d-flex justify-content-between align-items-center w-100 px-3 px-md-5">
-   <form role="search" action="/search" method="get" name="stickySearch" class="sticky--search-form w-100"
-     novalidate="novalidate">
-     <fieldset>
-       <label class="visually-hidden" for="q">Search Catalog</label>
-       <input type="text" id="q" name="q" value="" placeholder=" Search" class="valid w-100 pl-3" aria-invalid="false">
-       <input type="hidden" name="lang" value="en_AU">
-       <button type="submit" class="search-btn">
-         <span class="visually-hidden">Search</span>
-         <i class="fa fa-search" aria-hidden="true"></i>
-       </button>
-     </fieldset>
-   </form>
+<div class="sticky--search-box d-block d-lg-none d-flex justify-content-between align-items-center w-100 px-3 px-md-5">
+   <isinclude template="components/header/search" />
 </div>
 
 <div class="header--mobile-naviation">
