@@ -1,7 +1,9 @@
 <form action="${URLUtils.url('Order-Track')}" class="trackorder" method="POST" name="trackorder-form">
-    <h3 class="card-header track-order-header text-center border-0">${Resource.msg('header.form.trackorder', 'login', null)}</h3>
-    <span class="account-check-order-expand">+</span>
-	<span class="account-check-order-close">x</span>
+    <div class="account-check-order-head mb-md-3 m-0">
+	    <h3 class="card-header track-order-header text-center border-0">${Resource.msg('header.form.trackorder', 'login', null)}</h3>
+	    <span class="account-check-order-expand">+</span>
+		<span class="account-check-order-close">x</span>
+    </div>
     <div class="card-body account-check-order-content">
         <isif condition="${pdict.orderTrackFormError}">
             <div class="form-group">

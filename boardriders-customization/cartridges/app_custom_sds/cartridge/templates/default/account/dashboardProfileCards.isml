@@ -1,0 +1,34 @@
+<div class="row myaccount-content-block mx-auto bg-white p-5">
+  <ul class="w-100 p-0">
+    <li class="myaccount-content-item">
+		<a class="p-3 text-center w-100" title="Order History" href="${URLUtils.url('Order-History')}">
+			<span>${Resource.msg('label.orderhistory','account',null)}</span>
+		</a>
+	</li>
+	<li class="myaccount-content-item">
+		<a class="p-3 text-center w-100" title="Personal Details" href="${URLUtils.url('Account-EditProfile')}">
+			<span>${Resource.msg('label.profile.details','account',null)}</span>
+		</a>
+	</li>
+	<li class="myaccount-content-item">
+		<a class="p-3 text-center w-100" title="Address Book" href="${URLUtils.url('Address-List')}">
+			<span>${Resource.msg('label.addressbook','account',null)}</span>
+		</a>
+	</li>
+	<li class="myaccount-content-item">
+		<a class="p-3 text-center w-100" title="Payment Information" href="${URLUtils.url('PaymentInstruments-List')}">
+			<span>${Resource.msg('label.payment.information','account',null)}</span>
+		</a>
+	</li>
+	<li class="myaccount-content-item">
+		<a class="p-3 text-center w-100" title="View Wishlist" href="">
+			<span>${Resource.msg('label.wishlist','account',null)}</span>
+		</a>
+	</li>
+	<li class="myaccount-content-item">
+		<a class="p-3 text-center w-100" title="Contact Us" href="">
+			<span>${Resource.msg('label.contactus','account',null)}</span>
+		</a>
+	</li>
+  </ul>
+</div>
