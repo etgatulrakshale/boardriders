@@ -1,0 +1,14 @@
+<li class="color-attribute ${!refinementValue.selectable ? 'disabled' : ''} col-4">
+    <button data-href="${refinementValue.url}" class="px-0 w-100 d-flex">
+    	<span class="refine-color-name">${refinementValue.displayValue}</span>
+        <span class="${refinementValue.swatchId} swatch-circle color-value swatch-mark ml-md-auto mx-0
+              <isif condition="${refinementValue.selected && refinementValue.selectable}">selected</isif>
+              <isif condition="${!refinementValue.selectable}">disabled</isif>"
+        >
+        </span>
+        <span id="${refinementValue.swatchId}-assistive" class="sr-only selected-assistive-text">
+            ${refinementValue.selected && refinementValue.selectable ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
+            ${refinementValue.title}
+        </span>
+    </button>
+</li>

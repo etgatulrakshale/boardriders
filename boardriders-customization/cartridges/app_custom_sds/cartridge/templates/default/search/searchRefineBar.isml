@@ -1,15 +1,21 @@
-<div class="refinements">
-  <div id="accordion" class="refinement d-flex">
+<div class="refinements-block d-flex col-12">
+  <div class="refinement-head col-3 d-md-block d-none">
+	<h1 class="cat-refinement-title text-capitalize p-3">
+    	${pdict.productSearch.category.name}
+	</h1>
+  </div>
+  <div id="accordion" class="refinements d-md-flex d-block col-md-9 col-12">
       <isloop items="${pdict.productSearch.refinements}" var="refinement">
           <isset name="refinmentid" value="${refinement.displayName.toLowerCase().replace(/ /g, '-')}" scope="page"/>
-          <div class="refinement p-3 refinement-${refinmentid} <isif condition="${refinmentid === 'category' && !pdict.productSearch.productSearch.refinementCategory.topLevel}">hide-category-filter</isif>">
-		      <div class="col-sm-12 cat-heading collapsed">
+          <div class="refinement refinement-item mb-0 refinement-${refinmentid} <isif condition="${refinmentid === 'category' && !pdict.productSearch.productSearch.refinementCategory.topLevel}">hide-category-filter</isif>">
+		      <div class="col-sm-12 refinement-item-heading p-3">
+		      	   <div class="border-cover"></div>
 		           <div aria-label="${refinement.displayName}" class="cat-name">
 		           		<span>${refinement.displayName}</span>
 		           		<iscomment><i class="fa fa-plus" aria-hidden="true"></i></iscomment>	
 		           </div>
 		       </div>
-		       <div class="panel-collapse collapse" id="${refinmentid}">
+		       <div class="refinement-item-values" id="${refinmentid}">
 		           <!--- CATEGORY REFINEMENTS --->
 		           <isif condition="${refinement.isCategoryRefinement}">
 		               <isset name="categories" value="${refinement.values}" scope="page" />
@@ -28,5 +34,15 @@
 		       </div>
           </div>
       </isloop>
+      <!--- Results count and Reset button --->
+		<isif condition="${pdict.productSearch.productIds.length > 0}">
+		    <div>
+		        <div class="secondary-bar col-12 offset-sm-4 offset-md-0 col-sm-4 col-md-12 reset-block">
+		            <button class="reset reset-button" data-href="${pdict.productSearch.resetLink}">
+		                ${Resource.msg('link.reset', 'search', null)}
+		            </button>
+		        </div>
+		    </div>
+		</isif>      
   </div>
 </div>

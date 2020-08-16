@@ -1,38 +1,41 @@
 <ul class="values content list-unstyled category-values">
-    <isloop items="${categories}" var="category">
-        <li>
-            <button class="bg-white border-0 category-main-parent p-2" data-href="${category.url}">
-            	<span class="category-expand active-menu" ></span>
-                <!--- Label --->
-                <span title="${category.title}" class="${category.selected ? 'selected' : ''}" aria-hidden="true">
-                    ${category.displayValue}
-                </span>
-                <span class="sr-only selected-assistive-text">
-                    ${category.selected ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
-                    ${category.title}
-                </span>
-            </button>
-            <!--- Process subcategories --->
+  <isloop items="${categories}" var="category">
+    <!--- Process subcategories --->
             <isset name="categories" value="${category.subCategories}" scope="page" />
-            <ul class="values content list-unstyled parent-subcategory pl-4">
-			    <isloop items="${categories}" var="category">
-			        <li class="mt-1">
-			            <button class="bg-white border-0 p-2" data-href="${category.url}">			
-			                <!--- Label --->
+    <ul class="values content list-unstyled category-values">
+      <isloop items="${categories}" var="category">
+        <li>
+          <button class="bg-white border-0 category-main-parent p-2" data-href="${category.url}">
+            <span class="category-expand active-menu" ></span>
+            <!--- Label --->
 			                <span title="${category.title}" class="${category.selected ? 'selected' : ''}" aria-hidden="true">
-			                    ${category.displayValue}
-			                </span>
-			                <span class="sr-only selected-assistive-text">
-			                    ${category.selected ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
+              ${category.displayValue}
+            </span>
+            <span class="sr-only selected-assistive-text">
+              ${category.selected ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
 			                    ${category.title}
-			                </span>
-			            </button>
-			            <!--- Process subcategories --->
+            </span>
+          </button>
+          <!--- Process subcategories --->
 			            <isset name="categories" value="${category.subCategories}" scope="page" />
-			            <isinclude template="search/refinements/categories" />
-			        </li>
-			    </isloop>
-			</ul>
+          <ul class="values content list-unstyled parent-subcategory pl-4">
+            <isloop items="${categories}" var="category">
+              <li>
+                <button class="bg-white border-0 p-2" data-href="${category.url}">
+                  <!--- Label --->
+						                <span title="${category.title}" class="${category.selected ? 'selected' : ''}" aria-hidden="true">
+                    ${category.displayValue}
+                  </span>
+                  <span class="sr-only selected-assistive-text">
+                    ${category.selected ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
+						                    ${category.title}
+                  </span>
+                </button>
+              </li>
+            </isloop>
+          </ul>
         </li>
-    </isloop>
+      </isloop>
+    </ul>
+  </isloop>
 </ul>
