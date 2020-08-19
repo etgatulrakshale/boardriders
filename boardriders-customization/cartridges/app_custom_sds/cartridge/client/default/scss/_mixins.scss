@@ -13,3 +13,22 @@
 	    border-color: #000;
     }
 }
+@mixin blue-black-button {
+  	font-weight: 300;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: 12px 45px;
+    font-size: 0.875rem;
+    line-height: 0.9375rem;
+    letter-spacing: 0.18em;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+    background: #000;
+    box-shadow: none !important;
+    &:hover{
+        background-color: #006095;
+    	border-color: black;
+    }
+}
