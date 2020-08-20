@@ -19,7 +19,6 @@
             height: 100%;
         }
         @include media-breakpoint-down(sm) {
-            padding: 20px 65px!important;
             margin: 20px !important;
             .account-login-expand, .account-create-expand, .account-check-order-expand {
                 display: block;
@@ -52,6 +51,7 @@
             }
             .account-content-active {
                 display:block;
+                padding: 10px;
             }
         }
     }
@@ -107,13 +107,14 @@
         }
     }
 }
-.account-login-head, .account-create-head, .account-check-order {
+.account-login-head, .account-create-head, .account-check-order-head {
     .account-expand {
         display: none;
     }
     @include media-breakpoint-down(sm) {
-        height: 60px;
+        height: auto;
         font-size: 15px;
+        padding: 20px;
             h3 {
                 font-size: 15px;
                 line-height: 30px;

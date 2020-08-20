@@ -1,0 +1,74 @@
+@import "../variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "~base/account/dashboard";
+
+.myaccount-page {
+	.myaccount-head {
+        background-color: #171717;
+        a {
+            &:hover {
+                color: #006095 !important;
+                transition: 0.3s;
+                text-decoration: none;
+            }
+        }
+        .myaccount-main-head {
+            margin: 0;
+            padding-bottom: 70px;
+            text-align: center;
+            .myaccount-main-head-title {
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 0.5rem;
+                font-size: 4.5rem;
+                font-weight: 200;
+                font-family: Steelfish, Roboto, Helvetica, Arial, sans-serif;
+                @include media-breakpoint-down(sm) {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+    .myaccount-content {
+    	background-color: #f9f9f9;
+	    padding: 50px;
+	    position: relative;
+	    z-index: 1;
+	    .myaccount-content-block {
+	    	width: 100%;
+		    max-width: 800px;
+		    margin: 0 auto;
+		    .myaccount-content-item {
+		        background-color: #e9e9e9;
+			    color: #202020;
+			    font-size: 13px;
+			    letter-spacing: 2px;
+			    font-weight: 300;
+			    display: inline-flex;
+			    width: 45%;
+			    margin: 10px;
+			    text-transform: capitalize;
+			    @include media-breakpoint-down(sm) {
+			    	width: 100%;
+			        margin-left: 0;
+			    }
+		    }
+	    } 
+	    .myaccount-sidebar {
+	    	h4 {
+	    		font-size: 19px;
+    			font-weight: 500;
+	    	}
+	    	.myaccount-sidebar-list {
+	    		li {
+	    			padding: 5px 0;
+	    			a {
+	    			    color: #202020;
+    					font-size: 14px;
+	    			}
+	    		}
+	    	}
+	    }
+    }
+}

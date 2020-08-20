@@ -12,8 +12,8 @@
 		</div>
 		<div class="d-lg-flex d-block pb-4">
 	    	<div class="col-lg-4 col-12">
-	    		<div class="account-login bg-white ml-lg-4 mx-3 p-5">
-	    			<div class="account-login-head text-center mb-3">
+	    		<div class="account-login bg-white ml-lg-4 mx-3 p-md-5 p-0">
+	    			<div class="account-login-head text-center  mb-md-3 m-0">
 						<h3 class="d-md-block d-none">Sign in to an existing account</h3>
 						<h3 class="d-md-none d-block">Sign in to an<br> existing account</h3>
 						<span class="account-login-expand">+</span>
@@ -26,8 +26,8 @@
 	    		</div>
 	    	</div>
 	    	<div class="col-lg-4 col-12">
-	    		<div class="account-create bg-white ml-lg-4 mx-3 p-5">
-	    			<div class="account-create-head text-center mb-3">
+	    		<div class="account-create bg-white ml-lg-4 mx-3 p-md-5 p-0">
+	    			<div class="account-create-head text-center mb-md-3 m-0">
 						<h3 class="d-md-block d-none">NEW TO Surf, Dive 'N' Ski?</h3>
 						<h3 class="d-md-none d-block">NEW TO Surf, Dive<br/> 'N' Ski?</h3>
 						<span class="account-create-expand">+</span>
@@ -57,7 +57,7 @@
 	    		</div>
 	    	</div>
 	    	<div class="col-lg-4 col-12">
-	    		<div class="account-check-order bg-white mx-lg-4 mx-3 p-5">
+	    		<div class="account-check-order bg-white mx-lg-4 mx-3 p-md-5 p-0">
 	              <isinclude template="account/components/trackOrderForm" />
 	    		</div>
 	    	</div>

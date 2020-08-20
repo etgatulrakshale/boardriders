@@ -1,0 +1,80 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/profile.css');
+        assets.addCss('/css/account/dashboard.css');
+        assets.addJs('/js/profile.js');
+    </isscript>
+    <div class="myaccount-page">
+	    <div class="myaccount-head">
+    		 <div class="p-4">			
+		        <!---Breadcrumbs--->
+		        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+	         </div>
+             <div class="myaccount-main-head">
+				<div class="myaccount-main-head-title">${Resource.msg('label.profile.edit','account',null)}</div>
+			</div>
+		</div>
+		<div class="myaccount-content px-0">
+			<div class="row">
+				<div class="col-2 myaccount-sidebar bg-white py-5 px-4">
+					<h4 class="py-2 text-uppercase">			
+						<span>${Resource.msg('page.title.myaccount','account',null)}</span>
+			         </h4>
+					<ul class="list-unstyled p-0 myaccount-sidebar-list">
+						<li>
+							<a title="Order History" href="${URLUtils.url('Order-History')}">
+								<span>${Resource.msg('label.orderhistory','account',null)}</span>
+							</a>
+						</li>
+						<li>
+							<a title="Personal Details" href="${URLUtils.url('Account-EditProfile')}">
+								<span>${Resource.msg('label.profile.details','account',null)}</span>
+							</a>
+						</li>
+						<li>
+							<a title="Address Book" href="${URLUtils.url('Address-List')}">
+								<span>${Resource.msg('label.addressbook','account',null)}</span>
+							</a>
+						</li>
+						<li>
+							<a title="Payment Information" href="${URLUtils.url('PaymentInstruments-List')}">
+								<span>${Resource.msg('label.payment.information','account',null)}</span>
+							</a>
+						</li>
+						<li>
+							<a title="View Wishlist" href="${URLUtils.url('Account-EditPassword')}">
+								<span>${Resource.msg('label.wishlist','account',null)}</span>
+							</a>
+						</li>
+						<li>
+							<a title="Contact Us" href="">
+								<span>${Resource.msg('label.contactus','account',null)}</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+	            <div class="col-5">
+	                <div class="card ml-3 mr-2 border-0">
+	                    <div class="card-header">
+	                        <h2>${Resource.msg('label.profile.editformhead','account',null)}</h2>
+	                    </div>
+	                    <div class="card-body">
+	                        <isinclude template="account/editProfileForm"/>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-5">
+					<div class="card ml-2 mr-3 border-0">
+	                    <div class="card-header">
+	                        <h2>${Resource.msg('label.profile.changepassword','account',null)}</h2>
+	                    </div>
+	                    <div class="card-body">
+	                        <isinclude template="account/changePasswordForm"/>
+	                    </div>
+	                </div>
+				</div>
+	        </div>		
+		</div>
+    </div>
+</isdecorate>
