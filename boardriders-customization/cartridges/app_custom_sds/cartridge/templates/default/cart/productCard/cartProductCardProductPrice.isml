@@ -1,13 +1,13 @@
-<div class="col-12 product-card-footer product-quantity-price-update">
+<div class="col-md-12 col-4 product-card-footer product-quantity-price-update">
     <isif condition="${!lineItem.isBonusProductLineItem}"/>
-        <div class="row ml-4">
+        <div class="row ml-md-4 ml-0 h-100">
 
             <!--- quantity --->
             <div class="line-item-quantity my-auto">
                 <isinclude template="checkout/productCard/productCardQuantitySelector" />
             </div>
             
-            <div class="line-item-price-block m-auto">
+            <div class="line-item-price-block m-auto d-md-block d-none">
 	            <!---item price--->
 	            <div class="line-item-price-${lineItem.UUID} each-line-item-price">
 	                <p class="line-item-price-info">${Resource.msg('label.each.item.price','cart',null)}</p>

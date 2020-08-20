@@ -326,6 +326,13 @@ function confirmDelete(actionUrl, productID, productName, uuid) {
 }
 
 module.exports = function () {
+	$(document).ready(function() {
+        $('.product-quantity-price-update').height($('.item-attributes-content').height());
+	});
+	$('.cart-promo-label').click(function () {
+		$(this).toggleClass("active");
+        $('.cart-promo-content').slideToggle();
+    });
     $('body').on('click', '.remove-product', function (e) {
         e.preventDefault();
 

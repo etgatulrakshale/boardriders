@@ -17,31 +17,45 @@
             </div>
         </isif>
     </div>
-    <div class="breadcrumbs p-3">
+    <div class="breadcrumbs p-3 d-md-block d-none">
 		<a href="${URLUtils.url('Home-Show')}">home</a>
 		<a class="child-crumb" href="${URLUtils.url('Cart-Show')}">cart</a>
 	</div>
-    <div class="cart-top-items pl-3">
+	
+    <isif condition="${pdict.items.length <== 1}">
+    <div class="cart-top-items pl-md-3 pt-5">
         <div class="row cart-header">
-            <div class="col-12">
+            <div class="col-12 text-md-left text-center">
                 <h2 class="number-of-items pb-4">${Resource.msgf('label.number.items.in.cart','cart', null, pdict.numItems)}</h2>
             </div>
         </div>
     </div>
+    
+    <div class="col-12 mobile-top-checkout-continue px-3 d-md-none d-block">
+         <isinclude template="cart/checkoutButtons" />
+    </div>
+    
+    </isif>
+    
 
     <isif condition="${pdict.items.length === 0}">
-        <div class=" cart-empty">
+        <div class="cart-empty py-md-2 py-5">
             <div class="row">
                 <div class="col-12 text-center">
                     <h1>${Resource.msg('info.cart.empty.msg','cart',null)}</h1>
                 </div>
+                <div class="col-12 cart-empty-continue-shopping text-center py-3 mb-4">
+			       <a class="continue-shopping-link" href="${URLUtils.url('Home-Show')}" title="${Resource.msg('link.continue.shopping','cart',null)}">
+			            « ${Resource.msg('link.continue.shopping','cart',null)}
+			       </a>
+			    </div>
             </div>
         </div>
     <iselse/>
-        <div class="cart cart-page">
+        <div class="cart cart-page m-md-4 m-0">
             <div class="row">
                 <!---product cards--->
-                <div class="col-sm-7 col-md-8">
+                <div class="col-md-8 col-12">
                     <isloop items="${pdict.items}" var="lineItem">
                         <isif condition="${lineItem.productType === 'bundle'}">
                             <isinclude template="cart/productCard/cartBundleCard" />
@@ -56,7 +70,7 @@
                     <isinclude template="cart/cartApproachingDiscount" />
                 </div>
                 <!---totals, and checkout actions--->
-                <div class="col-sm-5 col-md-4 totals cart-summary p-4">
+                <div class="col-md-4 col-12 totals cart-summary p-4">
                 	<div class="col-12 top-checkout-continue">
                        <isinclude template="cart/checkoutButtons" />
                     </div>
@@ -72,17 +86,32 @@
                     <div class="row d-none">
                         <isinclude template="cart/cartShippingMethodSelection" />
                     </div>
-                    <div class="main-cart-totals">
+                    <div class="main-cart-totals pt-2 pb-4">
                     	<isinclude template="cart/cartTotals" />
                     </div>
-                    <div class="row col-12">
+                    <div class="row col-12 final-cart-total pt-4">
                     	<div class="col-8">
-					        <p>${Resource.msg('label.cart.total','cart',null)}</p>
+					        <p class="m-0">${Resource.msg('label.cart.total','cart',null)}</p>
 					    </div>
 					    <div class="col-4">
-					        <p class="text-right shipping-cost">${pdict.totals.subTotal}</p>
+					        <p class="text-right m-0">${pdict.totals.subTotal}</p>
 					    </div>
-					    <p class="inclusive-tax">Inclusive of 10% GST</p>
+					    <p class="inclusive-tax pt-1 m-0">Inclusive of 10% GST</p>
+				    </div>
+				    <div class="afterpay-checkout py-3">
+				    	<div class="afterpay-message">
+							  <span class="afterpay-message-text">
+							    or four payments of AUD 87.47 with
+							  </span>
+							  <span class="afterpay-image">
+							    <a href="/afterpay.html">
+							      <img src="${URLUtils.staticURL('images/afterpay-logo.png')}" alt="Afterpay">
+							    </a>
+							  </span>
+							    <span class="afterpay-learn-more">
+							      <a href="/afterpay.html" id="learnmore">Learn more</a>
+							  </span>
+						 </div>
 				    </div>
                     <div class="row">
                         <div class="col-12 main-checkout-continue">

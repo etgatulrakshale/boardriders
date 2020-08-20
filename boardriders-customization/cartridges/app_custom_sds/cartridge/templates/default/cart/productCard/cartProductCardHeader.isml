@@ -8,9 +8,4 @@
     <div class="line-item-brand pb-1">
         Brand
     </div>
-    <isif condition="${!lineItem.isBonusProductLineItem}"/>
-        <div class="remove-line-item d-lg-none">
-            <isinclude template="components/deleteButton" />
-        </div>
-    </isif>
 </div>
