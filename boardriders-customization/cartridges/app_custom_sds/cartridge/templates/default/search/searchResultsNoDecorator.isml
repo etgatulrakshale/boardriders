@@ -2,7 +2,6 @@
  var catalogMgr = require('dw/catalog/CatalogMgr'); 
   var currentCategory = catalogMgr.getCategory(pdict.productSearch.category.id);
 </isscript>
-
 <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
     <isinclude template="reporting/reportingUrls" />
 </isif>
@@ -23,94 +22,117 @@
 <iselse>
     <isslot id="search-result-banner-m" description="Banner for search results" context="global" />
 </isif>
-<!---Breadcrumbs Desktop--->
-<div class="crumbs-black d-md-flex d-none">
-    <isif condition="${pdict.productSearch.productIds.length > 0}">
-        <div class="breadcrumbs col-lg-5 col-4">
-            <isif condition="${currentCategory.parent.ID !== "root"}">
-                <a href="">${currentCategory.parent.ID}</a>
-            </isif>
-            <a href="">${currentCategory.ID}</a>
-        </div>
-    </isif>
-    <div class="result-count text-center col-2">
-	    <isinclude template="search/resultsCount" />
-	</div>
-	<div class="col-lg-5 col-6 d-flex">
-		<div class="toggle-grid text-center col-6">
-		    <span class="toggle-heading">view:</span>
-		    <span class="wide-select" data-option="wide">
-		        <i></i><i></i><i></i>
-		    </span>
-		    <span class="column-select mx-2" data-option="column">
-		        <i></i><i></i><i></i><i></i>
-		    </span>
-		</div>
-		<isif condition="${pdict.productSearch.productIds.length > 0}">
-		    <div class="col-6 sort-by">
-		        <isinclude template="search/sortOrderMenu" />
-		    </div>
-		</isif>
-	</div>
-</div>
-<!---Breadcrumbs Mobile--->
-<div class="crumbs-mobile d-md-none d-block bg-white p-2 pb-4">
-	<div id="mobileRefinement" class="mobile-search d-flex">
-        <div class="col-6 p-2">
-            <div class="button col-12 p-2" id="mobile-refinements">
-                Refine
-            </div>
-        </div>
-        <div class="col-6 p-2">
-            <div class="sds-plp-toggle button col-12 p-2" id="mobile-sort">
-                Sort
-            </div>
-        </div>
-        <div class="refine-sort-mobile-naviation mobile-sort-menu">
-        	<h2 class="text-center">SORT
-        		<span class="sds-plp-toggle-close mr-3">x</span>
-        	</h2>
-        	<div class="mobile-sort-content">
-        		<h3>${Resource.msg('label.sort.by', 'search', null)}</h3>
-        	</div>
-        </div>
-    </div>
-</div>
-<div id="searchRefinement" class="search-refinement refinements d-md-block d-none">
-	<isif condition="${pdict.productSearch.productIds.length > 0}">
-         <!--- Refinement bar --->
-          <div class="row">
-              <div class="refinement-bar col-12">
-                  <isinclude url="${pdict.refineurl}"/>
-               </div>
-           </div>
-    </isif>
-</div>
-<div class="primary-secondary-wrapper p-4 row">
-	<div class="col-3 d-md-block d-none" id="secondary-wrapper accordion border-0">
-		<isloop items="${pdict.productSearch.refinements}" var="refinement">
-            <div class="card collapsible-sm border-0 refinement refinement-${refinement.displayName.toLowerCase().replace(/ /g, '-')}">
-                <div class="card-body content value" id="refinement-${refinement.displayName.toLowerCase().replace(/ /g, '-')}">
-                    <!--- CATEGORY REFINEMENTS --->
-                    <isif condition="${refinement.isCategoryRefinement}">
-                        <isset name="categories" value="${refinement.values}" scope="page" />
-                        <isinclude template="search/refinements/categories" />
-                    </isif>
-                </div>
-            </div>
-        </isloop>
-	</div>
-	<div class="col-md-9 col-12" id="primary-wrapper">
-	    <div class="col-12">
-	        <!--- Selected filters bar --->
-	        <div class="row filter-bar d-none">
-	            <isinclude template="search/filterBar" />
+<div class="container p-0 plp-main-block">
+  <div class="row">
+    <!---Breadcrumbs Mobile--->
+	<div class="crumbs-mobile d-md-none d-block bg-white p-2 pb-4 w-100">
+		<div id="mobileRefinement" class="mobile-search d-flex">
+	        <div class="col-6 p-2">
+	            <div class="refine-results button col-12 p-2" id="mobile-refinements">
+	                <button class="p-0">Refine</button>
+	            </div>
 	        </div>
-	
-	        <!--- Product Grid --->
-	        <div class="row product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
-	            <isinclude template="search/productGrid" />
+			<div id="searchRefinement" class="refine-sort-mobile-naviation mobile-refine-menu p-0">
+				<h2 class="text-center">Refine
+					<span class="refine-results-close mr-3">x</span>
+				</h2>
+				<isif condition="${pdict.productSearch.productIds.length > 0}">
+			         <!--- Refinement bar --->
+			          <div class="row">
+			              <div class="refinement-bar col-12 d-block position-relative">
+			                  <isinclude url="${pdict.refineurl}"/>
+			               </div>
+			           </div>
+			    </isif>
+			</div>
+	        <div class="col-6 p-2">
+	            <div class="sort-results button col-12 p-2" id="mobile-sort">
+	                Sort
+	            </div>
+	        </div>
+	        <div class="refine-sort-mobile-naviation mobile-sort-menu">
+	        	<h2 class="text-center">SORT
+	        		<span class="sort-results-close mr-3">x</span>
+	        	</h2>
+	        	<div class="mobile-sort-content">
+	        		<h3>${Resource.msg('label.sort.by', 'search', null)}</h3>
+	        		<isif condition="${pdict.productSearch.productIds.length > 0}">
+					    	<isloop items="${pdict.productSearch.productSort.options}" var="option">
+					            <h3 class="${option.id}" value="${option.url}"
+					                data-id="${option.id}"
+					                ${pdict.productSearch.productSort.ruleId === option.id ? 'selected' : '' }
+					            >
+					                ${option.displayName}
+					            </h3>
+					        </isloop>
+					</isif>
+	        	</div>
 	        </div>
 	    </div>
 	</div>
+	<!---Breadcrumbs Desktop--->
+	<div class="crumbs-black d-md-flex d-none">
+	    <isif condition="${pdict.productSearch.productIds.length > 0}">
+	        <div class="breadcrumbs col-lg-5 col-4">
+	            <isif condition="${currentCategory.parent.ID !== "root"}">
+	                <a href="">${currentCategory.parent.ID}</a>
+	            </isif>
+	            <a class="cat-child-crumb" href="">${pdict.productSearch.category.name}</a>
+	        </div>
+	    </isif>
+	    <div class="result-count text-center col-2">
+		    <isinclude template="search/resultsCount" />
+		</div>
+		<div class="col-lg-5 col-6 d-flex">
+			<div class="toggle-grid text-center col-6">
+			    <span class="toggle-heading">view:</span>
+			    <span class="wide-select" data-option="wide">
+			        <i></i><i></i><i></i>
+			    </span>
+			    <span class="column-select mx-2" data-option="column">
+			        <i></i><i></i><i></i><i></i>
+			    </span>
+			</div>
+			<isif condition="${pdict.productSearch.productIds.length > 0}">
+			    <div class="col-6 sort-by">
+			        <isinclude template="search/sortOrderMenu" />
+			    </div>
+			</isif>
+		</div>
+	</div>
+    <div id="searchRefinement" class="search-refinement refinements-content d-md-flex d-none">
+      <isif condition="${pdict.productSearch.productIds.length > 0}">
+        <!--- Refinement bar --->
+            <isinclude url="${pdict.refineurl}" />
+      </isif>
+    </div>
+    <div class="primary-secondary-wrapper p-4 row">
+      <div class="col-3 d-md-block d-none" id="secondary-wrapper accordion border-0">
+        <isloop items="${pdict.productSearch.refinements}" var="refinement">
+          <div class="card collapsible-sm border-0 refinement refinement-${refinement.displayName.toLowerCase().replace(/ /g, '-')}">
+            <div class="card-body content value" id="refinement-${refinement.displayName.toLowerCase().replace(/ /g, '-')}">
+              <!--- CATEGORY REFINEMENTS --->
+                <isif condition="${refinement.isCategoryRefinement}">
+                	<isset name="categories" value="${refinement.values}" scope="page" />
+                	<isinclude template="search/refinements/categories" />
+              </isif>
+            </div>
+          </div>
+        </isloop>
+      </div>
+      <div class="col-md-9 col-12" id="primary-wrapper">
+        <div class="col-12">
+          <!--- Selected filters bar --->
+	        <div class="row filter-bar d-none">
+            <isinclude template="search/filterBar" />
+          </div>
+
+          <!--- Product Grid --->
+	        <div class="row product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
+            <isinclude template="search/productGrid" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
