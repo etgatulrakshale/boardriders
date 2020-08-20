@@ -1,0 +1,38 @@
+<div class="col-md-12 col-4 product-card-footer product-quantity-price-update">
+    <isif condition="${!lineItem.isBonusProductLineItem}"/>
+        <div class="row ml-md-4 ml-0 h-100">
+
+            <!--- quantity --->
+            <div class="line-item-quantity my-auto">
+                <isinclude template="checkout/productCard/productCardQuantitySelector" />
+            </div>
+            
+            <div class="line-item-price-block m-auto d-md-block d-none">
+	            <!---item price--->
+	            <div class="line-item-price-${lineItem.UUID} each-line-item-price">
+	                <p class="line-item-price-info">${Resource.msg('label.each.item.price','cart',null)}</p>
+	                <isset name="price" value="${lineItem.price}" scope="page"/>
+	                <isinclude template="/product/components/pricing/main" />
+	            </div>
+	
+	            <!--- line item total price --->
+	            <div class="line-item-total-price">
+	                <p class="line-item-price-info">
+	                    ${Resource.msg('label.total.price','cart',null)}
+	                </p>
+	                <div class="item-total-${lineItem.UUID} price">
+	                    <isinclude template="checkout/productCard/productCardProductTotalPrice" />
+	                </div>
+	            </div>
+            </div>
+
+            <!--- extra slot for spacing reasons due to large remove button --->
+            <div class="col-lg-1 hidden-md-down remove-line-item-lg"></div>
+        </div>
+
+        <!--- promotions --->
+        <div class="line-item-promo item-${lineItem.UUID}">
+            <isinclude template="checkout/productCard/productCardProductPromotions" />
+        </div>
+    </isif>
+</div>

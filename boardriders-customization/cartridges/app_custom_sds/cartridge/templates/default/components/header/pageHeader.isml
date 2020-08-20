@@ -66,11 +66,8 @@
             </div>
 
             <div class="header--mincart ">
-                <div id="mini-cart">
-                    <a class="mini-cart-link mini-cart-empty" href="https://www.sds.com.au/cart" title="View Cart">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        <span class="minicart-quantity">(0)</span>
-                    </a>
+                <div id="mini-cart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+                    <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
                 </div>
             </div>
         </div>
