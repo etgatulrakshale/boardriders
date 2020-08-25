@@ -3,7 +3,7 @@
     <div class="col-8">
         <p>${Resource.msg('label.cart.sub.total','cart',null)}</p>
     </div>
-    <div class="col-4">
+    <div class="sub-total col-4 text-right">
         <p class="text-right shipping-cost">${pdict.totals.subTotal}</p>
     </div>
 </div>
@@ -54,4 +54,14 @@
     <div class="col-4">
         <p class="text-right grand-total">${pdict.totals.grandTotal}</p>
     </div>
+</div>
+
+<div class="row col-12 final-cart-total pt-4">
+	<div class="col-8">
+		<p class="m-0">${Resource.msg('label.cart.total','cart',null)}</p>
+	</div>
+	<div class="sub-total col-4 text-right">
+		<p class="text-right m-0">${pdict.totals.subTotal}</p>
+	</div>
+	<p class="inclusive-tax pt-1 m-0">Inclusive of 10% GST</p>
 </div>
