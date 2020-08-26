@@ -1,0 +1,16 @@
+<ismodule template="/components/content/contentAsset"
+	name="contentasset"
+	attribute="aid"
+/>
+<iscomment>
+    Creates a recusrsive listing of category refinement values.
+    category: dw.catalog.Category
+    path: dw.util.ArrayList (of current selected Categories)
+</iscomment>
+<ismodule template="search/components/subcategorynavigation"
+    name="subcategorynavigation"
+    attribute="category"
+    attribute="path"
+    attribute="searchmodel"
+    attribute="issearchpage"
+/>

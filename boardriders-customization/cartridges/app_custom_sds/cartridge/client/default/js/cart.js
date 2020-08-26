@@ -3,5 +3,5 @@
 var processInclude = require('base/util');
 
 $(document).ready(function () {
-    processInclude(require('./login/login'));
+    processInclude(require('./cart/cart'));
 });
