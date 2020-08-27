@@ -4,7 +4,7 @@
         assets.addCss('/css/login.css');
         assets.addJs('/js/login.js');
     </isscript>
-    <div class="register-page mb-5 pb-5">
+    <div class="register-page pb-5">
     	<div class="register-head mb-4">
     		 <div class="p-4">			
 				<a href='${URLUtils.url('Login-Register')}' title="Go To Register">
@@ -15,7 +15,7 @@
 				<div class="register-main-head-title">Create Account</div>
 			</div>
 		</div>
-		<div class="register-account-form my-5">
+		<div class="register-account-form py-5">
 	    	<div class="register-account-form-block text-center p-5">
 		    	<div class="registation-header text-left pb-5">Create an Account</div>
 	    		<isinclude template="account/components/registerForm" />

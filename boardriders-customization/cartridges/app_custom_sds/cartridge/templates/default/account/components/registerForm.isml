@@ -68,12 +68,30 @@
             <isprint value=${pdict.profileForm.customer.emailconfirm.attributes} encoding="off" />>
         <div class="invalid-feedback" id="form-email-confirm-error"></div>
     </div>
+    
+    <div class="row">
+        <div class="col-12 newsletter-gender pb-4">
+        	<div class="newsletter-male pr-4 py-2">
+        		<input class="radio" checked="checked" type="radio" name="radio">
+	        	<label>
+		            Receive our Men's newsletter and special offers. 
+		        </label>
+        	</div>
+	        <div class="newsletter-female pr-4 py-2">
+	        	<input class="radio" type="radio" name="radio">
+	            <label>
+		            Receive our Women's newsletter and special offers. 
+		        </label>
+	        </div>
+		</div>
+    </div>
 
     <div class="form-group
         <isif condition="${!!pdict.profileForm.login.password.mandatory === true}">required</isif>">
         <label class="form-control-label" for="registration-form-password">
             <isprint value="${pdict.profileForm.login.password.label}" encoding="htmlcontent" />
         </label>
+        <i class="sds--icons sds-icon-eye password-eye"></i>
         <input
             type="password"
             class="form-control"
@@ -84,6 +102,7 @@
             autocomplete="off"
             <isprint value=${pdict.profileForm.login.password.attributes} encoding="off" />>
         <div class="invalid-feedback" id="form-password-error"></div>
+        <div class="form-caption">8 - 255 characters</div>
     </div>
 
     <div class="form-group
@@ -91,6 +110,7 @@
         <label class="form-control-label" for="registration-form-password-confirm">
             <isprint value="${pdict.profileForm.login.passwordconfirm.label}" encoding="htmlcontent" />
         </label>
+        <i class="sds--icons sds-icon-eye password-eye"></i>
         <input
             type="password"
             class="form-control"
@@ -121,7 +141,7 @@
     <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
 
     <button type="submit" class="btn btn-block btn-primary register-button w-50 mx-auto p-3 my-5">
-        ${Resource.msg('button.createaccount.registration', 'registration', null)}
+        ${Resource.msg('button.createaccount.registration.submit', 'registration', null)}
     </button>
     <div class="privacy-policy">
         Personal details are retained in our databse in accordance with our 
