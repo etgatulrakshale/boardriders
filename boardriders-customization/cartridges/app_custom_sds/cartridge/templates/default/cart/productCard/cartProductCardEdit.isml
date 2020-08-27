@@ -1,9 +1,16 @@
-<!--- Edit product --->
-<div class="product-edit w-50">
+<!--- Edit product and MoveToWishList--->
+<div class="product-edit product-move w-50">
     <a href="${URLUtils.url('Cart-GetProduct', 'uuid', lineItem.UUID)}" class="edit"
        data-toggle="modal" data-target="#editProductModal"
        aria-label="${Resource.msgf('text.edit.line.item','cart', null, lineItem.productName)}"
-       title="${Resource.msg('link.edit.item', 'cart',null)}">
-           ${Resource.msg('link.edit.item', 'cart', null)}
+       title="${Resource.msg('link.edit.item', 'cart', null)}">${Resource.msg('link.edit.item', 'cart', null)}
     </a>
+</div>
+<div class="wishlist-edit w-50">  
+  <a href="${URLUtils.url('Wishlist-AddProduct')}" class="move add-to-wish-list"
+        data-pid="${lineItem.id}"
+        data-name="${lineItem.productName}"
+        data-action="${URLUtils.url('Cart-RemoveProductLineItem')}"
+        data-uuid="${lineItem.UUID}"
+        title="${Resource.msg('link.move.to.wishlist', 'cart', null)}">${Resource.msg('link.move.to.wishlist', 'cart', null)}</a>
 </div>

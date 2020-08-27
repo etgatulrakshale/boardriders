@@ -104,14 +104,12 @@
 							  </span>
 						 </div>
 				    </div>
-                    <div class="row">
+                   <div class="row">
                         <div class="col-12 main-checkout-continue">
                             <isinclude template="cart/checkoutButtons" />
                         </div>
                         <div class="col-12 main-paypal-continue">
-			                <a class="main-paypal-link" href="" title="Paypal Express Button">
-			                	<img src="${URLUtils.staticURL('images/paypalexpresslogo.png')}" alt="Paypal Express Button">
-			           		</a>
+			                <isinclude template="paypal/cart/paypalCartContent">
 			            </div>
                     </div>
                     <div class="col-12 main-continue-shopping text-center py-3">
@@ -119,9 +117,9 @@
 			                ${Resource.msg('link.continue.shopping','cart',null)}
 			           </a>
 			        </div>
-			        <div class="col-12 payment-icons text-center py-3">
+			       <!--  <div class="col-12 payment-icons text-center py-3">
 			           <img src="${URLUtils.staticURL('images/icons-checkout-payment-new.png')}" alt="Payment Icons">
-			        </div>
+			        </div> -->
                 </div>
             </div>
             
