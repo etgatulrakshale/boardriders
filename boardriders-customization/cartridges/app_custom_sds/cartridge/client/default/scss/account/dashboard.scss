@@ -27,6 +27,13 @@
                 @include media-breakpoint-down(sm) {
                     font-size: 40px;
                 }
+                h3, h2 {
+                	font-size: 4.5rem;
+    				font-family: Steelfish, Roboto, Helvetica, Arial, sans-serif;
+    				@include media-breakpoint-down(sm) {
+                    	font-size: 40px;
+                	}
+                }
             }
         }
     }

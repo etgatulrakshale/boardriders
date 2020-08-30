@@ -7,7 +7,7 @@
     </isscript>
     <div class="myaccount-page myaccount-profile-page">
 	    <div class="myaccount-head">
-    		 <div class="p-4">			
+    		 <div class="px-4">			
 		        <!---Breadcrumbs--->
 		        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
 	         </div>

@@ -1,0 +1,113 @@
+@import "../variables";
+@import "../mixins";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "~base/account/addressBook";
+
+.myaccount-addressbook {
+	.myaccount-addressbook-block {
+	    background-color: #f9f9f9;
+    	padding: 50px;
+    	.add-addressbook {
+    		.add-addressbook-button {
+    			a {
+	    			@include blue-black-button;
+	    			font-size: 0.9em;
+				    font-weight: 400;
+				    text-transform: none;
+				    width: fit-content;
+				    @include media-breakpoint-down(sm) {
+				    	width: 100%;
+				    }
+				}
+    		}
+    		.add-addressbook-content {
+    			.add-addressbook-head {
+    			    border: 0;
+    				padding: 0 15px;
+    				h2 {
+    				    border-bottom: 1px solid #e4e4e4;
+					    font-size: 16px;
+					    padding: 15px;
+    				}
+    			}
+    			.add-addressbook-body {
+    				color: #202020;
+    				font-size: 16px;
+    				.addressbook-make-default, .addressbook-edit, .addressbook-delete {
+		    			text-transform: uppercase;
+					    text-decoration: underline;
+					    font-weight: bold;
+					    font-size: 12px;
+					    padding: 5px;
+					    background: 0;
+					}
+					.addressbook-make-default {
+						&:after {
+							content: "|";
+						    padding: 5px 0px 5px 5px;
+						}
+					}
+					.addressbook-delete {
+						&:before {
+							content: "|";
+						    padding: 5px 5px 5px 0px;
+						}
+					}
+    			}
+    		}
+    	}
+	}
+}
+
+
+.myaccount-editaddress {
+	background-color: #f9f9f9;
+	.myaccount-sidebar {
+		max-width: 100% !important;
+	}
+	.edit-address-block {
+    	padding: 50px 0;
+    	.edit-address-form {
+	    	.form-group {
+				.form-control-label {
+					@include sds-myaccount-input-label;
+				}
+				.form-control {
+	    			@include sds-myaccount-input;
+	    		}
+	    		.is-invalid {
+	    		    border-bottom: 2px solid #DE3333;
+	    		    box-shadow: none;
+	    		}
+	    		.invalid-feeedback {
+		    		padding: 0.625rem 0 0 0.125rem;
+				    font-size: 0.875rem;
+				    display: block;
+	    		}
+	    		#state {
+	    			border: 2px solid #e4e4e4;
+	    		}
+    		}
+    		.edit-address-submit, .edit-address-delete {
+    			button {
+    			    color: #fff;
+    				@include blue-black-button;
+    			}
+    		}
+    		.edit-address-cancel {
+    			a {
+    			    background-color: #fff;
+				    color: #202020;
+				    font-size: 14px;
+				    padding: 12px 25px;
+				    line-height: 18px;
+				    font-weight: 400;
+				    border: 0;
+				    box-shadow: none;
+    			}
+    		}
+    	}
+	}
+}
+
