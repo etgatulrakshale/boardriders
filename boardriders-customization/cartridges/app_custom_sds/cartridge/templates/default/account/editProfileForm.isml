@@ -1,0 +1,79 @@
+<form action="${URLUtils.url('Account-SaveProfile')}" class="edit-profile-form" method="POST" <isprint value="${pdict.profileForm.attributes}" encoding="off" />>
+
+    <div class="form-group
+        <isif condition="${pdict.profileForm.customer.firstname.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="firstName">
+            <isprint value="${pdict.profileForm.customer.firstname.label}" encoding="htmlcontent" />
+        </label>
+        <input type="text" class="form-control" id="firstName"
+            <isprint value="${pdict.profileForm.customer.firstname.attributes}" encoding="off" />>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <div class="form-group
+        <isif condition="${pdict.profileForm.customer.lastname.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="lastName">
+            <isprint value="${pdict.profileForm.customer.lastname.label}" encoding="htmlcontent" />
+        </label>
+        <input type="text" class="form-control" id="lastName"
+            <isprint value="${pdict.profileForm.customer.lastname.attributes}" encoding="off" />>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <div class="form-group
+        <isif condition="${pdict.profileForm.customer.email.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="email">
+            <isprint value="${pdict.profileForm.customer.email.label}" encoding="htmlcontent" />
+        </label>
+        <input type="email" class="form-control" id="email"
+            <isprint value="${pdict.profileForm.customer.email.attributes}" encoding="off" />>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <div class="form-group
+        <isif condition="${pdict.profileForm.customer.emailconfirm.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="confirmEmail">
+            <isprint value="${pdict.profileForm.customer.emailconfirm.label}" encoding="htmlcontent" />
+        </label>
+        <input type="email" class="form-control" id="confirmEmail" <isprint value="${pdict.profileForm.customer.emailconfirm.attributes}" encoding="off" />>
+        <div class="invalid-feedback"></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12 newsletter-gender pb-4">
+        	<div class="newsletter-male pr-4">
+        		<input class="radio" checked="checked" type="radio" name="radio">
+	        	<label>
+		            Receive our Men's newsletter and special offers. 
+		        </label>
+        	</div>
+	        <div class="newsletter-female pr-4">
+	        	<input class="radio" type="radio" name="radio">
+	            <label>
+		            Receive our Women's newsletter and special offers. 
+		        </label>
+	        </div>
+		</div>
+    </div>
+
+    <div class="form-group pb-4
+        <isif condition="${pdict.profileForm.login.password.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="password">
+            <isprint value="${pdict.profileForm.login.password.label}" encoding="htmlcontent" />
+        </label>
+        <i class="sds--icons sds-icon-eye password-eye"></i>
+        <input type="password" class="form-control" id="password" <isprint value="${pdict.profileForm.login.password.attributes}" encoding="off" />>
+        <div class="invalid-feedback"></div>
+        <div class="form-caption">8 - 255 characters</div>
+    </div>
+	<input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+    <div class="row">
+        <div class="col-12 edit-profile-update-details py-2">
+            <button type="submit" name="save" class="btn btn-save btn-block btn-primary">${Resource.msg('button.update.details','account',null)}</button>
+        </div>
+        <div class="form-caption edit-profile-privacy-policy p-4">
+			<span>Personal details are retained in our databse in accordance with our </span>
+			<a href="/privacy-policy.html" class="privacy-policy" title="Privacy Policy">Privacy Policy</a>
+		</div>
+    </div>
+</form>
