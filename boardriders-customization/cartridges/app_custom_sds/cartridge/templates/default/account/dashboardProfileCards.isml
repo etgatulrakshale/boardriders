@@ -21,12 +21,12 @@
 		</a>
 	</li>
 	<li class="myaccount-content-item">
-		<a class="p-3 text-center w-100" title="View Wishlist" href="">
+		<a class="p-3 text-center w-100" title="View Wishlist" href="Wishlist-Show">
 			<span>${Resource.msg('label.wishlist','account',null)}</span>
 		</a>
 	</li>
 	<li class="myaccount-content-item">
-		<a class="p-3 text-center w-100" title="Contact Us" href="">
+		<a class="p-3 text-center w-100" title="Contact Us" href="ContactUs-Landing">
 			<span>${Resource.msg('label.contactus','account',null)}</span>
 		</a>
 	</li>

@@ -7,3 +7,13 @@
            ${Resource.msg('link.edit.item', 'cart', null)}
     </a>
 </div>
+<!-- Move to Wish -->
+<div class="wishlist-edit w-50">
+	<a href="${URLUtils.url('Wishlist-AddProduct')}" class="move add-to-wish-list"
+        data-pid="${lineItem.id}"
+        data-name="${lineItem.productName}"
+        data-action="${URLUtils.url('Cart-RemoveProductLineItem')}"
+        data-uuid="${lineItem.UUID}"
+        title="${Resource.msg('link.move.to.wishlist', 'cart', null)}">${Resource.msg('link.move.to.wishlist', 'cart', null)}
+	</a>
+</div>
