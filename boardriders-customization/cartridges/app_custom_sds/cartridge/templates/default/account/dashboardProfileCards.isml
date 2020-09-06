@@ -1,5 +1,5 @@
-<div class="row myaccount-content-block mx-auto bg-white p-5">
-  <ul class="w-100 p-0">
+<div class="row myaccount-content-block mx-auto">
+  <ul class="w-100 mx-auto bg-white p-5">
     <li class="myaccount-content-item">
 		<a class="p-3 text-center w-100" title="Order History" href="${URLUtils.url('Order-History')}">
 			<span>${Resource.msg('label.orderhistory','account',null)}</span>
@@ -22,7 +22,7 @@
 	</li>
 	<li class="myaccount-content-item">
 		<a class="p-3 text-center w-100" title="View Wishlist" href="Wishlist-Show">
-			<span>${Resource.msg('label.wishlist','account',null)}</span>
+			<span>${Resource.msg('label.view.wishlist','account',null)}</span>
 		</a>
 	</li>
 	<li class="myaccount-content-item">
@@ -31,4 +31,7 @@
 		</a>
 	</li>
   </ul>
+  <div class="myaccount-signout">
+	<a href="${URLUtils.url('Login-Logout')}" role="menuitem" tabindex="-1">${Resource.msg('link.header.signout', 'account', null)}</a>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../mixins";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins/breakpoints";
 @import "~base/account/dashboard";
@@ -17,6 +18,10 @@
             margin: 0;
             padding-bottom: 70px;
             text-align: center;
+            .myaccount-myname {
+            	font-size: 16px;
+            	color: white;
+            }
             .myaccount-main-head-title {
                 color: #fff;
                 text-transform: uppercase;
@@ -43,23 +48,43 @@
 	    position: relative;
 	    z-index: 1;
 	    .myaccount-content-block {
-	    	width: 100%;
-		    max-width: 800px;
-		    margin: 0 auto;
-		    .myaccount-content-item {
-		        background-color: #e9e9e9;
-			    color: #202020;
-			    font-size: 13px;
-			    letter-spacing: 2px;
-			    font-weight: 300;
-			    display: inline-flex;
-			    width: 45%;
-			    margin: 10px;
-			    text-transform: capitalize;
-			    @include media-breakpoint-down(sm) {
-			    	width: 100%;
-			        margin-left: 0;
+	    	justify-content: center;
+		    ul {
+		    	width: 100%;
+			    max-width: 800px;
+			    margin: 0 auto;
+			    text-align: center;
+			    .myaccount-content-item {
+			        background-color: #e9e9e9;
+				    color: #202020;
+				    font-size: 13px;
+				    letter-spacing: 2px;
+				    font-weight: 300;
+				    display: inline-flex;
+				    width: 45%;
+				    margin: 10px;
+				    text-transform: capitalize;
+				    @include media-breakpoint-down(sm) {
+				    	width: 100%;
+				        margin-left: 0;
+				    }
 			    }
+			}		   
+		    .myaccount-signout {
+		    	float: right;
+		        position: absolute;
+    			right: 50px;
+    			@include media-breakpoint-down(sm) {
+				   	width: 100%;
+				    position: unset;
+				}
+			    a {
+					@include blue-black-button;
+					color: white;
+					@include media-breakpoint-down(sm) {
+				   		display: block;
+					}
+				}
 		    }
 	    }
     }
