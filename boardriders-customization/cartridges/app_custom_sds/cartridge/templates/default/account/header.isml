@@ -1,0 +1,23 @@
+<isif condition="${pdict.name === null}">
+    <div class="each-col header--customer-login-utility header-account-items mr-3">
+		<a href='${URLUtils.url('Login-Show')}' title="User: Login">
+			<i class="sds--icons sds-icon-user"></i>
+			<span>Login</span>
+		</a>
+	</div>
+	<div class="each-col header--customer-register header-account-items">
+		<a href='${URLUtils.url('Login-Register')}' title="Go to: Register">
+			<span>Register</span>
+		</a>
+	</div>
+<iselse/>
+	<div class="header-account-items mr-3 header--customer-myaccount">
+		<a href="${URLUtils.https('Account-Show')}" role="menuitem" tabindex="-1"><i class="sds--icons sds-icon-user px-1"></i><span>hi ${pdict.name}</span></a>
+	</div>
+	<div class="header-account-items mr-3 header--customer-wishlist">
+		<a href="${URLUtils.url('Wishlist-Show')}" role="menuitem" tabindex="-1"><i class="sds--icons sds-icon-star px-1"></i><span>${Resource.msg('label.your.wishlist', 'account', null)}</span></a>
+	</div>
+	<div class="header-account-items header--customer-logout">
+		<a href="${URLUtils.url('Login-Logout')}" role="menuitem" tabindex="-1">${Resource.msg('link.header.logout', 'account', null)}</a>
+	</div>
+</isif>
