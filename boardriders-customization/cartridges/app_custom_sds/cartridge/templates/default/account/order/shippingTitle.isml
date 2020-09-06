@@ -1,0 +1,2 @@
+<p class="order-history-shipping-head">${Resource.msg('label.orderhistory.shippedto','account',null)}: </p> 
+<p>${order.shippedToFirstName} ${order.shippedToLastName}</p>
