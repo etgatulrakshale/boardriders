@@ -129,6 +129,14 @@
             </div>
 			
 			<isinclude template="product/components/recentlyView" />
+			
+			
+            
+            
+    		<!-- last visited -->
+    		<div>
+			<isinclude url="${URLUtils.url('Product-IncludeLastVisited')}"/>
+			</div>
 			            
             <div>
                 <isslot id="cts-recommendations-m" description="Complete the set products" context="global" context-object="${pdict.product.raw}" />

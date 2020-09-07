@@ -1,0 +1,21 @@
+<!--- TEMPLATENAME: lastvisited.isml --->
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<iscomment><isinclude template="util/modules"/></iscomment> 
+<isif condition="${!empty(pdict.LastVisitedProducts)}">
+	<div class="product-listing last-visited wrapper">
+		<div class="grid-row" id="product-layout">
+			<div class="grid-xs-12 grid-sm-12 grid-md-12 grid-lg-12 grid-xl-12  ">
+				<h2>${Resource.msg('cart.lastvisited.header','checkout',null)}</h2>
+				<ul class="search-result-items tiles-container">
+					<isloop items="${pdict.LastVisitedProducts}" var="product" begin="0" end="5">
+						<li class="grid-xs-6 grid-sm-6 grid-md-3 grid-lg-2 grid-xl-2">
+							<div class="col-12 col-sm-12">
+								<isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'pview', 'tile', 'ratings', false, 'swatches', false,'showQuickView',false)}"/>
+							</div>
+						</li>
+					</isloop>
+				</ul>
+			</div>
+		</div>
+	</div>
+</isif>
