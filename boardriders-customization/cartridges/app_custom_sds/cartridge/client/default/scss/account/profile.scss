@@ -1,0 +1,97 @@
+@import "../variables";
+@import "../mixins";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "~base/account/profile";
+
+
+.myaccount-profile-edit {
+	background-color: #f9f9f9;
+    padding: 50px;
+    .change-password-form, .edit-profile-form {
+		.form-group {
+			.form-control-label {
+				@include sds-myaccount-input-label;
+			}
+			.form-control {
+    			@include sds-myaccount-input;
+    		}
+    		.is-invalid {
+    		    border-bottom: 2px solid #DE3333;
+    		    box-shadow: none;
+    		}
+    		.invalid-feeedback {
+	    		padding: 0.625rem 0 0 0.125rem;
+			    font-size: 0.875rem;
+			    display: block;
+    		}
+    		.form-caption {
+    		    padding: 8px 1.25rem;
+			    font-weight: 200;
+			    font-size: 0.75rem;
+			    color: #9c9c9c;
+			    float: right;
+    		}
+		    .sds-icon-eye {
+		        position: relative;
+			    top: 45px;
+			    float: right;
+			    right: 20px;
+		    }
+    	}
+    }
+    .edit-profile-update-details, .password-update-details {
+    	justify-content: center;
+    	display: flex;
+    	button {
+    		width: 100%;
+    		max-width: 340px;
+    	    @include sds-button-black-blue;
+    	}
+    }
+    .edit-profile-privacy-policy {
+        font-weight: 200;
+	    font-size: 0.75rem;
+	    color: #9c9c9c;
+	    text-align: center;
+    	.privacy-policy {
+    		text-decoration: none;
+    		color: #202020;
+    	}
+    }
+    .edit-profile-form {
+    	.newsletter-gender {
+    		input {
+    			opacity: 0;
+    		    position: relative;
+			    top: 34px;
+			    left: 4px;
+			    z-index: 2;
+    		}
+    		input[type=radio]:checked + label:after {
+    			background: #006095;
+    			z-index: 4;
+    		}
+    		input[type=radio]:checked + label:before {
+		    	border: 1px solid #181818;
+		    }
+    		.newsletter-male, .newsletter-female {
+    			label {
+			    	@include sds-myaccount-newsletter;
+			    	&:hover::before {
+						border: 1px solid #181818;
+					}
+			    }
+			}
+    	}
+    }
+    .card-header {
+    	h2 {
+		    text-align: left;
+		    font-size: 20px;
+		    font-weight: 300;
+		    text-transform: uppercase;
+		    letter-spacing: 2px;
+		}
+    }
+}

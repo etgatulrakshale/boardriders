@@ -1,0 +1,44 @@
+<div class="col-lg-2 col-md-3 myaccount-sidebar">
+  <div class="myaccount-sidebar-items bg-white py-md-5 py-md-4 py-1 px-4 m-md-0 m-4">
+    <h4 class="myaccount-sidebar-head py-md-2 py-4 text-uppercase mb-0">
+      <span>${Resource.msg('page.title.myaccount', 'account', null)}</span>
+      <span class="myaccount-sidebar-expand">+</span>
+      <span class="myaccount-sidebar-close">x</span>
+    </h4>
+    <ul class="list-unstyled p-0 myaccount-sidebar-list">
+      <li>
+        <a title="Order History" href="${URLUtils.url('Order-History')}">
+          <span>${Resource.msg('label.orderhistory', 'account', null)}</span>
+        </a>
+      </li>
+      <li>
+        <a title="Personal Details" href="${URLUtils.url('Account-EditProfile')}">
+          <span>${Resource.msg('label.profile.details', 'account', null)}</span>
+        </a>
+      </li>
+      <li>
+        <a title="Address Book" href="${URLUtils.url('Address-List')}">
+          <span>${Resource.msg('label.addressbook', 'account', null)}</span>
+        </a>
+      </li>
+      <li>
+        <a title="Payment Information" href="${URLUtils.url('PaymentInstruments-List')}">
+          <span>${Resource.msg('label.payment.information', 'account', null)}</span>
+        </a>
+      </li>
+      <li>
+        <a title="View Wishlist" href="${URLUtils.url('Account-EditPassword')}">
+          <span>${Resource.msg('label.wishlist', 'account', null)}</span>
+        </a>
+      </li>
+      <li>
+        <a title="Contact Us" href="${URLUtils.url('ContactUs-Landing')}">
+          <span>${Resource.msg('label.contactus', 'account', null)}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="myaccount-sidebar-customerservice pt-4 px-2 d-md-block d-none">
+    <p>Do you have a question?<br />Call us on 1300 650 905 or write to us at customerservice@sds.com.au</p>
+  </div>
+</div>

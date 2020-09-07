@@ -1,0 +1,1 @@
+<a data-toggle="modal" data-target="#sizeChartModal">${Resource.msg('link.size_chart', 'product', null)}</a>

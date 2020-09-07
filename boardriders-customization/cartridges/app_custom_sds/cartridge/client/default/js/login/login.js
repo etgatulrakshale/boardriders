@@ -127,6 +127,28 @@ module.exports = {
 			$('.account-check-order-expand').toggleClass('account-active');
 			$('.account-check-order-close').toggleClass('account-deactive');
 		});
-
+		$('.password-eye').click(function() {
+			if ($('#login-form-password').attr('type') == 'text') {
+		      $('#login-form-password').attr('type', 'password');
+		    } else {
+		      $('#login-form-password').attr('type', 'text');
+		    }
+		});
+		$('.password-eye').click(function() {
+			if ($('#registration-form-password-confirm').attr('type') == 'text') {
+		      $('#registration-form-password-confirm').attr('type', 'password');
+		    } else {
+		      $('#registration-form-password-confirm').attr('type', 'text');
+		    }
+		});
+		$('.custom-control-input').click(function () {
+	        if ($(this).is(':checked')) {
+	            $('.register-button').removeAttr('disabled');
+	            $('.register-button').addClass('active');
+	        } else {
+	            $('.register-button').attr('disabled', true);
+	            $('.register-button').removeClass('active');
+	        }
+	    });
 	}    
 };

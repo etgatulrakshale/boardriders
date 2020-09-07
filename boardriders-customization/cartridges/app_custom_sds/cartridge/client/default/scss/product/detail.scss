@@ -445,3 +445,12 @@ title{text-transform: uppercase;}
 
 .product-price .custom-style {color: #DE3333!important;}
 .product-price .price-standard {color: black!important;}
+
+
+
+.modal-dialog {
+	max-width: 800px;
+	.modal-content {
+		padding: 50px 30px;
+	}
+}

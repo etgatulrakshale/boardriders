@@ -240,7 +240,7 @@ module.exports = {
 		    	$(this).addClass('active-menu');
 		    }      
 	    });
-		$('.refinement-item-heading').click(function() {
+		$('body').on('click', '.refinement-item-heading', function() {
 		    if($(this).hasClass('active')){
 		    	$(this).removeClass("active");
 				$(this).closest(".refinement-item").removeClass("expanded");

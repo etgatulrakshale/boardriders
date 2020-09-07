@@ -1,0 +1,60 @@
+@import "./variables";
+@import "./mixins";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "~base/contactUs";
+@import "~base/components/formFields";
+@import "~base/components/toastMessage";
+
+.contact-us-landing-page {
+	background-color: #f9f9f9;
+    padding: 50px;
+    max-width: 100%;
+    @include media-breakpoint-down(sm) {
+    	padding: 20px;
+    }
+    @include media-breakpoint-down(xs) {
+    	padding: 0;
+    }
+    .contact-us-customer-service {
+    	@include media-breakpoint-down(xs) {
+	    	padding: 15px 0;
+	    }
+    	a {
+    		color: #9c9c9c;
+    		text-transform: uppercase;
+    		&:hover {
+    		    color: #006095 !important;
+			    transition: 0.3s;
+			    text-decoration: none;
+    		}
+    	}
+    }
+    .contact-us {
+    	.form-group {
+			.form-control-label {
+				@include sds-myaccount-input-label;
+			}
+			.form-control {
+	    		@include sds-myaccount-input;
+	    	}
+	    	.is-invalid {
+	    	    border-bottom: 2px solid #DE3333;
+	    	    box-shadow: none;
+	    	}
+	    	.invalid-feeedback {
+		    	padding: 0.625rem 0 0 0.125rem;
+			    font-size: 0.875rem;
+			    display: block;
+	    	}
+	    	#contact-topic, #contact-comment {
+	    		border: 2px solid #e4e4e4;
+	    	}
+    	}
+    	.contact-us-submnit {
+    		.subscribe-contact-us {
+    			@include blue-black-button;
+    		}
+    	}
+    }
+}
