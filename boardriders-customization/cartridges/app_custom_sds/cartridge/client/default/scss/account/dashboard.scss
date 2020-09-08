@@ -68,6 +68,9 @@
 				    	width: 100%;
 				        margin-left: 0;
 				    }
+				    a {
+				        text-transform: uppercase;
+				    }
 			    }
 			}		   
 		    .myaccount-signout {
@@ -79,6 +82,7 @@
 				    position: unset;
 				}
 			    a {
+			        text-transform: uppercase;
 					@include blue-black-button;
 					color: white;
 					@include media-breakpoint-down(sm) {
