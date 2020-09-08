@@ -101,6 +101,7 @@
 	    		border-radius: 0;
 	    	    border: 1px solid #e4e4e4 !important;
     			background: white !important;
+    			box-shadow: none;
 	    	}
 	    	&:hover::before {
 				border: 1px solid #181818;
@@ -118,7 +119,8 @@
     .button-success {
         background-color:#272727;
         color: #ffffff;
-        &:hover {
+	    box-shadow: none;
+        &:hover, &:focus {
             background-color: #005E35;
         }
     }
@@ -194,7 +196,7 @@
                     .form-control{
                         @include sds-myaccount-input;
                     }
-                    .password-eye {
+                    .password-eye-reg, .password-eye-con {
 					    position: relative;
 					    top: 45px;
 					    float: right;
@@ -253,6 +255,7 @@
 					    top: 22px;
 					    left: 4px;
 					    z-index: 2;
+					    box-shadow: none;
 			    	}
 			    	input[type=checkbox]:checked + label:after {
 			    		background-color: #006095;
@@ -265,6 +268,7 @@
 				    		border-radius: 0;
 				    	    border: 1px solid #e4e4e4 !important;
 			    			background: white !important;
+			    			box-shadow: none !important;
 				    	}
 				    	&:hover::before {
 							border: 1px solid #181818;
@@ -275,6 +279,7 @@
     			    background-color: #272727;
     			    opacity: 1;
     			    cursor: pointer;
+    			    color: white;
     			    &:hover {
     			    	background-color: #006095;
     			    }
