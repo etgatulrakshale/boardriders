@@ -92,6 +92,13 @@
 	    		#state {
 	    			border: 2px solid #e4e4e4;
 	    		}
+	    		.form-caption {
+	    			padding: 8px 1.25rem;
+				    font-weight: 200;
+				    font-size: 0.75rem;
+				    color: #9c9c9c;
+				    float: right;
+	    		}
     		}
     		.edit-address-submit, .edit-address-delete {
     			button {

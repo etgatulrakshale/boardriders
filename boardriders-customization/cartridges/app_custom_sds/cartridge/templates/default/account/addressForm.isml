@@ -49,6 +49,7 @@
             <isprint value="${pdict.addressForm.address1.attributes}" encoding="off" />
             autocomplete="address-line1">
         <div class="invalid-feedback"></div>
+        <div class="form-caption">Street Address, P.O. Box</div>
     </div>
 
     <!-- Address 2 -->
@@ -60,7 +61,7 @@
         <input type="text" class="form-control" id="address2"
             <isprint value="${pdict.addressForm.address2.attributes}" encoding="off" />
             autocomplete="billing address-line2">
-        <div class="invalid-feedback"></div>
+        <div class="form-caption">Apartment, Suite, Unit, Floor</div>
     </div>
 
     <!-- Country and State drop downs -->
@@ -118,6 +119,7 @@
                     <isprint value="${pdict.addressForm.postalCode.attributes}" encoding="off" />
                     autocomplete="postal-code">
                 <div class="invalid-feedback"></div>
+                <div class="form-caption">Example : 4220 or 2000</div>
             </div>
 
     <!-- Phone Number -->
@@ -130,6 +132,7 @@
             <isprint value="${pdict.addressForm.phone.attributes}" encoding="off" />
             autocomplete="tel">
         <div class="invalid-feedback"></div>
+        <div class="form-caption">Example: (03) 477 2021</div>
     </div>
 
     <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
