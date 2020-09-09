@@ -1,0 +1,26 @@
+<!--- Payment information --->
+<div class="summary-details">
+    <span class="summary-section-label payment-info-label pt-2">${Resource.msg('label.order.payment.method', 'confirmation', null)}</span><br/>
+    <isinclude template="checkout/billing/paymentOptions/paymentOptionsSummary" />
+    <div class="payment-amount">
+		<span class="payment-amount-label">${Resource.msg('label.order.amount', 'confirmation', null)}:</span>
+		<span class="value">${pdict.order.totals.grandTotal}</span>
+	</div>
+</div>
+
+<span class="summary-section-label billing-addr-label">${Resource.msg('label.order.billing.address', 'confirmation', null)}</span><br/>
+<isif condition="${pdict.order.billing.billingAddress.address !== null}">
+    <isset name="address" value="${pdict.order.billing.billingAddress.address}" scope="page"/>
+    <iselse>
+    <isset name="address" value="{}" scope="page"/>
+</isif>
+
+<div class="summary-details billing">
+     <isinclude template="checkout/addressSummary" />
+    <br/>
+    <isif condition="${pdict.order.billing.billingAddress.address !== null}">
+        <span class="order-summary-phone">${pdict.order.billing.billingAddress.address.phone}</span>
+        <iselse>
+        <span class="order-summary-phone"></span>
+    </isif>
+</div>

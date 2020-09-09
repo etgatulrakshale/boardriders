@@ -1,0 +1,36 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/orderHistory.js');
+        assets.addCss('/css/account/profile.css');
+        assets.addCss('/css/account/dashboard.css');
+        assets.addJs('/js/checkoutRegistration.js');
+    </isscript>
+    
+    <div class="myaccount-page myaccount-order-history-page">
+	    <div class="myaccount-head">
+    		 <div class="px-4">			
+		        <!---Breadcrumbs--->
+		        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+	         </div>
+             <div class="myaccount-main-head">
+				<div class="myaccount-main-head-title">${Resource.msg('label.orderhistory','account',null)}</div>
+			</div>
+		</div>
+		
+		<div class="myaccount-order-history px-0">
+			<div class="row">
+				<isinclude template="account/components/myAccountSideBar" />
+				<div class="col-lg-10 col-md-9">
+					<div class="myaccount-order-history-block">
+				        <div class="row justify-content-center">
+				            <div class="order-list-container w-100">
+				                <isinclude template="account/order/orderList"/>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</isdecorate>

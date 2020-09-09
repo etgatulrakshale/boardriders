@@ -11,7 +11,7 @@
         </div>
         <div class="row justify-content-center px-md-3 p-0">
             <div class="col-md-8 col-12">
-                <div class="card">
+                <div class="card border-0">
                 	<div class="card-header border-0">
                             <h2 class="contact-us-heading pull-left">${Resource.msg('title.contact.us.page', 'contactUs', null)}</h2>
                     </div>
@@ -63,7 +63,6 @@
                                             ${Resource.msg('label.input.contact-us-phone', 'contactUs', null)}
                                         </label>
                                         <input type="email" required class="form-control required" aria-describedby="form-contact-email-error" id="contact-email" name="contactEmail">
-                                        <div class="invalid-feedback" id="form-contact-email-error"></div>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +75,6 @@
                                             ${Resource.msg('label.input.contact-us-order-number', 'contactUs', null)}
                                         </label>
                                         <input type="email" required class="form-control required" aria-describedby="form-contact-email-error" id="contact-email" name="contactEmail">
-                                        <div class="invalid-feedback" id="form-contact-email-error"></div>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +111,7 @@
                                         <label class="form-control-label" for="contact-comment">
                                             ${Resource.msg('label.input.contact-us-comment', 'contactUs', null)}
                                         </label>
-                                        <textarea class="form-control" id="contact-comment" name="contactComment" rows="4" maxlength="250"></textarea>
+                                        <textarea class="form-control" id="contact-comment" name="contactComment" rows="8" cols="40" maxlength="300"></textarea>
                                     </div>
                                 </div>
                             </div>

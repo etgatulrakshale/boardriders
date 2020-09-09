@@ -64,14 +64,5 @@ server.get('Register',
 );
 
 
-server.replace('Logout', function (req, res, next) {
-    var CustomerMgr = require('dw/customer/CustomerMgr');
-
-    CustomerMgr.logoutCustomer(false);
-    res.render('/account/logout', {});
-    next();
-});
-
-
 
 module.exports = server.exports();

@@ -7,7 +7,7 @@
     <div class="login-page mb-5 pb-5">
     	<div class="login-head p-4 mb-4">			
 			<a href='${URLUtils.url('Login-Show')}' title="Go To Login">
-                 <span>Login</span>
+                 <span class="text-uppercase">Login</span>
              </a>
 		</div>
 		<div class="d-lg-flex d-block pb-4">

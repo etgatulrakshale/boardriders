@@ -62,8 +62,19 @@ module.exports = {
 		$('.password-eye').click(function() {
 			if ($('#password').attr('type') == 'text') {
 		      $('#password').attr('type', 'password');
+		      $('.password-eye').removeClass('sds-icon-eye-close');
 		    } else {
 		      $('#password').attr('type', 'text');
+		      $('.password-eye').addClass('sds-icon-eye-close');
+		    }
+		});
+		$('.password-eye').click(function() {
+			if ($('#newPassword').attr('type') == 'text') {
+		      $('#newPassword').attr('type', 'password');
+		      $('.password-eye').removeClass('sds-icon-eye-close');
+		    } else {
+		      $('#newPassword').attr('type', 'text');
+		      $('.password-eye').addClass('sds-icon-eye-close');
 		    }
 		});
 		$('.myaccount-sidebar-head').click(function() {

@@ -18,6 +18,8 @@
 	         </div>
              <div class="myaccount-main-head">
 				<div class="myaccount-main-head-title">${Resource.msg('page.title.myaccount','account',null)}</div>
+				<h3 class="myaccount-myname">hi ${pdict.firstName}</h3>
+				<isprint value="${JSON.stringify(customer.name)}" />
 			</div>
 		</div>
 		<div class="myaccount-content">

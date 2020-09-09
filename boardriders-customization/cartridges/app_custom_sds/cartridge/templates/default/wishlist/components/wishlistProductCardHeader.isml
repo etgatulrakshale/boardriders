@@ -1,0 +1,17 @@
+<div class="line-item-header">
+    <!--- product name--->
+    <!-- <div class="line-item-name">
+    ${item.name}
+    </div> -->
+    <isif condition=${!pdict.wishlist.publicView}>
+        <!--- remove wishlist icon--->
+        <div class="d-block pt-1">
+        <button type="button" class="remove-btn remove-from-wishlist btn btn-light"
+            data-url="${URLUtils.url('Wishlist-RemoveProduct','pid', item.pid)}"
+            aria-label="remove">
+            <span aria-hidden="true">${Resource.msg('label.each.item.removewishlist','cart',null)}</span>
+        </button>
+        </div>
+    </isif>
+</div>
+

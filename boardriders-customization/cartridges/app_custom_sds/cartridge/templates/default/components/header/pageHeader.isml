@@ -1,12 +1,12 @@
 <div class="global-header">
     <div class="header--top-bar d-lg-flex d-block justify-content-between align-items-center px-3">
         <div class="top-bar--left d-flex">
-            <div class="each-col header--store-locator mr-3">
-                <a href="https://www.sds.com.au/stores" title="Store Locator">
+            <div class="each-col header--store-locator header-account-items mr-3">
+                <a href="${URLUtils.url('Stores-Find')}" title="Store Locator">
                     <span>Store Locator</span>
                 </a>
             </div>
-            <div class="each-col header--help">
+            <div class="each-col header--help header-account-items">
                 <a href="https://www.sds.com.au/help">
                     <span>Help</span>
                 </a>
@@ -20,18 +20,9 @@
             </div>
             <span class="xmeout d-none"><i class="sds--icons sds-icon-x" aria-hidden="true"></i></span>
         </div>
-        <div class="top-bar--right d-flex px-3">
-            <div class="each-col header--customer-login-utility mr-3">
-                <a href='${URLUtils.url('Login-Show')}' title="User: Login">
-                    <i class="sds--icons sds-icon-user"></i>
-                    <span>Login</span>
-                </a>
-            </div>
-            <div class="each-col header--customer-register">
-                <a href='${URLUtils.url('Login-Register')}' title="Go to: Register">
-                    <span>Register</span>
-                </a>
-            </div>
+        <div class="top-bar--right d-flex">
+            <isinclude url="${URLUtils.url('Account-Header')}" />
+            <isinclude url="${URLUtils.url('Page-Locale')}" />
         </div>
     </div>
 
@@ -57,11 +48,10 @@
             <div class="header--search mr-4 d-lg-block d-none pt-2">
                 <isinclude template="components/header/search" />
             </div>
-            <div class="header--account-util-icons mr-lg-5 mr-3">
-                <div class="each-col header--customer-register">
-                    <a href="https://www.sds.com.au/account" title="Go to: Register">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                    </a>
+            <div class="header--account-util-icons mx-auto">
+                <div class="each-col header--customer-register d-flex">
+                    <isinclude url="${URLUtils.url('Account-Header')}" />
+            		<isinclude url="${URLUtils.url('Page-Locale')}" />
                 </div>
             </div>
 
