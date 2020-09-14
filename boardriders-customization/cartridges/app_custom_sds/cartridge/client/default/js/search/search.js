@@ -255,6 +255,7 @@ module.exports = {
 				$(this).closest(".refinement-item").find('.refinement-item-values').slideDown('fast');
 		    }      
 	    });
+	    
 		$('.refinement-item').mouseleave(function() {
 		    if($(this).hasClass('expanded')){
 		    	$(this).closest(".refinement-item").find('.refinement-item-values').slideUp('fast');

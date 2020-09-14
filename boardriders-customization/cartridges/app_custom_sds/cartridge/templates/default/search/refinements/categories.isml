@@ -20,6 +20,7 @@
               ${category.displayName}
             </span>
           </a>
+          
           <!--- Process subcategories --->
 		  <isset name="categories" value="${category.subCategories}" scope="page" />
           <ul class="values content list-unstyled pl-4 subcategory-child">
