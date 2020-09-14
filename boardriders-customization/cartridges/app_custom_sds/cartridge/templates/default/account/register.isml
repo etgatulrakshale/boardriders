@@ -16,7 +16,7 @@
 			</div>
 		</div>
 		<div class="register-account-form py-5">
-	    	<div class="register-account-form-block text-center p-5">
+	    	<div class="register-account-form-block text-center p-sm-5 p-3">
 		    	<div class="registation-header text-left pb-5">Create an Account</div>
 	    		<isinclude template="account/components/registerForm" />
 	    	</div>

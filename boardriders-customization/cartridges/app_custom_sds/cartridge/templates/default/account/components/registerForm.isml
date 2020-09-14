@@ -71,13 +71,13 @@
     
     <div class="row">
         <div class="col-12 newsletter-gender pb-4">
-        	<div class="newsletter-male pr-4 py-2">
+        	<div class="newsletter-male pr-md-4 pr-2 py-2">
         		<input class="radio" checked="checked" type="radio" name="radio">
 	        	<label class="text-uppercase">
 		            Receive our Men's newsletter and special offers. 
 		        </label>
         	</div>
-	        <div class="newsletter-female pr-4 py-2">
+	        <div class="newsletter-female pr-md-4 pr-2 py-2">
 	        	<input class="radio" type="radio" name="radio">
 	            <label class="text-uppercase">
 		            Receive our Women's newsletter and special offers. 

@@ -76,7 +76,7 @@
 		    .myaccount-signout {
 		    	float: right;
 		        position: absolute;
-    			right: 50px;
+    			right: 0px;
     			@include media-breakpoint-down(sm) {
 				   	width: 100%;
 				    position: unset;

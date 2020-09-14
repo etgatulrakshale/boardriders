@@ -86,6 +86,7 @@
 		    top: 24px;
 		    left: 4px;
 		    z-index: 2;
+		    box-shadow: none !important;
     	}
     	input[type=checkbox]:checked + label:after {
     		background: #006095;
@@ -93,7 +94,8 @@
     		border-radius: 0;
     	}
     	input[type=checkbox]:checked + label:before {
-				border: 1px solid #181818;
+				border: 1px solid #181818 !important;
+				box-shadow: none !important;
 		}
     	label {
 	    	@include sds-myaccount-newsletter;
@@ -101,7 +103,7 @@
 	    		border-radius: 0;
 	    	    border: 1px solid #e4e4e4 !important;
     			background: white !important;
-    			box-shadow: none;
+    			box-shadow: none !important;
 	    	}
 	    	&:hover::before {
 				border: 1px solid #181818;
@@ -119,9 +121,12 @@
     .button-success {
         background-color:#272727;
         color: #ffffff;
-	    box-shadow: none;
-        &:hover, &:focus {
-            background-color: #005E35;
+	    box-shadow: none !important;
+	    border-radius: 0;
+	    border: 0;
+	    
+        &:hover {
+            background-color: #005E35 !important;
         }
     }
 }
@@ -143,7 +148,13 @@
             }
     }
 }
-
+.account-check-order-head {
+	button {
+		box-shadow: none !important;
+	    border-radius: 0;
+	    border: 0;
+	}
+}
 // Register Page SCSS
 
 .register-page {
@@ -214,10 +225,14 @@
 		    		input {
 		    		    opacity: 0;
 					    position: relative;
-					    top: 4px;
-					    left: 17px;
+					    top: 26px;
+    					left: 5px;
 					    z-index: 2;
 					    float: left;
+					    @include media-breakpoint-down(xs) {
+						    top: 37px;
+    						left: 3px;
+						}
 		    		}
 		    		input[type=radio]:checked + label:after {
 		    			background: #006095;
@@ -229,6 +244,9 @@
 		    		.newsletter-male, .newsletter-female {
 		    			label {
 					    	@include sds-myaccount-newsletter;
+					    	@include media-breakpoint-down(xs) {
+								max-width: 310px;
+					        }
 					    	&:hover::before {
 								border: 1px solid #181818;
 					    	}
@@ -258,7 +276,8 @@
 					    box-shadow: none;
 			    	}
 			    	input[type=checkbox]:checked + label:after {
-			    		background-color: #006095;
+			    		background: #006095;
+			    		border: 1px solid #181818 !important;
 			    		z-index: 4;
 			    		border-radius: 0;
 			    	}
