@@ -106,7 +106,7 @@
             <isinclude url="${pdict.refineurl}" />
       </isif>
     </div>
-    <div class="primary-secondary-wrapper p-4 row">
+    <div class="primary-secondary-wrapper p-4 row w-100">
       <div class="col-3 d-md-block d-none" id="secondary-wrapper accordion border-0">
         <isloop items="${pdict.productSearch.refinements}" var="refinement">
           <div class="card collapsible-sm border-0 refinement refinement-${refinement.displayName.toLowerCase().replace(/ /g, '-')}">

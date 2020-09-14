@@ -1,36 +1,36 @@
-<ul class="values content list-unstyled category-values">
+<div class="values content list-unstyled category-values">
   <isloop items="${categories}" var="category">
+<isscript>
+  var catalogMgr = require('dw/catalog/CatalogMgr'); 
+  var currentCategory : dw.catalog.Category = catalogMgr.getCategory(category.id);
+  var parentCategory : dw.catalog.Category = currentCategory.parent;
+  if(parentCategory.ID !== "root") {
+  	currentCategory = parentCategory;
+  }
+</isscript>
     <!--- Process subcategories --->
-            <isset name="categories" value="${category.subCategories}" scope="page" />
-    <ul class="values content list-unstyled category-values">
+    <isset name="categories" value="${currentCategory.subCategories}" scope="page" />
+    <ul class="values content list-unstyled category-values parent-subcategory ">
       <isloop items="${categories}" var="category">
-        <li>
-          <button class="bg-white border-0 category-main-parent p-2" data-href="${category.url}">
-            <span class="category-expand active-menu" ></span>
+        <li class="parent-subcategory-item">
+          <span class="category-expand" ></span>
+          <a class="subcategory-main-parent p-2" href="${URLUtils.url('Search-Show', 'cgid', category.ID)}">
             <!--- Label --->
-			                <span title="${category.title}" class="${category.selected ? 'selected' : ''}" aria-hidden="true">
-              ${category.displayValue}
+			<span title="${category.ID}" class="${(pdict.productSearch.category.name === category.displayName) ? 'selected' : ''}" aria-hidden="true">
+              ${category.displayName}
             </span>
-            <span class="sr-only selected-assistive-text">
-              ${category.selected ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
-			                    ${category.title}
-            </span>
-          </button>
+          </a>
           <!--- Process subcategories --->
-			            <isset name="categories" value="${category.subCategories}" scope="page" />
-          <ul class="values content list-unstyled parent-subcategory pl-4">
+		  <isset name="categories" value="${category.subCategories}" scope="page" />
+          <ul class="values content list-unstyled pl-4 subcategory-child">
             <isloop items="${categories}" var="category">
               <li>
-                <button class="bg-white border-0 p-2" data-href="${category.url}">
+                <a class="subcategory-child-item-link p-2" href="${URLUtils.url('Search-Show', 'cgid', category.ID)}">
                   <!--- Label --->
-						                <span title="${category.title}" class="${category.selected ? 'selected' : ''}" aria-hidden="true">
-                    ${category.displayValue}
+				  <span title="${category.ID}" class="subcategory-child-item-link-name ${(pdict.productSearch.category.name === category.displayName) ? 'selected' : ''}" aria-hidden="true">
+                    ${category.displayName}
                   </span>
-                  <span class="sr-only selected-assistive-text">
-                    ${category.selected ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
-						                    ${category.title}
-                  </span>
-                </button>
+                </a>
               </li>
             </isloop>
           </ul>
@@ -38,4 +38,4 @@
       </isloop>
     </ul>
   </isloop>
-</ul>
+</div>
