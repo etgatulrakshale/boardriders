@@ -10,7 +10,7 @@
                  <span class="text-uppercase">Login</span>
              </a>
 		</div>
-		<div class="d-lg-flex d-block pb-4">
+		<div class="d-lg-flex d-block pb-4 login-body">
 	    	<div class="col-lg-4 col-12">
 	    		<div class="account-login bg-white ml-lg-4 mx-3 p-md-5 p-0">
 	    			<div class="account-login-head text-center  mb-md-3 m-0">

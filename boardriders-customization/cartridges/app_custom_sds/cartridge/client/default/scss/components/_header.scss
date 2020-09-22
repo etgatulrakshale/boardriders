@@ -22,6 +22,7 @@
 	font-size: 11px;
     text-transform: uppercase;
     color: #FFFFFF;
+    font-weight: 100;
     i {
     	font-size: 16px;
     }
@@ -560,6 +561,59 @@
 					top: 15px;
 				}
 			}
+		}
+	}
+}
+// Checkout Header
+.checkout-header-primary {
+	background-color: #272727;
+	height: 100px;
+	max-height: 100px;
+	.checkout-header-primary-logo {
+		width: 25%;
+		img {
+			width: 190px;
+		}
+	}
+	.checkout-right {
+		width: 75%;
+	    justify-content: flex-end;
+		font-size: 11px;
+	    text-transform: uppercase;
+	    color: #FFFFFF;
+	    font-weight: 100;
+	}
+}
+.sticky-header {
+	.checkout-header--primary-logo {
+		width: 170px;
+	}
+	.checkout-header-primary {
+		position: fixed;
+		width: 100%;
+		z-index: 999;
+		top: 0;
+		height: 60px;
+		transition: max-height 200ms ease-in;
+	}
+}
+@include media-breakpoint-down(sm) {
+	.checkout-header-primary {
+	    max-height: 70px;
+	}
+	.checkout-header-primary-logo, .checkout-right {
+		width: 50% !important;
+		text-align: center;
+	}
+	.checkout-header-account {
+		display: block;
+		.header--customer-logout, .header--customer-register, .header-account-items span  {
+			display: none;
+		}
+		.header-account-items {
+			i {
+		    	font-size: 30px;
+		    }
 		}
 	}
 }

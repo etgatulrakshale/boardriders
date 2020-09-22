@@ -9,7 +9,7 @@
                 <span class="grand-total-price">${pdict.order.totals.subTotal}</span>
             </div>
         </div>
-        <div class="product-summary-block">
+        <div class="product-summary-block m-0">
             <isloop items="${pdict.order.shipping}" var="shippingModel">
                 <isif condition="${pdict.order.shipping.length > 1}">
                     <div class="shipment-block pb-3">
