@@ -127,6 +127,11 @@ module.exports = {
 			$('.account-check-order-expand').toggleClass('account-active');
 			$('.account-check-order-close').toggleClass('account-deactive');
 		});
+		$('.guest-checkout-head').click(function() {
+			$('.guest-checkout-content').toggleClass('account-content-active');
+			$('.guest-checkout-expand').toggleClass('account-active');
+			$('.guest-checkout-close').toggleClass('account-deactive');
+		});
 		$('.password-eye').click(function() {
 			if ($('#login-form-password').attr('type') == 'text') {
 		      $('#login-form-password').attr('type', 'password');
