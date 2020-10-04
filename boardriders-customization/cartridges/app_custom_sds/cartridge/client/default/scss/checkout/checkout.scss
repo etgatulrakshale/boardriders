@@ -36,18 +36,18 @@
 	        color: #202020;
 	    }
 	}
-	.checkout-shipping-section {
-		.checkout-shipping-delivery-info {
+	.checkout-body-section {
+		.checkout-shipping-payment-info {
 			font-size: 24px;
 			color: #202020;
 		}
-		.checkout-shipping-card {
-			.checkout-shipping-contact {
-			    border-bottom: 1px solid #e4e4e4;
-    			font-size: 18px;
-			}
-			.checkout-shipping-form {
-				.shipping-address-block {
+		.checkout-shipping-payment-contact, .checkout-payment-billing-coupon {
+		    border-bottom: 1px solid #e4e4e4;
+    		font-size: 18px;
+		}
+		.checkout-shipping-payment-card {
+			.checkout-shipping-payment-form {
+				.checkout-address-block, .contact-info-block, .checkout-billing-coupon, .credit-card-form {
 					.form-group {
 						max-width: 500px;
 						.form-control-label {
@@ -65,7 +65,7 @@
 						    font-size: 0.875rem;
 						    display: block;
 			    		}
-			    		#shippingStatedefault {
+			    		#shippingStatedefault, #billingState {
 			    			border: 2px solid #e4e4e4;
 			    		}
 			    		.form-caption {
@@ -76,6 +76,13 @@
 						    float: right;
 			    		}
 		    		}
+		    		.form-caption {
+			    		padding: 8px 1.25rem;
+					    font-weight: 200;
+					    font-size: 0.75rem;
+					    color: #9c9c9c;
+					    float: right;
+			    	}
 		    	}
 	    		.bill-add-checkbox, .addressbook-add-checkbox {
 	    			input {
@@ -109,16 +116,151 @@
 					   }
 				    }
 	    		}
-	    		.shipment-selector-block {
+	    		.shipment-selector-block, .address-selector-block {
 	    			label {
-	    			    font-size: 1.125rem;
+	    			    font-size: 1.125rem !important;
 					    font-weight: 300;
 					    line-height: 1.125rem;
-					    letter-spacing: 0.1125rem;
+					    letter-spacing: 0.1125rem !important;
 					    display: block;
-					    color: #9c9c9c;
+					    color: #9c9c9c !important;
 					    padding: 20px 0 20px 20px;
 	    			}
+	    			label:before {
+	    				display: none;
+	    			}
+	    			#billingAddressSelector {
+	    				border: 2px solid #e4e4e4;
+	    			}
+	    		}
+	    		.coupon-apply {
+	    			button {
+	    			    border: none;
+					    border-radius: 0;
+					    outline: none;
+	    			}
+	    		}
+	    		.credit-card-selection-new {
+			    	.credit-card-content {
+			    		.credit-card-form {
+			    			.credit-card-body, .paypal-body, .afterpay-body {
+			    			    border-bottom: 1px solid #e4e4e4;
+			    			}
+			    			.credit-card-head, .paypal-head, .afterpay-head {
+			    				input {
+					    		    opacity: 0;
+								    position: relative;
+								    top: 17px;
+				    				left: 4px;
+								    z-index: 2;
+								    float: left;
+								    @include media-breakpoint-down(xs) {
+									    top: 37px;
+				    					left: 3px;
+									}
+					    		}
+					    		input[type=radio]:checked + label:after {
+					    			background: #006095;
+					    			z-index: 4;
+					    		}
+					    		input[type=radio]:checked + label:before {
+					    			border: 1px solid #181818;
+					    		}
+					    		label {
+					    			@include sds-myaccount-newsletter;
+							        font-weight: 200;
+								    color: #2b2b2b;
+								    font-size: 0.875rem;
+								    cursor: pointer;
+							    	&:hover::before {
+										border: 1px solid #181818 !important;
+							    	}
+							    }
+			    			}
+			    			.form-group {
+			    				label {
+			    					font-size: 16px;
+			    				}
+			    				.securitycodelabel {
+			    					font-size: 18px;
+			    				}
+			    				input, select {
+				    				border: 2px solid #e4e4e4;
+				    			}
+				    			#cardType, #expirationMonth, #expirationYear {
+				    				&:hover {
+				    				    border: 1px solid #181818;
+				    				}
+				    			}
+			    			}
+			    			.card-number-wrapper {
+			    				&:after {
+			    					display: none;
+			    				}
+			    			}
+			    			.payment-expiration-date {
+			    				max-width: 500px;
+			    				.form-group {
+			    					label {
+			    						&:before {
+			    							display: none;
+			    						}
+			    					}
+			    				}
+			    			}
+			    		}
+			    	}
+			    }
+	    		.checkout-payment-email-info {
+	    			.checkout-payment-email-info-header {
+					    border-bottom: 1px solid #e4e4e4;
+		    			font-size: 18px;
+					}
+					.newsletter-gender {
+			    		input {
+			    		    opacity: 0;
+						    position: relative;
+						    top: 17px;
+	    					left: 4px;
+						    z-index: 2;
+						    float: left;
+						    @include media-breakpoint-down(md) {
+								top: 15px;
+		    					left: 17px;
+						    }
+						    @include media-breakpoint-down(xs) {
+							    top: 25px;
+	    						left: 18px;
+							}
+			    		}
+			    		input[type=radio]:checked + label:after {
+			    			background: #006095;
+			    			z-index: 4;
+			    		}
+			    		input[type=radio]:checked + label:before {
+			    			border: 1px solid #181818;
+			    		}
+			    		.newsletter-male, .newsletter-female {
+			    			label {
+						    	@include sds-myaccount-newsletter;
+						    	@include media-breakpoint-down(lg) {
+									max-width: 80%;
+						        }
+						        @include media-breakpoint-down(md) {
+									max-width: 90%;
+						        }
+						        @include media-breakpoint-down(sm) {
+									max-width: 75%;
+						        }
+						    	@include media-breakpoint-down(xs) {
+									max-width: 310px;
+						        }
+						    	&:hover::before {
+									border: 1px solid #181818 !important;
+						    	}
+						    }
+						}
+			    	}
 	    		}
 			}
 			
@@ -129,9 +271,9 @@
 	    box-shadow: none;
 	    position: unset;
 	}
-	.checkout-continue-payment {
+	.checkout-continue-payment, .checkout-order-review {
         width: 55%;
-	    background-color: #00AB84;
+	    background-color: #00AB84 !important;
 	    color: #fff;
 	    border: 1px solid #000000;
 	    box-shadow: none !important;
@@ -140,7 +282,7 @@
 	        background-color: #005E35 !important;
 	    }
 	}
-	.checkuot-section-shipping-method {
+	.checkout-section-shipping-method {
 		.checkout-section-header-sub {
 			border-bottom: 1px solid #e4e4e4;
     		font-size: 18px;
@@ -306,7 +448,7 @@
 }
 @include media-breakpoint-down(md) {
 	.checkout-page {
-		.checkout-continue-payment {
+		.checkout-continue-payment, .checkout-order-review {
         	width: 100%;
         }
 	}
@@ -360,4 +502,7 @@
 			display:block;
 		}
 	}
+}
+.data-checkout-stage[data-checkout-stage=payment] #shipping-method-list {
+	display: none;
 }

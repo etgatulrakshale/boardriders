@@ -1,25 +1,26 @@
-<div class="card payment-form">
-    <div class="card-header">
-        <h2 class="card-header-custom">${Resource.msg('heading.payment', 'checkout', null)}</h2>
+<div class="card payment-form bg-transparent border-0 checkout-body-section m-0">
+    <div class="bg-white px-lg-5 px-4 pt-lg-5 pt-4">
+        <h2 class="checkout-shipping-payment-info pb-5">${Resource.msg('heading.checkout.payment', 'checkout', null)}</h2>
+        <h3 class="checkout-shipping-payment-contact pb-3">${Resource.msg('heading.checkout.billing.contact', 'checkout', null)}</h3>
     </div>
-    <div class="card-body">
-        <form autocomplete="on" method="POST" action="${URLUtils.url('CheckoutServices-SubmitPayment')}"
+    <div class="checkout-shipping-payment-card">
+        <form class="checkout-shipping-payment-form" autocomplete="on" method="POST" action="${URLUtils.url('CheckoutServices-SubmitPayment')}"
             data-address-mode="${!pdict.order.billing.billingAddress.address ? 'new' : 'edit'}"
             <isprint value=${pdict.forms.billingForm.attributes} encoding="off" /> novalidate>
 
-            <fieldset class="billing-address-block">
+            <fieldset class="billing-address-block checkout-address-block bg-white px-lg-5 px-4 pt-3">
                 <!-------------------------------------------------------------------------->
                 <!-- Billing Address Selector                                             -->
                 <!-------------------------------------------------------------------------->
-                <fieldset class="address-selector-block">
+                <fieldset class="address-selector-block ${(pdict.customer.addresses && pdict.customer.addresses.length > 0) ? '' : 'd-none'}">
                     <div class="form-group">
                         <label class="form-control-label" for="billingAddressSelector">
-                            ${Resource.msg('heading.billing.address', 'checkout', null)}
+                            ${Resource.msg('heading.bill.select.address', 'checkout', null)}
                         </label>
 
                         <isinclude template="checkout/billing/addressSelector" />
                         <div class="invalid-feedback"></div>
-                        <div class="row">
+                        <div class="row d-none">
                             <button class="col-6 text-center btn-show-details btn" type="button">${Resource.msg('action.update.address', 'checkout', null)}</button>
                             <button class="col-6 text-center btn-add-new btn" type="button">${Resource.msg('action.add.new', 'checkout', null)}</button>
                         </div>
@@ -29,7 +30,7 @@
                 <!-------------------------------------------------------------------------->
                 <!-- Billing Address                                                      -->
                 <!-------------------------------------------------------------------------->
-                <fieldset class="billing-address">
+                <fieldset class="billing-address d-block">
                     <isinclude template="checkout/billing/billingAddress" />
                 </fieldset>
 
@@ -40,35 +41,14 @@
             <!-------------------------------------------------------------------------->
             <!-- Contact Info (Email and Phone)                                       -->
             <!-------------------------------------------------------------------------->
-            <fieldset class="contact-info-block">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group
-                            <isif condition=${pdict.forms.billingForm.contactInfoFields.email.mandatory === true}>required</isif>
-                            ${pdict.forms.billingForm.contactInfoFields.email.htmlName}">
-                            <label class="form-control-label" for="email">${Resource.msg('field.customer.email','checkout',null)}</label>
-
-                            <button type="button" class="info-icon">
-                                <span class="icon" aria-hidden="true">i</span>
-                                <span class="sr-only">${Resource.msg('button.help.assistive.text','common',null)}</span>
-                                <span class="tooltip d-none">
-                                    ${Resource.msg('tooltip.email','creditCard',null)}
-                                </span>
-                            </button>
-
-                            <input type="text" class="form-control email" id="email"
-                                value="${pdict.order.orderEmail||''}" <isprint value=${pdict.forms.billingForm.contactInfoFields.email.attributes} encoding="off"/>
-                                aria-describedby="emailInvalidMessage" >
-                            <div class="invalid-feedback" id="emailInvalidMessage"></div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
+            <fieldset class="contact-info-block border-0 bg-white px-lg-5 px-4 pb-lg-5 pb-4">
+                    <div class="col-sm-12">
                         <div class="form-group
                             <isif condition=${pdict.forms.billingForm.contactInfoFields.phone.mandatory === true}>required</isif>
                             ${pdict.forms.billingForm.contactInfoFields.phone.htmlName}">
                             <label class="form-control-label" for="phoneNumber">${Resource.msg('field.customer.phone.number','checkout',null)}</label>
 
-                            <button type="button" class="info-icon">
+                            <button type="button" class="info-icon d-none">
                                 <span class="icon" aria-hidden="true">i</span>
                                 <span class="sr-only">${Resource.msg('button.help.assistive.text','common',null)}</span>
                                 <span class="tooltip d-none">
@@ -82,10 +62,81 @@
                                 : ''}" <isprint value=${pdict.forms.billingForm.contactInfoFields.phone.attributes} encoding="off"/>
                                 aria-describedby="phoneInvalidMessage" >
                             <div class="invalid-feedback" id="phoneInvalidMessage"></div>
+                            <div class="form-caption">Example: (03) 477 2021</div>
                         </div>
                     </div>
-                </div>
+            	<isif condition="${pdict.customer.registeredUser}">
+                    <div class="col-sm-12">
+						<div class="form-group checkbox addressbook-add-checkbox">
+						   <input class="checkbox hasvalue " type="checkbox" id="" name="" value="true" placeholder="">
+						   <label class="addressbook-add-label" for=""><span>Add to Address Book</span></label>
+						</div>
+					</div>
+				</isif>
+			</fieldset>
+			<fieldset class="contact-info-block border-0 checkout-payment-email-info my-4 bg-white p-lg-5 p-4">
+                    <div class="col-sm-12">
+	                    <h3 class="checkout-payment-email-info-header pb-3">Where should we send you emails about your order</h3>
+	                    <div class="form-group pt-3
+                            <isif condition=${pdict.forms.billingForm.contactInfoFields.email.mandatory === true}>required</isif>
+                            ${pdict.forms.billingForm.contactInfoFields.email.htmlName}">
+                            <label class="form-control-label" for="email">${Resource.msg('field.customer.email','checkout',null)}</label>
+
+                            <button type="button" class="info-icon d-none">
+                                <span class="icon" aria-hidden="true">i</span>
+                                <span class="sr-only">${Resource.msg('button.help.assistive.text','common',null)}</span>
+                                <span class="tooltip d-none">
+                                    ${Resource.msg('tooltip.email','creditCard',null)}
+                                </span>
+                            </button>
+
+                            <input type="text" class="form-control email" id="email"
+                                value="${pdict.order.orderEmail||''}" <isprint value=${pdict.forms.billingForm.contactInfoFields.email.attributes} encoding="off"/>
+                                aria-describedby="emailInvalidMessage" >
+                            <div class="invalid-feedback" id="emailInvalidMessage"></div>
+                        </div>
+					</div>
+					<div class="col-sm-12">
+	                    <div class="col-12 newsletter-gender pb-4">
+					        <div class="newsletter-female pr-md-4 pr-2 py-2">
+					        	<input class="radio" type="radio" name="radio">
+					            <label class="text-uppercase">
+						            Receive our Women's newsletter and special offers. 
+						        </label>
+					        </div>
+					        <div class="newsletter-male pr-md-4 pr-2 py-2">
+				        		<input class="radio" type="radio" name="radio">
+					        	<label class="text-uppercase">
+						            Receive our Men's newsletter and special offers. 
+						        </label>
+				        	</div>
+						</div>
+                        <div class="form-caption"><a title="Privacy Policy" href="/privacy-policy.html" class="privacy-policy">Privacy Policy</a></div>
+                    </div>
             </fieldset>
+            
+            <!-------------------------------------------------------------------------->
+            <!-- Coupons                                                      -->
+            <!-------------------------------------------------------------------------->
+            <fieldset>
+            <div class="checkout-billing-coupon bg-white p-lg-5 p-4 mb-4">
+			   <h3 class="checkout-payment-billing-coupon pb-3">Enter Coupon Codes</h3>
+			   <div class="billing-coupon-code">
+			      <div class="coupon-error error"></div>
+			      <div class="form-group pt-4">
+			         <label class="empty-label d-none"><span>Enter coupon code</span></label>
+			         <input class="form-control input-text " type="text" value="">
+			         <div class="form-caption"></div>
+			      </div>
+			      <div class="coupon-apply">
+			         <button class="apply cancel" id="add-coupon" type="submit" value="Apply"><span>Apply</span></button>
+			      </div>
+			      <div class="redemption coupon form-row coupon-success">
+			         <!-- container for coupon applied success messages -->
+			      </div>
+			   </div>
+			</div>
+			</fieldset>
 
             <!-------------------------------------------------------------------------->
             <!-- Payment Options                                                      -->

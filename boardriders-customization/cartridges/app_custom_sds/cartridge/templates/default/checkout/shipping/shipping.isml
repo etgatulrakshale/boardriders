@@ -1,11 +1,11 @@
-<div class="shipping-section checkout-shipping-section">
+<div class="shipping-section checkout-body-section">
     <div class="single-shipping bg-white p-lg-5 p-4">
         <isset name="shippingModel" value="${pdict.order.shipping[0]}" scope="page" />
         <isset name="shipmentLoopState" value="${null}" scope="page" />
         <isset name="lineItem" value="${null}" scope="page" />
         <div data-shipment-uuid="${shippingModel.UUID}">
             <div>
-                <h2 class="checkout-shipping-delivery-info pb-5">${Resource.msg('heading.checkout.delivery.information', 'checkout', null)}</h2>
+                <h2 class="checkout-shipping-payment-info pb-5">${Resource.msg('heading.checkout.delivery.information', 'checkout', null)}</h2>
             </div>
 
             <div class="shipping-error"></div>

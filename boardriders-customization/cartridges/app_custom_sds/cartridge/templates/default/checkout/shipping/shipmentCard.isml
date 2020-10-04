@@ -1,6 +1,6 @@
-<div class="shipping-content checkout-shipping-card">
-	<h2 class="checkout-shipping-contact pb-3">${Resource.msg('heading.checkout.shipping.contact', 'checkout', null)}</h2>
-    <form class="shipping-form checkout-shipping-form" autocomplete="on" novalidate
+<div class="shipping-content checkout-shipping-payment-card">
+	<h2 class="checkout-shipping-payment-contact pb-3">${Resource.msg('heading.checkout.shipping.contact', 'checkout', null)}</h2>
+    <form class="shipping-form checkout-shipping-payment-form" autocomplete="on" novalidate
           action="${shipmentLoopState
           ? URLUtils.url('CheckoutAddressServices-AddNewAddress')
           : URLUtils.url('CheckoutShippingServices-SubmitShipping')}"
@@ -19,7 +19,7 @@
                 <isinclude template="checkout/shipping/shipmentSelector" />
             </fieldset>
 
-            <fieldset class="shipping-address-block pt-4 d-block">
+            <fieldset class="shipping-address-block checkout-address-block pt-4 d-block">
                 <isinclude template="checkout/shipping/shippingAddress" />
             </fieldset>
         </div>

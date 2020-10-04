@@ -149,10 +149,12 @@
         </div>
     </div>
     <div class="col-sm-12">
-		<div class="form-group checkbox addressbook-add-checkbox">
-		   <input class="checkbox hasvalue " type="checkbox" id="" name="" value="true" placeholder="">
-		   <label class="addressbook-add-label" for=""><span>Add to Address Book</span></label>
-		</div>
+    	<isif condition="${pdict.customer.registeredUser}">
+			<div class="form-group checkbox addressbook-add-checkbox">
+			   <input class="checkbox hasvalue " type="checkbox" id="" name="" value="true" placeholder="">
+			   <label class="addressbook-add-label" for=""><span>Add to Address Book</span></label>
+			</div>
+		</isif>
 	    <div class="form-group checkbox bill-add-checkbox">
 		   <input class="checkbox hasvalue " type="checkbox" id="" name="" value="true" placeholder="">
 		   <label class="bill-add-label" for=""><span>Use this address for Billing</span></label>
