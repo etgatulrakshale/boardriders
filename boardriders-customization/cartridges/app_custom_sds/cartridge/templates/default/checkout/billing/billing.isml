@@ -41,7 +41,8 @@
             <!-------------------------------------------------------------------------->
             <!-- Contact Info (Email and Phone)                                       -->
             <!-------------------------------------------------------------------------->
-            <fieldset class="contact-info-block border-0 bg-white px-lg-5 px-4 pb-lg-5 pb-4">
+            <fieldset class="contact-info-block">
+            	<div class="border-0 bg-white px-lg-5 px-4 pb-lg-5 pb-4">
                     <div class="col-sm-12">
                         <div class="form-group
                             <isif condition=${pdict.forms.billingForm.contactInfoFields.phone.mandatory === true}>required</isif>
@@ -65,16 +66,16 @@
                             <div class="form-caption">Example: (03) 477 2021</div>
                         </div>
                     </div>
-            	<isif condition="${pdict.customer.registeredUser}">
-                    <div class="col-sm-12">
-						<div class="form-group checkbox addressbook-add-checkbox">
-						   <input class="checkbox hasvalue " type="checkbox" id="" name="" value="true" placeholder="">
-						   <label class="addressbook-add-label" for=""><span>Add to Address Book</span></label>
+	            	<isif condition="${pdict.customer.registeredUser}">
+	                    <div class="col-sm-12">
+							<div class="form-group checkbox addressbook-add-checkbox">
+							   <input class="checkbox hasvalue " type="checkbox" id="" name="" value="true" placeholder="">
+							   <label class="addressbook-add-label" for=""><span>Add to Address Book</span></label>
+							</div>
 						</div>
-					</div>
-				</isif>
-			</fieldset>
-			<fieldset class="contact-info-block border-0 checkout-payment-email-info my-4 bg-white p-lg-5 p-4">
+					</isif>
+				</div>
+				<div class="border-0 checkout-payment-email-info my-4 bg-white p-lg-5 p-4">
                     <div class="col-sm-12">
 	                    <h3 class="checkout-payment-email-info-header pb-3">Where should we send you emails about your order</h3>
 	                    <div class="form-group pt-3
@@ -113,6 +114,7 @@
 						</div>
                         <div class="form-caption"><a title="Privacy Policy" href="/privacy-policy.html" class="privacy-policy">Privacy Policy</a></div>
                     </div>
+            	</div>
             </fieldset>
             
             <!-------------------------------------------------------------------------->
