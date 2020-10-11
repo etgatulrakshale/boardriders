@@ -84,7 +84,7 @@
 					    float: right;
 			    	}
 		    	}
-	    		.bill-add-checkbox, .addressbook-add-checkbox {
+	    		.bill-add-checkbox, .addressbook-add-checkbox, .save-credit-card {
 	    			input {
 						opacity: 0;
 			    	    position: relative;
@@ -95,9 +95,11 @@
 			    	}
 			    	input[type=checkbox]:checked + label:after {
 			    		background: #006095;
-			    		border: 1px solid #181818 !important;
 			    		z-index: 4;
 			    		border-radius: 0;
+			    	}
+			    	input[type=checkbox]:checked + label:before {
+			    		border: 1px solid #181818 !important;
 			    	}
 	    			label {
 				    	@include sds-myaccount-newsletter;
@@ -271,7 +273,7 @@
 	    box-shadow: none;
 	    position: unset;
 	}
-	.checkout-continue-payment, .checkout-order-review {
+	.checkout-continue-payment, .checkout-review-your-order {
         width: 55%;
 	    background-color: #00AB84 !important;
 	    color: #fff;

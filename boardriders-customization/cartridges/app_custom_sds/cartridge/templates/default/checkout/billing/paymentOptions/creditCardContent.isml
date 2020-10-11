@@ -29,7 +29,7 @@
 					<input class="radio" type="radio" checked="checked" name="radio">
 					<label class="text-uppercase">Credit Card</label>
 				</div>
-				<div class="credit-card-form-body pl-lg-5 pl-4">
+				<div class="credit-card-form-body pl-lg-5 pl-4 pb-5">
 	            	<isinclude template="checkout/billing/creditCardForm" />
 	            </div>
 	        </div>

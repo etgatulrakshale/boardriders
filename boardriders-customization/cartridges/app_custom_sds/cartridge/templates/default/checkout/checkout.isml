@@ -110,7 +110,7 @@
                                 ${Resource.msg('button.next.payment.continue', 'checkout', null)}
                             </button>
 
-                            <button class="btn btn-primary btn-block submit-payment checkout-order-review button m-0" type="submit" name="submit" value="submit-payment">
+                            <button class="btn btn-primary btn-block submit-payment checkout-review-your-order button m-0" type="submit" name="submit" value="submit-payment">
                                 ${Resource.msg('button.next.review.your.order', 'checkout', null)}
                             </button>
 

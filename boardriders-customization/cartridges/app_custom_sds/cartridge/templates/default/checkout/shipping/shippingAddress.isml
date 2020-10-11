@@ -150,7 +150,7 @@
     </div>
     <div class="col-sm-12">
     	<isif condition="${pdict.customer.registeredUser}">
-			<div class="form-group checkbox addressbook-add-checkbox">
+			<div class="form-group checkbox addressbook-add-checkbox mb-0">
 			   <input class="checkbox hasvalue " type="checkbox" id="" name="" value="true" placeholder="">
 			   <label class="addressbook-add-label" for=""><span>Add to Address Book</span></label>
 			</div>
