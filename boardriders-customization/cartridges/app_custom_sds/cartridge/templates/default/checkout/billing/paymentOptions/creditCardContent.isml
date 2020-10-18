@@ -18,7 +18,7 @@
 
                 <!--- Add new credit card button --->
                 <div class="row">
-                    <button class="btn btn-block add-payment btn-outline-primary" type="button">${Resource.msg('button.add.payment', 'checkout', null)}</button>
+                    <button class="btn button add-payment btn-outline-primary" type="button">${Resource.msg('button.add.payment', 'checkout', null)}</button>
                 </div>
             </div>
         </isif>
@@ -32,6 +32,9 @@
 				<div class="credit-card-form-body pl-lg-5 pl-4 pb-5">
 	            	<isinclude template="checkout/billing/creditCardForm" />
 	            </div>
+	            <isif condition="${pdict.customer.registeredUser}">
+	                <button class="btn button cancel-new-payment btn-outline-primary ${pdict.customer.registeredUser && pdict.customer.customerPaymentInstruments.length ? '' : 'checkout-hidden'}" type="button">${Resource.msg('button.back.to.stored.payments', 'checkout', null)}</button>
+	            </isif>
 	        </div>
 	        <div class="paypal-body">
 				<div class="paypal-head pr-md-4 pr-2 py-4">
@@ -45,9 +48,6 @@
 					<label class="text-uppercase">After Pay (4 PAYMENTS OF AUD 11.24)</label>
 				</div>
 			</div>
-            <isif condition="${pdict.customer.registeredUser}">
-                <button class="btn btn-block cancel-new-payment btn-outline-primary ${pdict.customer.registeredUser && pdict.customer.customerPaymentInstruments.length ? '' : 'checkout-hidden'}" type="button">${Resource.msg('button.back.to.stored.payments', 'checkout', null)}</button>
-            </isif>
         </fieldset>
 
     </fieldset>

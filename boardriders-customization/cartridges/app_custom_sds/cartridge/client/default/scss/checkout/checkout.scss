@@ -47,7 +47,7 @@
 		}
 		.checkout-shipping-payment-card {
 			.checkout-shipping-payment-form {
-				.checkout-address-block, .contact-info-block, .checkout-billing-coupon, .credit-card-form {
+				.checkout-address-block, .contact-info-block, .checkout-billing-coupon, .credit-card-form, .user-payment-instruments {
 					.form-group {
 						max-width: 500px;
 						.form-control-label {
@@ -144,7 +144,7 @@
 	    		}
 	    		.credit-card-selection-new {
 			    	.credit-card-content {
-			    		.credit-card-form {
+			    		.credit-card-form, .user-payment-instruments {
 			    			.credit-card-body, .paypal-body, .afterpay-body {
 			    			    border-bottom: 1px solid #e4e4e4;
 			    			}
@@ -189,7 +189,7 @@
 			    				input, select {
 				    				border: 2px solid #e4e4e4;
 				    			}
-				    			#cardType, #expirationMonth, #expirationYear {
+				    			#cardType, #expirationMonth, #expirationYear, #saved-payment-security-code {
 				    				&:hover {
 				    				    border: 1px solid #181818;
 				    				}
