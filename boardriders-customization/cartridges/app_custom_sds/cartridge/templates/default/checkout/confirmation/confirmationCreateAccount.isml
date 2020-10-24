@@ -1,0 +1,52 @@
+<div style="height: 100%;">
+    <div class="card order-confirm-create-account border-0 px-lg-5 p-4">
+        <div>
+            <h3 class="card-header-custom order-confirm-create-account-head-label pb-4">${Resource.msg('title.save.customer.information', 'confirmation', null)}</h3>
+        </div>
+        <div class="card-body pt-4 p-0">
+        	<p class="order-confirm-create-account-info">Create a password for faster checkouts and other benefits.</p>
+            <form
+                action="${URLUtils.url('Order-CreateAccount', 'ID', pdict.order.orderNumber)}"
+                class="checkout-registration"
+                method="POST"
+                name="checkout-register-form" ${pdict.passwordForm.attributes} novalidate>
+                <div class="form-group
+                    <isif condition="${pdict.passwordForm.newpassword.mandatory === true}">required</isif>">
+                    <label class="form-control-label" for="newPassword">
+                        ${Resource.msg('field.password','confirmation',null)}
+                    </label>
+                    <i class="sds--icons sds-icon-eye password-eye"></i>
+                    <input
+                       type="password"
+                       class="form-control"
+                       id="newPassword"
+                       data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+                       data-range-error="${Resource.msg('error.message.8_255characters','forms',null)}"
+                       <isprint value="${pdict.passwordForm.newpassword.attributes}" encoding="off" />>
+                    <div class="invalid-feedback"></div>
+                    <div class="form-caption">8 - 255 characters</div>
+                </div>
+                <div class="form-group
+                    <isif condition="${pdict.passwordForm.newpasswordconfirm.mandatory === true}">required</isif>">
+                    <label class="form-control-label" for="newPasswordConfirm">
+                        ${Resource.msg('field.confirm.password','confirmation',null)}
+                    </label>
+                    <input
+                       type="password"
+                       class="form-control"
+                       id="newPasswordConfirm"
+                       data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+                       data-range-error="${Resource.msg('error.message.8_255characters','forms',null)}"
+                       <isprint value="${pdict.passwordForm.newpasswordconfirm.attributes}" encoding="off" />>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+
+                <button class="btn button btn-block">
+                    ${Resource.msg('button.create.account','confirmation',null)}
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

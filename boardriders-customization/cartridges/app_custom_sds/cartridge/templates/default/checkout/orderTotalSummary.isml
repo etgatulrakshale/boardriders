@@ -1,4 +1,4 @@
-<h2 class="checkout-order-total-break pb-3">${Resource.msg('heading.checkout.order.subtotal', 'checkout', null)}</h2>
+<h2 class="checkout-order-total-break pb-2">${Resource.msg('heading.checkout.order.subtotal', 'checkout', null)}</h2>
 <!--- Subtotal --->
 <div class="row leading-lines subtotal-item pt-4 pb-2">
     <div class="col-6">

@@ -28,3 +28,12 @@ $(document).ready(function () {
         return false;
     });
 });
+$('.password-eye').click(function() {
+	if ($('#newPassword').attr('type') == 'text') {
+		$('#newPassword').attr('type', 'password');
+		$('.password-eye').removeClass('sds-icon-eye-close');
+	} else {
+		$('#newPassword').attr('type', 'text');
+		$('.password-eye').addClass('sds-icon-eye-close');
+	}
+});
