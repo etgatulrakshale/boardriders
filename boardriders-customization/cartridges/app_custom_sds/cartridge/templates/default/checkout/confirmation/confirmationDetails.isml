@@ -2,9 +2,27 @@
     <!-- <div class="card-header">
         <h2 class="card-header-custom">${Resource.msg('title.receipt', 'confirmation', null)}</h2>
     </div> -->
-	<div class="row justify-content-center">
-	    <div class="col-lg-6 col-12 pr-md-2 p-0 mb-3">
-	        <div class="bg-white confirm-details-left-block p-3">
+	<div class="row justify-content-center confirm-details-body mb-5">
+	    <div class="col-lg-8 col-12 confirm-details-left-block">
+	    	<div class="bg-white px-lg-5 p-4">
+	    		<div class="card checkout-order-total-summary border-0">
+				    <div class="card-body order-total-summary p-0">
+				    	<isinclude template="checkout/orderTotalSummary" />
+				    </div>
+				</div>
+				<div class="confirm-details-delivery-info pb-5">
+					<h3 class="confirm-details-delivery-info-head pb-2">${Resource.msg('label.order.grand.delivery.info', 'confirmation', null)}</h3>
+					<p class="m-0 pt-4">${Resource.msg('label.orderhistory.shippedto','account',null)} </p>
+					<isinclude template="checkout/shipping/shippingSummary" /> 
+				</div>
+				<div class="confirm-details-billing-info">
+					<h3 class="confirm-details-payment-info-head pb-2 mb-4">${Resource.msg('label.order.grand.payment.info', 'confirmation', null)}</h3>
+		        	<isinclude template="checkout/billing/billingSummary" />
+		       	</div>
+			</div>
+	    </div>
+	    <div class="col-lg-4 col-12 confirm-details-right-block">
+	        <div class="bg-white px-lg-5 p-4">
 		        <div class="confirm-details-order-date pb-3">
 		            <p class="summary-section-label order-number-label confirm-details-order-number text-uppercase mb-0 pb-2">${Resource.msg('label.order.number', 'confirmation', null)} <span class="summary-details order-number">${pdict.order.orderNumber}</span></p>
 		            <p class="confirm-details-order-status mb-0 pt-2">${Resource.msg('label.orderhistory.orderstatus','account',null)} <span class="dashboard-order-card-status pl-5">${order.orderStatus}</span></p>
@@ -17,33 +35,13 @@
 						<div class="label">Shipping Status:</div>
 						<div class="value">Not Shipped</div>
 					</div>
-					<div class="shipping-method">
+					<div class="shipping-method d-flex">
 						<div class="label">Method:</div>
 						<div class="value">Star Track Premium</div>
 					</div>
 		        </div>
 		        <isinclude template="checkout/orderProductSummary" />
 	        </div>	
-	    </div>
-	    <div class="col-lg-6 col-12 pl-md-2 p-0 mb-3">
-	    	<div class="bg-white confirm-details-right-block p-3">
-	    		<div class="card checkout-order-total-summary border-0">
-				    <div class="card-body order-total-summary p-0">
-				    	<h3 class="order-total-breakdown pb-2">${Resource.msg('label.order.grand.total.breakdown', 'confirmation', null)}</h3>
-				        <isinclude template="checkout/orderTotalSummary" />
-				        <div class="includsive-tax">Inclusive of 10% GST</div>
-				    </div>
-				</div>
-				<div class="confirm-details-delivery-info">
-					<h3 class="confirm-details-delivery-info-head pb-2">${Resource.msg('label.order.grand.delivery.info', 'confirmation', null)}</h3>
-					<p class="m-0">${Resource.msg('label.orderhistory.shippedto','account',null)} </p>
-					<isinclude template="checkout/shipping/shippingSummary" /> 
-				</div>
-				<div class="confirm-details-billing-info">
-					<h3 class="confirm-details-payment-info-head pb-2">${Resource.msg('label.order.grand.payment.info', 'confirmation', null)}</h3>
-		        	<isinclude template="checkout/billing/billingSummary" />
-		       	</div>
-			</div>
 	    </div>
     </div>
 </div>

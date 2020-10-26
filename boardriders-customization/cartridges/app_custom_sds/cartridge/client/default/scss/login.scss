@@ -6,14 +6,22 @@
 
 // Login Page SCSS
 
+.login-body, .login-head {
+	@include media-breakpoint-down(lg) {
+	    max-width: 1700px;
+    	margin: auto;
+    }
+}
 .login-page {
   background-image: url("../images/hero.png");
-    .account-login, .account-create, .account-check-order {
+  background-size: cover;
+  background-repeat: no-repeat;
+    .account-login, .account-create, .account-check-order, .guest-checkout {
         height: 100%;
-        .account-login-expand, .account-create-expand, .account-check-order-expand {
+        .account-login-expand, .account-create-expand, .account-check-order-expand, .guest-checkout-expand {
             display:none;
         }
-        .account-login-close, .account-create-close, .account-check-order-close {
+        .account-login-close, .account-create-close, .account-check-order-close, .guest-checkout-close {
             display:none;
         }
         @include media-breakpoint-down(lg) {
@@ -21,7 +29,7 @@
         }
         @include media-breakpoint-down(sm) {
             margin: 20px !important;
-            .account-login-expand, .account-create-expand, .account-check-order-expand {
+            .account-login-expand, .account-create-expand, .account-check-order-expand, .guest-checkout-expand {
                 display: block;
                 font-size: 22px;
                 float: right;
@@ -31,7 +39,7 @@
                 font-weight: bold;
                 color: #000;
             }
-            .account-login-close, .account-create-close, .account-check-order-close {
+            .account-login-close, .account-create-close, .account-check-order-close, .guest-checkout-close {
                 display: none;
                 font-size: 22px;
                 float: right;
@@ -47,14 +55,25 @@
             .account-deactive {
                 display: block;
             }
-            .account-login-content, .account-create-content, .account-check-order-content {
+            .account-login-content, .account-create-content, .account-check-order-content, .guest-checkout-content {
                 display:none;
             }
             .account-content-active {
                 display:block;
-                padding: 10px;
+                padding: 20px;
             }
         }
+    }
+    .account-create-content {
+    	.content-asset {
+    	    text-align: center;
+		    font-size: 0.75rem;
+		    letter-spacing: 0.0625rem;
+		    font-weight: 200;
+		    strong {
+		   	    font-weight: bold;
+		    }
+    	}
     }
     .login-head {
         a {
@@ -86,6 +105,7 @@
 		    top: 24px;
 		    left: 4px;
 		    z-index: 2;
+		    box-shadow: none !important;
     	}
     	input[type=checkbox]:checked + label:after {
     		background: #006095;
@@ -93,7 +113,8 @@
     		border-radius: 0;
     	}
     	input[type=checkbox]:checked + label:before {
-				border: 1px solid #181818;
+				border: 1px solid #181818 !important;
+				box-shadow: none !important;
 		}
     	label {
 	    	@include sds-myaccount-newsletter;
@@ -101,10 +122,10 @@
 	    		border-radius: 0;
 	    	    border: 1px solid #e4e4e4 !important;
     			background: white !important;
-    			box-shadow: none;
+    			box-shadow: none !important;
 	    	}
 	    	&:hover::before {
-				border: 1px solid #181818;
+				border: 1px solid #181818 !important;
 			}
 	    }
     }
@@ -119,13 +140,16 @@
     .button-success {
         background-color:#272727;
         color: #ffffff;
-	    box-shadow: none;
-        &:hover, &:focus {
-            background-color: #005E35;
+	    box-shadow: none !important;
+	    border-radius: 0;
+	    border: 0;
+	    
+        &:hover {
+            background-color: #005E35 !important;
         }
     }
 }
-.account-login-head, .account-create-head, .account-check-order-head {
+.account-login-head, .account-create-head, .account-check-order-head, .guest-checkout-head {
     .account-expand {
         display: none;
     }
@@ -143,7 +167,13 @@
             }
     }
 }
-
+.account-check-order-head {
+	button {
+		box-shadow: none !important;
+	    border-radius: 0;
+	    border: 0;
+	}
+}
 // Register Page SCSS
 
 .register-page {
@@ -214,10 +244,14 @@
 		    		input {
 		    		    opacity: 0;
 					    position: relative;
-					    top: 4px;
-					    left: 17px;
+					    top: 26px;
+    					left: 5px;
 					    z-index: 2;
 					    float: left;
+					    @include media-breakpoint-down(xs) {
+						    top: 37px;
+    						left: 3px;
+						}
 		    		}
 		    		input[type=radio]:checked + label:after {
 		    			background: #006095;
@@ -229,8 +263,11 @@
 		    		.newsletter-male, .newsletter-female {
 		    			label {
 					    	@include sds-myaccount-newsletter;
+					    	@include media-breakpoint-down(xs) {
+								max-width: 310px;
+					        }
 					    	&:hover::before {
-								border: 1px solid #181818;
+								border: 1px solid #181818 !important;
 					    	}
 					    }
 					}
@@ -258,7 +295,8 @@
 					    box-shadow: none;
 			    	}
 			    	input[type=checkbox]:checked + label:after {
-			    		background-color: #006095;
+			    		background: #006095;
+			    		border: 1px solid #181818 !important;
 			    		z-index: 4;
 			    		border-radius: 0;
 			    	}

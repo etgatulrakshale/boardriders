@@ -1,0 +1,29 @@
+<header>
+<div class="global-header">
+	<div class="checkout-header-primary d-flex px-3">
+		<div class="checkout-header-primary-logo my-auto">
+            <a href="${URLUtils.url('Home-Show')}" title="Surf Dive N Ski Home">
+                <img src="${URLUtils.staticURL('images/logo-white.svg')}"
+                    alt="Surf Dive N Ski">
+                <span class="visually-hidden d-none">Surf Dive N Ski</span>
+            </a>
+        </div>
+        <div class="checkout-right d-flex my-auto">
+        	<div class="checkout-header-help px-5 d-md-block d-none">
+			   <div class="content-asset">
+			      <div>Help? <span>1300 650 905</span></div>
+			   </div>
+			</div>
+			<div class="checkout-header-account d-flex">
+            	<isinclude url="${URLUtils.url('Account-Header')}" />
+            </div>
+            <div class="checkout-header-home-logo px-3 d-md-block d-none">
+				<a href="${URLUtils.url('Home-Show')}" title="Surf Dive N Ski Home">
+					<i class="sds--icons sds-icon-home"></i>
+				</a>
+			</div>
+            <isinclude url="${URLUtils.url('Page-Locale')}" />
+        </div>
+	</div>
+</div>
+</header>

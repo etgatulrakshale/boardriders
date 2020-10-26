@@ -188,7 +188,18 @@
 				}
 			}
 			.confirm-details {
-				.confirm-details-left-block {
+				.confirm-details-body {
+					flex-direction: row-reverse;
+				}
+				.confirm-details-right-block {
+				    padding-right: 10px;
+				    flex: 0 0 50% !important;
+    				max-width: 50% !important;
+				    @include media-breakpoint-down(md) {
+			            padding: 0;
+			            flex: 0 0 100% !important;
+    					max-width: 100% !important;
+			        }
 					.confirm-details-order-date {
 						.confirm-details-order-number {
 						    font-size: 15px;
@@ -219,10 +230,13 @@
 							font-size: 1.1rem;
     						font-weight: 100;
 						}
-						.order-line-item-vaules, .line-item-total-price-amount {
+						.order-line-item-vaules, .line-item-total-price-amount, .order-qty-card-quantity-count {
 						    font-size: 12px;
 						    font-weight: 100;
-						    color: #202020;						
+						    color: #202020;	
+						    .line-item-total-price-amount {
+						    	display: none;
+						    }					
 						}
 						.order-product-shipping-card, .order-product-total-items-price, .product-line-item-details, .order-product-single-item-price {
 							display: none !important;
@@ -232,10 +246,25 @@
 						    	display: none;
 						    }
 						}
+						.product-summary-product-data {
+							padding: 0 !important;
+							display: flex;
+						}
+						.line-item-total-price-amount {
+							text-align: center;
+						}
 					}
 				}
-				.confirm-details-right-block { 
-					.order-total-breakdown, .confirm-details-delivery-info-head, .confirm-details-payment-info-head {
+				.confirm-details-left-block {
+				    padding-left: 10px;
+				    flex: 0 0 50% !important;
+    				max-width: 50% !important;
+				    @include media-breakpoint-down(md) {
+			            padding: 0s;
+			            flex: 0 0 100% !important;
+    					max-width: 100% !important;
+			        }
+					.checkout-order-total-break, .confirm-details-delivery-info-head, .confirm-details-payment-info-head {
 					    font-size: 15px;
     					font-weight: 300;
     					border-bottom: 1px solid #e9e9e9;
