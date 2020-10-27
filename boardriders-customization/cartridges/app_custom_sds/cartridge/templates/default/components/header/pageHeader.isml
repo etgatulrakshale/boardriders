@@ -44,8 +44,8 @@
         <div class="header--primary-naviation pt-2 d-none d-md-block m-auto" id="navigation">
         	<isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
         </div>
-        <div class="header--utility-container d-flex align-items-center">
-            <div class="header--search mr-4 d-lg-block d-none pt-2">
+        <div class="navbar-header header--utility-container d-flex align-items-center">
+            <div class="search header--search mr-4 d-lg-block d-none pt-2">
                 <isinclude template="components/header/search" />
             </div>
             <div class="header--account-util-icons mx-auto">
@@ -54,9 +54,8 @@
             		<isinclude url="${URLUtils.url('Page-Locale')}" />
                 </div>
             </div>
-
             <div class="header--mincart ">
-                <div id="mini-cart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+                <div class="minicart" id="mini-cart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
                     <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
                 </div>
             </div>
