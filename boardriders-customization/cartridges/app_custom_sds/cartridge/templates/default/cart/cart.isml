@@ -74,7 +74,7 @@
                 	<div class="col-12 top-checkout-continue">
                        <isinclude template="cart/checkoutButtons" />
                     </div>
-                    <div class="col-12 cart-order-summary py-4 text-center">
+                    <div class="col-12 cart-order-summary py-4 text-md-left text-center">
                        <h1>${Resource.msg('label.ordersummary','cart',null)}</h1>
                     </div>
                     <div class="col-12 cart-promo-code py-3">

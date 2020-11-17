@@ -14,6 +14,6 @@
         data-name="${lineItem.productName}"
         data-action="${URLUtils.url('Cart-RemoveProductLineItem')}"
         data-uuid="${lineItem.UUID}"
-        title="${Resource.msg('link.move.to.wishlist', 'cart', null)}">${Resource.msg('link.move.to.wishlist', 'cart', null)}
+        title="${Resource.msg('link.move.to.wishlist', 'cart', null)}">${Resource.msg('link.add.to.wishlist', 'cart', null)}
 	</a>
 </div>
