@@ -12,6 +12,12 @@
         font-size: 30px;
     }
 }
+.sds-search-results {
+	h2 {
+	    font-size: 24px;
+    	font-weight: 300;
+	}
+}
 .plp-main-block {
 	max-width: 100%;
 	width: 100%;
@@ -42,6 +48,10 @@
         		content: "/";
         		margin: 5px;
         	}
+        }
+        .search-keywords {
+        	font-size: 0.675rem;
+    		font-weight: 300;
         }
     }
     .result-count {

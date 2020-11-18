@@ -20,7 +20,13 @@
         </h1>
     </div>
 <iselse>
-    <isslot id="search-result-banner-m" description="Banner for search results" context="global" />
+    <div class="sds-search-results">
+	    <h2 class="pt-4 pb-5 text-center">Searching for  
+	    	<span>
+	           "${pdict.productSearch.searchKeywords ? pdict.productSearch.searchKeywords : ''}"
+	        </span>
+	    </h2>
+    </div>
 </isif>
 <div class="container p-0 plp-main-block">
   <div class="row">
@@ -74,10 +80,18 @@
 	<div class="crumbs-black d-md-flex d-none">
 	    <isif condition="${pdict.productSearch.productIds.length > 0}">
 	        <div class="breadcrumbs col-lg-5 col-4">
-	            <isif condition="${currentCategory.parent.ID !== "root"}">
-	                <a href="">${currentCategory.parent.ID}</a>
-	            </isif>
-	            <a class="cat-child-crumb" href="">${pdict.productSearch.category.name}</a>
+	        	<isif condition="${pdict.productSearch.category}">
+		            <isif condition="${currentCategory.parent.ID !== "root"}">
+		                <a class="cat-parent-crumb" href="">${currentCategory.parent.ID}</a>
+		            </isif>
+		            <a class="cat-child-crumb" href="">${pdict.productSearch.category.name}</a>
+		        <iselse>
+		        	<h2 class="search-keywords">Your search phrase was 
+		        		<a href="">"${pdict.productSearch.searchKeywords}"</a>
+		        		 - Showing results for 
+		        		<a href="">"${pdict.productSearch.searchKeywords}"</a>
+		        	</h2>
+		        </isif>
 	        </div>
 	    </isif>
 	    <div class="result-count text-center col-2">
