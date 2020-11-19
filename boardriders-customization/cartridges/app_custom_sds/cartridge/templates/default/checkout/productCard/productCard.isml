@@ -36,7 +36,7 @@
 		        <iselse>
 		            <isinclude template="checkout/productCard/productCardProductName" />
 		        </isif>
-		        <span class="pricing qty-card-quantity-count order-qty-card-quantity-count"><isprint value="${lineItem.quantity}" formatter="##" /></span>
+		        <span class="pricing qty-card-quantity-count order-qty-card-quantity-count"><span class="label d-none">Qty:</span><isprint value="${lineItem.quantity}" formatter="##" /></span>
 		    </div>
 		    <div class="order-line-item-vaules">
 			    <div class="order-line-item-brand">Billabong</div>

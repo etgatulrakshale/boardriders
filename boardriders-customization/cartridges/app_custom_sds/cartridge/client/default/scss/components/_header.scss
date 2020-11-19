@@ -17,6 +17,19 @@
 			text-decoration: none;
 		}
 	}
+	.primary-overlay-white {
+		display: none;
+	}
+	.primary-overlay-white.active {
+	    background-color: rgba(220, 220, 220, 0.7);
+	    position: absolute;
+	    top: 134px;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    z-index: 2;
+	    display: block;
+	}
 }
 .header-account-items {
 	font-size: 11px;
@@ -616,7 +629,6 @@
 }
 
 // Mini Cart
-
 .minicart {
 	.minicart-total {
 	    height: auto;
@@ -635,6 +647,18 @@
 	.minicart-content {
 	    max-width: 480px !important;
 	    top: 75px !important;
+	    .minicart-promotional-slot {
+	        background-color: #eee;
+		    border-top: 1px solid #dddddd;
+		    font-size: 0.8125rem;
+		    color: #9c9c9c;
+		    text-transform: uppercase;
+		    margin: 0;
+		    font-weight: 300;
+		    padding: 8px 0px;
+		    text-align: center;
+		    display: block;
+	    }
 	    .cart {
 	        width: 480px;
 		    background-color: #fff !important;
@@ -720,6 +744,12 @@
 						    .order-qty-card-quantity-count, .line-item-total-price-amnt {
 							    font-size: 14px;
 	    						font-weight: 100;
+	    					    margin: auto;
+    							text-align: right;
+    							display: inherit;
+    							.label {
+    								display: block !important;
+    							}
 						    }
 						    .order-line-item-color, .order-line-item-size {
 							    color: #b9b9b9;

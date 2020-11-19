@@ -10,7 +10,7 @@
 <div class="minicart-total hide-no-link">
     <i class="sds--icons sds-icon-cart"></i>
         <span class="minicart-quantity">
-            <isprint value="${pdict.quantityTotal}" formatter="##" />
+            (<isprint value="${pdict.quantityTotal}" formatter="##" />)
         </span>
 </div>
 <div class="popover popover-bottom minicart-content" data-toggle="popover" data-placement="bottom"></div>

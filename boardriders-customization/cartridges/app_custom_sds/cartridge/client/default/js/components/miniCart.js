@@ -27,6 +27,7 @@ module.exports = function () {
         if (count !== 0 && $('.minicart .popover.show').length === 0) {
             if (!updateMiniCart) {
                 $('.minicart .popover').addClass('show');
+                $('.primary-overlay-white').addClass('active');
                 return;
             }
 
@@ -41,6 +42,7 @@ module.exports = function () {
     $('body').on('touchstart click', function (e) {
         if ($('.minicart').has(e.target).length <= 0) {
             $('.minicart .popover').removeClass('show');
+            $('.primary-overlay-white').removeClass('active');
         }
     });
     $('.minicart').on('mouseleave focusout', function (event) {
@@ -51,6 +53,7 @@ module.exports = function () {
             return;
         }
         $('.minicart .popover').removeClass('show');
+        $('.primary-overlay-white').removeClass('active');
     });
     $('body').on('change', '.minicart .quantity', function () {
         if ($(this).parents('.bonus-product-line-item').length && $('.cart-page').length) {

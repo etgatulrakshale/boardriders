@@ -6,7 +6,11 @@
     <div>
         <div class="row minicart-content-top">
             <div class="col-6">
-                <h1>${Resource.msg('title.your.shopping.cart','cart',null)}</h1>
+                <h1>${Resource.msg('title.your.shopping.cart','cart',null)}
+                <span class="minicart-quantity">
+		            (${Resource.msgf('label.number.items.total.cart','cart', null, pdict.numItems)})
+		        </span>
+                </h1>
             </div>
             <div class="col-6 text-right">
                 <a class="normal" href="${URLUtils.https('Cart-Show')}" title="${Resource.msg('link.view.cart','cart',null)}">
@@ -73,4 +77,6 @@
             </div>
         </div>
     </div>
+</div>
+	<p>Free express shipping on orders over $50</p>
 </div>
