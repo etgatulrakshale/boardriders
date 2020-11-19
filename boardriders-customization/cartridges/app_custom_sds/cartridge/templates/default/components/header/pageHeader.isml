@@ -1,65 +1,69 @@
 <div class="global-header">
-    <div class="header--top-bar d-lg-flex d-block justify-content-between align-items-center px-3">
-        <div class="top-bar--left d-flex">
-            <div class="each-col header--store-locator header-account-items mr-3">
-                <a href="${URLUtils.url('Stores-Find')}" title="Store Locator">
-                    <span>Store Locator</span>
-                </a>
-            </div>
-            <div class="each-col header--help header-account-items">
-                <a href="https://www.sds.com.au/help">
-                    <span>Help</span>
-                </a>
-            </div>
-        </div>
-        <div class="header--banner-slot d-lg-flex d-block">
-            <div class="html-slot-container">
-                <p class="mb-0 text-center pt-lg-0 pt-1">Shipping carriers are currently experiencing delays.
-                    <a href="https://www.sds.com.au/shipping-info.html/"><b>More Details</b></a>.
-                </p>
-            </div>
-            <span class="xmeout d-none"><i class="sds--icons sds-icon-x" aria-hidden="true"></i></span>
-        </div>
-        <div class="top-bar--right d-flex">
-            <isinclude url="${URLUtils.url('Account-Header')}" />
-            <isinclude url="${URLUtils.url('Page-Locale')}" />
-        </div>
+	<div class="header-top-block">
+    	<div class="header--top-bar d-lg-flex d-block justify-content-between align-items-center px-3">
+	        <div class="top-bar--left d-flex">
+	            <div class="each-col header--store-locator header-account-items mr-3">
+	                <a href="${URLUtils.url('Stores-Find')}" title="Store Locator">
+	                    <span>Store Locator</span>
+	                </a>
+	            </div>
+	            <div class="each-col header--help header-account-items">
+	                <a href="https://www.sds.com.au/help">
+	                    <span>Help</span>
+	                </a>
+	            </div>
+	        </div>
+	        <div class="header--banner-slot d-lg-flex d-block">
+	            <div class="html-slot-container">
+	                <p class="mb-0 text-center pt-lg-0 pt-1">Shipping carriers are currently experiencing delays.
+	                    <a href="https://www.sds.com.au/shipping-info.html/"><b>More Details</b></a>.
+	                </p>
+	            </div>
+	            <span class="xmeout d-none"><i class="sds--icons sds-icon-x" aria-hidden="true"></i></span>
+	        </div>
+	        <div class="top-bar--right d-flex">
+	            <isinclude url="${URLUtils.url('Account-Header')}" />
+	            <isinclude url="${URLUtils.url('Page-Locale')}" />
+	        </div>
+    	</div>
     </div>
-
-    <div class="header--primary d-flex justify-content-between align-items-center px-3" role="banner">
-    <div class="mobile-nav--button d-block d-md-none">
-            <div class="sds-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <div class="header--primary-logo w-25">
-            <a href="${URLUtils.url('Home-Show')}" title="Surf Dive N Ski Home">
-                <img src="${URLUtils.staticURL('images/logo-white.svg')}"
-                    alt="Surf Dive N Ski">
-                <span class="visually-hidden d-none">Surf Dive N Ski</span>
-            </a>
-        </div>
-        <div class="header--primary-naviation pt-2 d-none d-md-block m-auto" id="navigation">
-        	<isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
-        </div>
-        <div class="navbar-header header--utility-container d-flex align-items-center">
-            <div class="search header--search mr-4 d-lg-block d-none pt-2">
-                <isinclude template="components/header/search" />
-            </div>
-            <div class="header--account-util-icons mx-auto">
-                <div class="each-col header--customer-register d-flex">
-                    <isinclude url="${URLUtils.url('Account-Header')}" />
-            		<isinclude url="${URLUtils.url('Page-Locale')}" />
-                </div>
-            </div>
-            <div class="header--mincart ">
-                <div class="minicart" id="mini-cart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
-                    <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
-                </div>
-            </div>
-        </div>
+	
+	<div class="header-primary-block">
+    	<div class="header--primary d-flex justify-content-between align-items-center px-3" role="banner">
+	    	<div class="mobile-nav--button d-block d-md-none">
+	            <div class="sds-menu-toggle">
+	                <span></span>
+	                <span></span>
+	                <span></span>
+	            </div>
+	        </div>
+	        <div class="header--primary-logo w-25">
+	            <a href="${URLUtils.url('Home-Show')}" title="Surf Dive N Ski Home">
+	                <img src="${URLUtils.staticURL('images/logo-white.svg')}"
+	                    alt="Surf Dive N Ski">
+	                <span class="visually-hidden d-none">Surf Dive N Ski</span>
+	            </a>
+	        </div>
+	        <div class="header--primary-naviation pt-2 d-none d-md-block m-auto" id="navigation">
+	        	<isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
+	        </div>
+	        <div class="navbar-header header--utility-container d-flex align-items-center">
+	            <div class="search header--search mr-4 d-lg-block d-none pt-2">
+	                <isinclude template="components/header/search" />
+	            </div>
+	            <div class="header--account-util-icons mx-auto">
+	                <div class="each-col header--customer-register d-flex">
+	                    <isinclude url="${URLUtils.url('Account-Header')}" />
+	            		<isinclude url="${URLUtils.url('Page-Locale')}" />
+	                </div>
+	            </div>
+	            <div class="header--mincart ">
+	                <div class="minicart" id="mini-cart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+	                    <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
+	                </div>
+	            </div>
+	        </div>
+		</div>
     </div>
 <div class="sticky--search-box d-block d-lg-none d-flex justify-content-between align-items-center w-100 px-3 px-md-5">
    <isinclude template="components/header/search" />
@@ -68,5 +72,8 @@
 <div class="header--mobile-naviation">
 	<isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
 </div>
-
+<div class="header-banner-content px-4">
+	<iscontentasset aid="header-banner-content" />
+</div>
+<div class="primary-overlay-white"></div>
 </div>
