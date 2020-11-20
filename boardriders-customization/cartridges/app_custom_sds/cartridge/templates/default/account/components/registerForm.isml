@@ -73,13 +73,13 @@
         <div class="col-12 newsletter-gender pb-4">
         	<div class="newsletter-male pr-4 py-2">
         		<input class="radio" checked="checked" type="radio" name="radio">
-	        	<label>
+	        	<label class="text-uppercase">
 		            Receive our Men's newsletter and special offers. 
 		        </label>
         	</div>
 	        <div class="newsletter-female pr-4 py-2">
 	        	<input class="radio" type="radio" name="radio">
-	            <label>
+	            <label class="text-uppercase">
 		            Receive our Women's newsletter and special offers. 
 		        </label>
 	        </div>
@@ -91,7 +91,7 @@
         <label class="form-control-label" for="registration-form-password">
             <isprint value="${pdict.profileForm.login.password.label}" encoding="htmlcontent" />
         </label>
-        <i class="sds--icons sds-icon-eye password-eye"></i>
+        <i class="sds--icons sds-icon-eye password-eye-reg"></i>
         <input
             type="password"
             class="form-control"
@@ -110,7 +110,7 @@
         <label class="form-control-label" for="registration-form-password-confirm">
             <isprint value="${pdict.profileForm.login.passwordconfirm.label}" encoding="htmlcontent" />
         </label>
-        <i class="sds--icons sds-icon-eye password-eye"></i>
+        <i class="sds--icons sds-icon-eye password-eye-con"></i>
         <input
             type="password"
             class="form-control"
@@ -130,7 +130,7 @@
             <isprint value=${pdict.profileForm.customer.addtoemaillist.attributes} encoding="off" />
         >
         <label class="custom-control-label" for="add-to-email-list">
-            <span class="pl-3">I agree to our 
+            <span  class="text-uppercase pl-3">I agree to our 
 				<a href="https://www.sds.com.au/terms-conditions.html" target="_blank">Terms &amp; Conditions</a>
 				and 
 				<a href="https://www.sds.com.au/privacy-policy.html" target="_blank">Privacy Policy</a>

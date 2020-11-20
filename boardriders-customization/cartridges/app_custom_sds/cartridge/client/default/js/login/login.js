@@ -130,15 +130,28 @@ module.exports = {
 		$('.password-eye').click(function() {
 			if ($('#login-form-password').attr('type') == 'text') {
 		      $('#login-form-password').attr('type', 'password');
+		      $('.password-eye').removeClass('sds-icon-eye-close');
 		    } else {
 		      $('#login-form-password').attr('type', 'text');
+		      $('.password-eye').addClass('sds-icon-eye-close');
 		    }
 		});
-		$('.password-eye').click(function() {
+		$('.password-eye-reg').click(function() {
+			if ($('#registration-form-password').attr('type') == 'text') {
+		      $('#registration-form-password').attr('type', 'password');
+		      $('.password-eye-reg').removeClass('sds-icon-eye-close');
+		    } else {
+		      $('#registration-form-password').attr('type', 'text');
+		      $('.password-eye-reg').addClass('sds-icon-eye-close');
+		    }
+		});
+		$('.password-eye-con').click(function() {
 			if ($('#registration-form-password-confirm').attr('type') == 'text') {
 		      $('#registration-form-password-confirm').attr('type', 'password');
+		      $('.password-eye-con').removeClass('sds-icon-eye-close');
 		    } else {
 		      $('#registration-form-password-confirm').attr('type', 'text');
+		      $('.password-eye-con').addClass('sds-icon-eye-close');
 		    }
 		});
 		$('.custom-control-input').click(function () {

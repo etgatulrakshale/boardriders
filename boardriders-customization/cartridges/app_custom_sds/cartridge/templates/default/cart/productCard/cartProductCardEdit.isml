@@ -6,11 +6,22 @@
        title="${Resource.msg('link.edit.item', 'cart', null)}">${Resource.msg('link.edit.item', 'cart', null)}
     </a>
 </div>
+<<<<<<< HEAD
 <div class="wishlist-edit w-50">  
   <a href="${URLUtils.url('Wishlist-AddProduct')}" class="move add-to-wish-list"
+=======
+<!-- Move to Wish -->
+<div class="wishlist-edit w-50">
+	<a href="${URLUtils.url('Wishlist-AddProduct')}" class="move add-to-wish-list"
+>>>>>>> ebdc436482cb22fc528b41234936120a482d6a62
         data-pid="${lineItem.id}"
         data-name="${lineItem.productName}"
         data-action="${URLUtils.url('Cart-RemoveProductLineItem')}"
         data-uuid="${lineItem.UUID}"
+<<<<<<< HEAD
         title="${Resource.msg('link.move.to.wishlist', 'cart', null)}">${Resource.msg('link.move.to.wishlist', 'cart', null)}</a>
+=======
+        title="${Resource.msg('link.move.to.wishlist', 'cart', null)}">${Resource.msg('link.move.to.wishlist', 'cart', null)}
+	</a>
+>>>>>>> ebdc436482cb22fc528b41234936120a482d6a62
 </div>

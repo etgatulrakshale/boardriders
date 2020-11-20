@@ -18,6 +18,19 @@
 		}
 	}
 }
+.header-account-items {
+	font-size: 11px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    i {
+    	font-size: 16px;
+    }
+}
+.header--customer-wishlist {
+	i {
+		display: none;
+	}
+}
 .header--top-bar {
 	background-color: #202020;
 	color: #FFFFFF;
@@ -229,6 +242,9 @@
 	}
 	.header--account-util-icons {
 		display: block;
+		.header--customer-logout, .header--customer-register, .header-account-items span  {
+			display: none;
+		}
 	}
 	.level-2 {
 		top: 60px;
@@ -270,6 +286,7 @@
 @media screen and (max-width: 1400px) {
 	.header--utility-container {
 		width: 25%;
+		overflow: hidden;
 	}
 	.header--mincart {
 		width: 90px;
@@ -379,9 +396,6 @@
 		width: 100%;
 		margin-bottom: 0 !important;
     	border-bottom: 1px solid rgba(221, 221, 221, 0.6);
-	}
-	.header--account-util-icons {
-		display: block;
 	}
 	.sticky--search-box {
 		input {

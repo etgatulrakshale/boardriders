@@ -35,9 +35,9 @@
 				        </div>
                         <div class="product-wishlist-edit d-flex">
                         	<isinclude template="cart/productCard/cartProductCardEdit" />
-                        	<div class="wishlist-edit w-50">
+                        	<!-- <div class="wishlist-edit w-50">
                         		<a href="">Wishlist</a>
-                        	</div>
+                        	</div> -->
                         </div>
                         <!--- line item total price --->
 				        <div class="line-item-total-price item-attributes-total-price pb-2 d-md-none d-block">
