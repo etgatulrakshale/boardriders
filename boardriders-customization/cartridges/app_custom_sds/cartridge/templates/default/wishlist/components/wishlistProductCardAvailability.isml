@@ -1,0 +1,35 @@
+<!-- <div class="line-item-availability availability-${item.UUID}">
+    <isloop items="${item.availability.messages}" var="message">
+        <p class="line-item-attributes">${message}</p>
+    </isloop>
+    <isif condition="${item.availability.inStockDate}">
+        <p class="line-item-attributes line-item-instock-date">
+            ${item.availability.inStockDate}
+        </p>
+    </isif>
+</div>
+ -->
+ <div class="product-list-item">
+    <div class="attribute-name ">
+        <a href="https://www.sds.com.au/1460-pride-8-eye-boot/6J-25701001-261-5.html">
+            1460 PRIDE 8 EYE BOOT
+		</a>
+    </div>
+    <div class="attribute-brand">DR MARTENS</div>
+    <div class="attribute-sku">
+        <span class="label">Item No.:</span>
+        <span class="value">6J-25701001-261-5</span>
+    </div>
+    <div class="attribute-color" data-attribute="color">
+        <span class="label">Colour:</span>
+        <span class="value">
+            BLACK
+		</span>
+    </div>
+    <div class="attribute-color" data-attribute="size">
+        <span class="label">Size:</span>
+        <span class="value">
+            UK 5
+		</span>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<isif condition="${pdict.wishlist.items.length > 0}">
+	<!-- Share WishList -->
+	<div>
+        <isset name="shareLinks" value="${pdict.socialLinks}" scope="page"/>
+        <isinclude template="wishlist/components/socialsharing" />
+    </div>
+    <!---product cards--->
+    <div class="wishlistItemCards" data-error-msg="${Resource.msg('wishlist.remove.error','wishlist',null)}">
+    	<div class="row wishlist-signle-item-header text-uppercase py-4 px-5">
+	    	<div class="col-5">
+	    		${Resource.msg('label.each.item.wishlistitem','cart',null)}
+	    	</div>
+	    	<div class="col-4 d-lg-flex d-none">
+	    		<div class="col-6 text-center">${Resource.msg('field.selectquantity','cart',null)}</div>
+	    		<div class="col-6">${Resource.msg('label.each.item.wishlistprice','cart',null)}</div>
+	    	</div>
+	    	<div class="col-3">
+	    		
+	    	</div>
+	    </div>
+        <isloop items="${pdict.wishlist.items}" var="item">
+            <isif condition=${(pdict.wishlist.publicView && item.publicItem) || (!pdict.wishlist.publicView)}>
+                <isif condition="${!!item.bundle}">
+                    <isinclude template="wishlist/productCard/wishlistBundleCard" />
+                <iselse/>
+                    <isinclude template="wishlist/components/wishlistProductCard" />
+                </isif>
+            </isif>
+        </isloop>
+        <isif condition="${pdict.wishlist.showMore}">
+             <div class="my-account col-12">
+                <button type="button" class="btn btn-block btn-primary btn-outline-primary more-wl-items" >
+                    ${Resource.msg('text.link.show.more.results.wl', 'wishlist', null)}
+                </button>
+            </div>
+        </isif>
+        <span class="wishlistItemCardsData" data-uuid="${pdict.wishlist.UUID}" data-href="${URLUtils.url('Wishlist-MoreList')}" data-page-number="${pdict.wishlist.pageNumber || 1}"  data-public-view=${pdict.wishlist.publicView}></span>
+    </div>
+<iselse>
+	<!-- Share WishList -->
+	<div>
+        <isset name="shareLinks" value="${pdict.socialLinks}" scope="page"/>
+        <isinclude template="wishlist/components/socialsharing" />
+    </div>
+    <div class="col-12 text-center wishlist-empty">
+        <p>${Resource.msg('wishlist.empty.text','wishlist',null)}</p>
+        <a class="wishlist-empty-button" href="${URLUtils.url('Home-Show')}" title="Surf Dive N Ski">Click here to start adding items.</a>
+    </div>
+</isif>

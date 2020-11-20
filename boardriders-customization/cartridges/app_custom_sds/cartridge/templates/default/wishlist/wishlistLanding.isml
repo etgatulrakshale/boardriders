@@ -1,0 +1,32 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/wishlist.css');
+        assets.addJs('/js/wishlist.js');
+        assets.addJs('/js/login.js');
+        assets.addCss('/css/account/dashboard.css');
+    </isscript>
+    <div class="myaccount-page myaccount-wishlist-page">
+	    <div class="myaccount-head">
+    		 <div class="px-4">			
+		        <!---Breadcrumbs--->
+		        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+	         </div>
+             <div class="myaccount-main-head">
+				<div class="myaccount-main-head-title">${Resource.msg('wishlist.hero.image.header', 'wishlist', null)}</div>
+			</div>
+		</div>
+		<div class="myaccount-wishlist px-0">
+			<div class="row">
+				<isinclude template="account/components/myAccountSideBar" />
+				<div class="col-lg-10 col-md-9 d-lg-flex d-md-block">
+					<div class="container ${pdict.loggedIn ? '' : 'login-page'} p-md-0 p-4 myaccount-wishlist-block">
+				        <isif condition="${pdict.loggedIn}">
+				            <isinclude template="wishlist/components/wishlist" />
+				        </isif>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</isdecorate>
