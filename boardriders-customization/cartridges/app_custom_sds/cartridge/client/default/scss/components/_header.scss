@@ -5,6 +5,7 @@
 @import "./sitewide_banner_content";
 
 .global-header {
+	over-flow: hidden;
 	img {
 		width: 100%;
     	max-width: 190px;
@@ -279,6 +280,11 @@
 	.header--mincart {
 		width: 120px;
 	}
+	.header-account-items i {
+	    font-size: 26px;
+	    line-height: 40px;
+	}
+
 }
 .cn--image-block {
 	padding: 25px;

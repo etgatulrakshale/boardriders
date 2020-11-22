@@ -2,7 +2,7 @@
 <isset name="bonusproductlineitem" value="${hasEmbeddedBonusProducts ? 'bonus-product-line-item' : ''}" scope="page"/>
 <isset name="bonuslineitemrow" value="${hasEmbeddedBonusProducts ? 'bonus-line-item-row' : ''}" scope="page"/>
 
-<div class="product-info cart-product-info mr-md-4 m-0 py--md-4 p-3 ${bonusproductlineitem} uuid-${lineItem.UUID}">
+<div class="product-info cart-product-info mr-md-4 m-0 py-md-4 p-4 ${bonusproductlineitem} uuid-${lineItem.UUID}">
     <div class="row ${bonuslineitemrow}">
         <div class="col-md-8 col-12 cart-product-item-info-content">
             <div class="row">
@@ -14,11 +14,11 @@
                     	<div class="item-attributes-content">
 		                    <!--- name and remove buttons --->
 		    				<isinclude template="cart/productCard/cartProductCardHeader" />
- 	                        <isloop items="${lineItem.variationAttributes}" var="attribute">
-	                        	<div class="line-item-attributes-values d-md-flex d-block pb-2">
+	                        <div class="line-item-attributes-values d-md-flex d-block pb-2">
+	                        	<isloop items="${lineItem.variationAttributes}" var="attribute">
 	                            	<p class="line-item-attributes w-md-50 w-100 py-1 ${attribute.displayName}-${lineItem.UUID}">${attribute.displayName}: ${attribute.displayValue}</p>
-	                        	</div>
-	                        </isloop> 
+	                        	</isloop> 	
+	                        </div>
 	                        <isloop items="${lineItem.options}" var="option">
 	                            <isif condition="${!!option}" />
 	                                <div class="lineItem-options-values d-md-flex d-block" data-option-id="${option.optionId}" data-value-id="${option.selectedValueId}">

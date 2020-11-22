@@ -31,7 +31,7 @@
         </div>
     </div>
     
-    <div class="col-12 mobile-top-checkout-continue px-3 d-md-none d-block">
+    <div class="col-12 mobile-top-checkout-continue px-4 d-md-none d-block">
          <isinclude template="cart/checkoutButtons" />
     </div>
     
@@ -55,7 +55,11 @@
         <div class="cart cart-page m-md-4 m-0">
             <div class="row">
                 <!---product cards--->
-                <div class="col-md-8 col-12">
+                <div class="col-md-8 col-12 cart-page-left-content">
+                	<div class="coupon-error mt-md-0 mb-md-4 mr-4 my-5 mx-4 py-3 px-4">
+                        <span class="coupon-missing-error" id="missingCouponCode" role="alert">${Resource.msg('error.missing.coupon.code', 'cart', null)}</span>
+                    	<span class="coupon-error-message" id="invalidCouponCode" role="alert"></span>
+               		</div>
                     <isloop items="${pdict.items}" var="lineItem">
                         <isif condition="${lineItem.productType === 'bundle'}">
                             <isinclude template="cart/productCard/cartBundleCard" />
