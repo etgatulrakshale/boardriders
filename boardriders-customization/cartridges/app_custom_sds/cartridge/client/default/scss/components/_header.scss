@@ -705,6 +705,7 @@
 	.minicart-content {
 	    max-width: 480px !important;
 	    top: 75px !important;
+	    border: 0;
 	    .minicart-promotional-slot {
 	        background-color: #eee;
 		    border-top: 1px solid #dddddd;
@@ -713,9 +714,8 @@
 		    text-transform: uppercase;
 		    margin: 0;
 		    font-weight: 300;
-		    padding: 8px 0px;
+		    padding: 15px 20px;
 		    text-align: center;
-		    display: block;
 	    }
 	    .cart {
 	        width: 480px;
@@ -802,7 +802,7 @@
 						    .order-qty-card-quantity-count, .line-item-total-price-amnt {
 							    font-size: 14px;
 	    						font-weight: 100;
-	    					    margin: auto;
+	    					    margin: 0 auto;
     							text-align: right;
     							display: inherit;
     							.label {
