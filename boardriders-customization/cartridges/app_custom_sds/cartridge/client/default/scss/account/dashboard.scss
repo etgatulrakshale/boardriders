@@ -8,6 +8,8 @@
 	.myaccount-head {
         background-color: #171717;
         a {
+        	color: #9c9c9c;
+    		text-transform: uppercase;
             &:hover {
                 color: #006095 !important;
                 transition: 0.3s;
@@ -45,10 +47,14 @@
     .myaccount-content {
     	background-color: #f9f9f9;
 	    padding: 50px;
-	    position: relative;
 	    z-index: 1;
 	    .myaccount-content-block {
+	        max-width: 1700px;
+    		position: relative;
 	    	justify-content: center;
+	    	@include media-breakpoint-down(lg) {
+				position: unset;
+			}
 		    ul {
 		    	width: 100%;
 			    max-width: 800px;
