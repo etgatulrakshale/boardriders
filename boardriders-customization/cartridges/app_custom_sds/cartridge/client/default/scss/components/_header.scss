@@ -5,7 +5,6 @@
 @import "./sitewide_banner_content";
 
 .global-header {
-	over-flow: hidden;
 	img {
 		width: 100%;
     	max-width: 190px;
@@ -90,10 +89,16 @@
 			font-size: 11px;
 		    font-weight: 300;
 			padding-bottom: 50px;
+			@include media-breakpoint-down(md) {
+	    		font-size: 0.5625rem;
+	    	}
 		}
 	}
 	.top-level-link {
 	    font-size: 11px;
+	    @include media-breakpoint-down(md) {
+	    	font-size: 0.5625rem;
+	    }
 	}
 }
 .search-button {
