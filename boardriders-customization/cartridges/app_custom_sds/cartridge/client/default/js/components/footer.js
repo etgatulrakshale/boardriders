@@ -54,6 +54,16 @@ module.exports = function () {
         });
     });
     
+    $('.arrow-up').click(function () {
+		  if ($(this).hasClass("active")) {
+		  	$(this).removeClass('active');
+		    $('.footer-newsletter-block').addClass('showNewsLetter');
+		  } else {
+		  	$(this).addClass('active');
+		  	$('.footer-newsletter-block').removeClass('showNewsLetter');
+		  }
+	});
+    
     var i, item = $(".footer-accordion-button");
 	for (i = 0; i < item.length; i++) {
 		item[i].onclick = function () {
