@@ -97,8 +97,8 @@
 	    <div class="result-count text-center col-2">
 		    <isinclude template="search/resultsCount" />
 		</div>
-		<div class="col-lg-5 col-6 d-flex">
-			<div class="toggle-grid text-center col-6">
+		<div class="col-lg-5 col-6 plp-view-sort-section d-flex">
+			<div class="toggle-grid text-right">
 			    <span class="toggle-heading">view:</span>
 			    <span class="wide-select" data-option="wide">
 			        <i></i><i></i><i></i>
@@ -108,7 +108,7 @@
 			    </span>
 			</div>
 			<isif condition="${pdict.productSearch.productIds.length > 0}">
-			    <div class="col-6 sort-by">
+			    <div class="sort-by">
 			        <isinclude template="search/sortOrderMenu" />
 			    </div>
 			</isif>
@@ -143,10 +143,11 @@
 
           <!--- Product Grid --->
 	        <div class="row product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
-            <isinclude template="search/productGrid" />
+            	<isinclude template="search/components/productTiles" />
           </div>
         </div>
       </div>
+      <isinclude template="search/productGrid" />
     </div>
   </div>
 </div>
