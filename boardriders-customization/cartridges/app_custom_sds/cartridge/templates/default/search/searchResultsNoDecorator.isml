@@ -142,12 +142,11 @@
           </div>
 
           <!--- Product Grid --->
-	        <div class="row product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
-            	<isinclude template="search/components/productTiles" />
+	      <div class="row product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
+            <isinclude template="search/productGrid" />
           </div>
         </div>
       </div>
-      <isinclude template="search/productGrid" />
     </div>
   </div>
 </div>
