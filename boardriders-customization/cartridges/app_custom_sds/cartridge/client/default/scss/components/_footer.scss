@@ -133,6 +133,11 @@
 		display: none !important;
 	}
 }
+.showNewsLetterSuccess {
+	.arrow-up, .footer-newsletter-email {
+		display: none !important;
+	}
+}
 .footer-newsletter-block {
 	.arrow-up {
 	    padding: 15px;
@@ -157,6 +162,35 @@
 	   		color: #fff;
 	   	}
 	}
+	.footer-newsletter-email-success {
+		display: none;
+		h4 {
+			color: #272727;
+		    padding-left: 40px;
+		    background: url(../images/newsletter/checked.png) no-repeat;
+		    line-height: 25px;
+		    display: inline-grid;
+		    font-size: 16px;
+    		font-weight: bold;
+    		text-align: center;
+    		margin: 30px;
+		}
+		.sds--icons {
+		    font-size: 24px;
+    		float: right;
+		}
+		.button {
+		    font-size: 20px !important;
+			display: block;
+    		width: fit-content;
+    		margin: auto;
+    		background: #000;
+    	    color: #fff;
+		}
+	}
+	.footer-newsletter-email-success.success {
+		display: block;
+	}
 	.footer-newsletter-email {
 		display: none;
 		.footer-email-signup {
@@ -175,8 +209,20 @@
 		   	.footer-newsletter-email-block {
 		   	    justify-content: center;
 		   	}
+		   	.footer-newsletter-email-block.isinvalid .email-signup-message {
+		   	   	width: 100%;
+			    left: 0;
+			    background: #DE3333;
+			    padding: 10px;
+			    color: #fff;
+		   	}
+		   	.footer-newsletter-email-block.isinvalid  .input-group .form-control {
+		   	  	background-color: #faeded;
+		   	}
 		   	.input-group {
+		   		height: 50px;
 		   		.footer-newsletter-gender-select {
+		   			padding: 7px;
 				    select {
 				    	font-size: 16px;
 	    				font-weight: 300;
@@ -193,6 +239,9 @@
 				    font-weight: 300;
 				    line-height: 1.125rem;
 				    letter-spacing: 0.1125rem;
+				    &:focus {
+				        background-color: #ffffff !important;
+				    }
 		   		}
 		   		.input-group-append {
 		   			button {
@@ -200,7 +249,11 @@
 					    background: #f0f0f0 !important;
 					    color: #000;
 	    				letter-spacing: 0.18em;
-	    			}	    
+	    			}
+	    			.selvalid {
+	    			    background: #48c38f !important;
+    					color: #ffffff;
+	    			}   
 		   		}
 		   	}
 		}

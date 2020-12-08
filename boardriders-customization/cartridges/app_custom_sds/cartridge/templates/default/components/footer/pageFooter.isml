@@ -13,6 +13,7 @@
 		            <form role="form">
 		                <div class="row footer-newsletter-email-block">
 		                    <div class="col-lg-6 col-7 py-3 mb-3">
+		                    	<div class="email-signup-message"></div>
 		                        <div class="input-group">
 		                        	<div class="footer-newsletter-gender-select bg-white">
 			                        	<select class="selectvalid border-0 p-2" name="newsletter-gender" required="" aria-invalid="false">
@@ -32,6 +33,13 @@
 		        </div>
 		        <p>by entering you email you will be opted in to receive marketing communication from SDS.For Details on how we use your information,view our <a href="https://www.sds.com.au/privacy-policy.html">privacy policy</a></p>
 			</div>
+		</div>
+		<div class="footer-newsletter-email-success text-center">
+			<h4>Welcome to the crew! Check your inbox shortly for details on your unique code and how to redeem</h4>
+			<a class="footer-newsletter-email-success-close">
+				<i class="sds--icons sds-icon-x"></i>
+			</a>
+			<button class="footer-newsletter-email-success-close button my-3">Got it!</button>
 		</div>
 	</div>
     <div class="full-bleed">
