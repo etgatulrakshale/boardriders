@@ -62,7 +62,7 @@
 	    			width: 240px;
 	    		}
 	    		.product-image {
-	    		    height: inherit;
+	    		    height: auto;
     				max-height: fit-content;
     				@include media-breakpoint-down(sm) {
 		    			width: 100%;

@@ -14,7 +14,7 @@
                     	<div class="item-attributes-content">
 		                    <!--- name and remove buttons --->
 		    				<isinclude template="cart/productCard/cartProductCardHeader" />
-	                        <div class="line-item-attributes-values d-md-flex d-block pb-2">
+	                        <div class="line-item-attributes-values d-md-flex d-block pb-2 text-center">
 	                        	<isloop items="${lineItem.variationAttributes}" var="attribute">
 	                            	<p class="line-item-attributes w-md-50 w-100 py-1 ${attribute.displayName}-${lineItem.UUID}">${attribute.displayName}: ${attribute.displayValue}</p>
 	                        	</isloop> 	
