@@ -12,6 +12,12 @@
         font-size: 30px;
     }
 }
+.sds-search-results {
+	h2 {
+	    font-size: 24px;
+    	font-weight: 300;
+	}
+}
 .plp-main-block {
 	max-width: 100%;
 	width: 100%;
@@ -24,7 +30,7 @@
     width: 100%;
     background-color: #fff;
     .breadcrumbs  {
-        font-size: 12PX;
+        font-size: 11px;
         line-height: 1.5em;
         text-transform: uppercase;
         font-weight: 500;
@@ -43,17 +49,29 @@
         		margin: 5px;
         	}
         }
+        .search-keywords {
+        	font-size: 0.675rem;
+    		font-weight: 300;
+        }
     }
     .result-count {
         color: #9c9c9c;
         font-size: 12px;
         text-transform: uppercase;
     }
+    .plp-view-sort-section {
+        justify-content: flex-end;
+    }
     .sort-by {
+    	padding-left: 25px;
+    	position: relative;
+    	@include media-breakpoint-down(md) {
+    		padding-left: 17px;
+    	}
         &:after {
         content: '|';
         position: absolute;
-        left: -12px;
+        left: 0px;
         top: 50%;
         transform: translate(0, -50%);
         font-size: 34px;
@@ -61,16 +79,8 @@
         color: #9c9c9c;
         }         
         .sort-menu {
-        	position: relative;
-		        &:after {
-			        content: '>';
-				    position: absolute;
-				    top: 30%;
-				    color: #9c9c9c;
-				    transform: rotate(90deg);
-				    font: 14px FontAwesome;
-				    font-weight: bold;
-			    }
+        	appearance: auto;
+    		width: 166px;
             &:focus {
                 box-shadow: none;
             }
@@ -78,9 +88,12 @@
     }
 }
     .toggle-grid {
-        text-align: center;
+    	padding-right: 25px;
         position: relative;
         top: 7px;
+        @include media-breakpoint-down(md) {
+    		padding-right: 17px;
+    	}
         .toggle-heading {
             text-transform: uppercase;
             font-size: 0.775rem;
@@ -127,24 +140,12 @@
     }
 }
 .category-values {
-    .category-main-parent {
+    .subcategory-main-parent {
         color: #202020;
 	    font-size: 12px;
 	    text-transform: uppercase;
         &:focus{
             outline: 0;
-        }
-        .category-expand:before{
-            content:'+';
-            color: #202020;
-            font-size: 16px;
-            left: 0;
-            cursor: pointer;
-            height: 20px;
-            width: 20px;
-        }
-        .active-menu:before{
-                content:'-'
         }
     }
     button {
@@ -152,12 +153,37 @@
             outline: 0;
         }
     }
-    .parent-subcategory{
+    .parent-subcategory-item {
+	    .category-expand:before {
+			content:'+';
+			color: #202020;
+			font-size: 16px;
+			left: 0;
+			cursor: pointer;
+			height: 20px;
+	        width: 20px;
+		}
+		.active-menu:before {
+	        content:'-'
+		}
+		.subcategory-child + .subcategory-child-item-link.selected {
+			display: block;
+		}
+		.subcategory-child {
+			display: none;
+		}
+	}
+    .parent-subcategory {
         text-transform: capitalize;
-        button {
+        a {
         	font-size: 12px;
             color: #9c9c9c;
         }
+        .subcategory-child-item-link-name.selected {
+	        border-bottom: 2px solid #457ce1 !important;
+	        padding-bottom: 3px;
+	        position: relative;
+	    }
     }
 }
 #searchRefinement {
@@ -175,7 +201,7 @@
 	   		}
 	    }
 	    .refinement-category {
-	    	display: none;
+	    	display: none !important;
 	    }
     	.refinements {
     		.refinement-item-values.selected + button.reset-block {
@@ -312,8 +338,27 @@
         }
             
     }
+}
+.plp-load-more-section {
+	text-align: center;
     .plp-button {
     	@include button-category;
+    }
+    .plp-total-count {
+    	span {
+    		font-size: 0.775rem;
+    		font-weight: 200;
+    	}
+    }
+    .plp-progress-bar {
+    	background-color: #ccc;
+	    margin: 16px auto;
+	    width: 240px;
+	    border-radius: 10px;
+    	.plp-progress-bar-fill {
+    	    height: 2px;
+    		background-color: #457ce1;
+    	}
     }
 }
 @include media-breakpoint-down(md) {

@@ -1,0 +1,43 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/checkout/checkout.css');
+        assets.addJs('/js/checkoutRegistration.js');
+    </isscript>
+
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <div class="container receipt order-success-block p-0 <isif condition="${pdict.order.shipping.length > 1}">multi-ship</isif>">
+        <div class="row order-success-top-block my-5">
+            <div class="${pdict.returningCustomer ? 'col-12' : 'col-lg-7 col-12 pr-lg-4 p-0'}">
+            	<div class=" order-success-top-body bg-white px-lg-5 p-4">
+	            	<p class="summary-section-label order-number-label text-uppercase pb-4 mb-0">${Resource.msg('label.order.number', 'confirmation', null)} <span class="summary-details order-number">${pdict.order.orderNumber}</span></p>
+	            	<h2 class="order-thank-you-msg text-uppercase py-5">${Resource.msg('msg.placed.order.thank.you','confirmation',null)}</h2>
+	                <isif condition="${pdict.order.orderEmail}">
+	                    <p class="order-thank-you-email-msg d-none"><isprint value="${Resource.msgf('info.receive.email.confirmation', 'confirmation', null, pdict.order.orderEmail)}" encoding="htmlcontent" /></p>
+	                </isif>
+	                <div class="content-asset">
+						If you have questions about your order, we're happy to take your call 1300-650-905 Monday - Friday, 8AM - 8PM
+					</div>
+					<div class="pt-4">
+		                <a href="${URLUtils.url('Home-Show')}" class="btn order-confirmation-continue-shopping button" role="button" aria-pressed="true">
+		                    ${Resource.msg('button.return.shopping','confirmation',null)}
+		                </a>
+	                </div>
+	        	</div>
+            </div>
+            <isif condition="${pdict.returningCustomer === false && pdict.order.orderEmail}">
+                <div class="col-lg-5 col-12 pl-lg-4 p-0">
+                    <isinclude template="checkout/confirmation/confirmationCreateAccount" />
+                </div>
+            </isif>
+        </div>
+        <div class="row">
+            <div class="${pdict.returningCustomer ? 'col-12' : 'col-12' }">
+                <isinclude template="checkout/confirmation/confirmationDetails" />
+            </div>
+        </div>
+    </div>
+</isdecorate>

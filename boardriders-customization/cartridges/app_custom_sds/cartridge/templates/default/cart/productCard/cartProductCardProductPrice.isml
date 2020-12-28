@@ -3,7 +3,7 @@
         <div class="row ml-md-4 ml-0 h-100">
 
             <!--- quantity --->
-            <div class="line-item-quantity my-auto">
+            <div class="line-item-quantity my-md-auto mt-3">
                 <isinclude template="checkout/productCard/productCardQuantitySelector" />
             </div>
             

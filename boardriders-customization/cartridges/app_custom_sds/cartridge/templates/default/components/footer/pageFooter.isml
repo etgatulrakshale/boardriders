@@ -1,4 +1,47 @@
 <footer id="footercontent">
+	<div class="footer-newsletter-block">
+		<span class="arrow-up"> <i class="sds--icons arrow-icon"></i></span>
+		<span class="arrow-up right-side"><i class="sds--icons arrow-icon"></i></span>
+		<span id="closefooterSticky" class="closefooterSticky d-none"><i class="sds--icons sds-icon-x"></i></span>
+		<div class="footer-newsletter-promotion p-3 text-center">
+			<h4 class="m-0">Hey, want a discount for your first order?</h4>
+		</div>
+		<div class="footer-newsletter-email">
+		    <div class="footer-email-signup text-center">
+		    	<h4>Sign up to receive a discount off your first order when you spend over $100*</h4>
+		        <div class="container">
+		            <form role="form">
+		                <div class="row footer-newsletter-email-block">
+		                    <div class="col-lg-6 col-7 py-3 mb-3">
+		                    	<div class="email-signup-message"></div>
+		                        <div class="input-group">
+		                        	<div class="footer-newsletter-gender-select bg-white">
+			                        	<select class="selectvalid border-0 p-2" name="newsletter-gender" required="" aria-invalid="false">
+			                        		<option value="G">Gender</option>
+			                        		<option value="M">Male</option>
+			                        		<option value="F">Female</option>
+			                        	</select>
+			                        </div>
+		                            <input type="text" class="form-control border-0" name="hpEmailSignUp" placeholder="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}" aria-label="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}">
+		                            <span class="input-group-append">
+		                                <button type="submit" class="btn subscribe-email" data-href="${URLUtils.url('EmailSubscribe-Subscribe')}">${Resource.msg('button.form.emailsignup', 'homePage', null)} </button>
+		                            </span>
+		                        </div>
+		                    </div>
+		                </div>
+		            </form>
+		        </div>
+		        <p>by entering you email you will be opted in to receive marketing communication from SDS.For Details on how we use your information,view our <a href="https://www.sds.com.au/privacy-policy.html">privacy policy</a></p>
+			</div>
+		</div>
+		<div class="footer-newsletter-email-success text-center">
+			<h4>Welcome to the crew! Check your inbox shortly for details on your unique code and how to redeem</h4>
+			<a class="footer-newsletter-email-success-close">
+				<i class="sds--icons sds-icon-x"></i>
+			</a>
+			<button class="footer-newsletter-email-success-close button my-3">Got it!</button>
+		</div>
+	</div>
     <div class="full-bleed">
 		<div class="global-footer">
 			<div class="footer-container">

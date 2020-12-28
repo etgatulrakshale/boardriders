@@ -1,7 +1,12 @@
 <div class="refinements-block d-flex col-12">
   <div class="refinement-head col-3 d-md-block d-none">
 	<h1 class="cat-refinement-title text-capitalize p-3">
-    	${pdict.productSearch.category.name}
+		<isif condition="${pdict.productSearch.category.name}">
+			${pdict.productSearch.category.name}
+			<iselse>
+			${Resource.msg('label.header.banner', 'search', null)}
+		</isif>
+    	
 	</h1>
   </div>
   <div id="accordion" class="refinements d-md-flex d-block col-md-9 col-12">

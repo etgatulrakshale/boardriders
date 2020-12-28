@@ -1,0 +1,84 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/checkout/checkoutLogin.css');
+        assets.addCss('/css/login.css');
+        assets.addJs('/js/login.js');
+    </isscript>
+
+	<div class="login-page pb-5 mb-5">
+    	<div class="login-head p-4 mb-4">			
+			<a href='${URLUtils.url('Login-Show')}' title="Go To Login">
+                 <span class="text-uppercase">Login</span>
+             </a>
+		</div>
+		<div class="d-lg-flex d-block pb-4 login-body">
+	    	<div class="col-lg-4 col-12">
+	    		<div class="account-login bg-white ml-lg-4 mx-3 p-md-5 p-0">
+	    			<div class="account-login-head text-center  mb-md-3 m-0">
+						<h3 class="d-md-block d-none">Sign in to an existing account</h3>
+						<h3 class="d-md-none d-block">Sign in to an<br> existing account</h3>
+						<span class="account-login-expand">+</span>
+						<span class="account-login-close">x</span>
+					</div>
+	    			<div class="account-login-content tab-pane ${pdict.navTabValue === 'login' ? 'active' : ''}" id="login" role="tabpanel" aria-labelledby="login-tab">
+	                      <isinclude template="account/components/loginForm" />
+	                      <isinclude template="account/password/requestPasswordResetModal"/>
+	                </div>
+	    		</div>
+	    	</div>
+	    	<div class="col-lg-4 col-12">
+	    		<div class="account-create bg-white ml-lg-4 mx-3 p-md-5 p-0">
+	    			<div class="account-create-head text-center mb-md-3 m-0">
+						<h3 class="d-md-block d-none">NEW TO Surf, Dive 'N' Ski?</h3>
+						<h3 class="d-md-none d-block">NEW TO Surf, Dive<br/> 'N' Ski?</h3>
+						<span class="account-create-expand">+</span>
+						<span class="account-create-close">x</span>
+					</div>
+					<div class="account-create-content text-center">
+						<p>Create an account for faster checkouts.</p>
+						<a class="button py-3 my-3 w-100" href='${URLUtils.url('Login-Register')}' title="Go to: Register">
+		                    <span>Create An Account</span>
+		                </a>
+						<div class="content-asset">
+						    <p><span style="font-size: large;">Benefits of Creating an Account</span></p>
+						    <p class="checkmark-grey fl"></p>
+						    <p class="fl"><strong>News and exclusive offers!</strong><br>Sign up to receive email updates on special promotions,
+						        new product announcements, gift ideas and more.</p>
+						    <div class="clear"></div>
+						    <p class="checkmark-grey fl"></p>
+						    <p class="fl"><strong>Order History</strong><br>Receive important information about your order. You can even track
+						        it up to the minute it arrives.</p>
+						    <div class="clear"></div>
+						    <p class="checkmark-grey fl"></p>
+						    <p class="fl"><strong>Faster Checkout</strong><br>Save your billing and shipping information to make it easier to
+						        buy your favourite gear.<br></p>
+						    <div class="clear"></div>
+						</div>
+					</div>	
+	    		</div>
+	    	</div>
+	    	<div class="col-lg-4 col-12">
+	    		<div class="guest-checkout bg-white mx-lg-4 mx-3 p-md-5 p-0">
+	              <div class="guest-checkout-body">
+	              	<div class="guest-checkout-head text-center mb-md-3 m-0">
+	              		<h1>${Resource.msg('title.guest.checkout', 'checkout', null)}</h1>
+	              		<span class="guest-checkout-expand">+</span>
+						<span class="guest-checkout-close">x</span>
+					</div>
+					<div class="guest-checkout-content text-center">
+                        <p class="pt-md-5 p-3">
+                            ${Resource.msg('msg.guest.checkout.message', 'checkout', null)}
+                        </p>
+                        <a
+                            href="${URLUtils.https('Checkout-Begin')}"
+                            class="btn btn-block btn-primary checkout-as-guest guest-checkout-link">
+                            ${Resource.msg('button.checkout.just.guest', 'checkout', null)}
+                        </a>
+                    </div>
+                  </div>
+	    		</div>
+	    	</div>
+	    </div>
+    </div>
+</isdecorate>

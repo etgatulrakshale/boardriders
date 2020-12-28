@@ -32,6 +32,21 @@
     	border-color: black;
     }
 }
+@mixin black-green-button {
+    background-color: #272727;
+    color: #ffffff;
+    box-shadow: none !important;
+    border-radius: 0;
+    border: 0;
+    padding: 12px 45px;
+    font-size: 0.875rem;
+    line-height: 0.9375rem;
+    letter-spacing: 0.18em;
+    &:hover{
+        background-color: #005E35;
+    	border-color: black;
+    }
+}
 @mixin sds-myaccount-input {
     border: 0;
     border-bottom: 2px solid #e4e4e4;
@@ -70,6 +85,8 @@
     font-size: 14px;
     padding-left: 30px;
     box-shadow: none;
+    text-align: left;
+    width: 100%;
     &:hover::before {
 		border: 1px solid #181818;
     }

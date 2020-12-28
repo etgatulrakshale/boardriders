@@ -11,10 +11,6 @@
                 <div class="row cart-promo-content">
                     <div class="col-12">
                         <input type="text" class="form-control coupon-code-field" id="couponCode" name="couponCode" placeholder="${Resource.msg('placholder.text.promo.code.input','cart',null)}">
-                        <div class="coupon-error mt-0">
-                            <span class="coupon-missing-error" id="missingCouponCode" role="alert">${Resource.msg('error.missing.coupon.code', 'cart', null)}</span>
-                            <span class="coupon-error-message" id="invalidCouponCode" role="alert"></span>
-                        </div>
                     </div>
 
                     <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>

@@ -1,12 +1,23 @@
+<isscript>
+var processBar = ((pdict.productSearch.productSort.options[0].currentPageCount.toFixed(0)/pdict.productSearch.count)*100).toFixed(0);
+</isscript>
 <isinclude template="search/components/productTiles" />
-
-<div class="col-12 grid-footer"
+<div class="col-12 grid-footer plp-load-more-section"
      data-sort-options="${JSON.stringify(pdict.productSearch.productSort)}"
      data-page-size="${pdict.productSearch.pageSize}"
      data-page-number="${pdict.productSearch.pageNumber}"
 >
+
     <!--- More button --->
     <isif condition="${pdict.productSearch.showMoreUrl !== ''}">
+        <div class="plp-total-count">
+			<span id="loadMoreMessage" class="load-more-message">
+				You have viewed ${pdict.productSearch.productSort.options[0].currentPageCount.toFixed(0)} of ${Resource.msgf('label.results', 'search', null, pdict.productSearch.count)} products.
+			</span>
+		</div>
+		<div class="plp-progress-bar">
+			<div class="plp-progress-bar-fill" style="width:${processBar}%"></div>
+		</div>
         <div class="show-more">
             <div class="text-center">
                 <button class="col-12 col-sm-4 more plp-button"
@@ -16,6 +27,15 @@
                 </button>
             </div>
         </div>
+	<iselse>
+		<div class="plp-total-count">
+			<span>
+				You have viewed ${pdict.productSearch.count} of ${Resource.msgf('label.results', 'search', null, pdict.productSearch.count)} products.
+			</span>
+		</div>
+		<div class="plp-progress-bar">
+			<div class="plp-progress-bar-fill w-100"></div>
+		</div>
     </isif>
 
     <input type="hidden" class="permalink" value="${pdict.productSearch.permalink}" />

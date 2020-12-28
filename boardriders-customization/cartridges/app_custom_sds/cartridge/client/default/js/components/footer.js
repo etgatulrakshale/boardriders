@@ -10,28 +10,21 @@ function displayMessage(data, button) {
     var status;
     if (data.success) {
         status = 'alert-success';
+		$('.footer-newsletter-email-success').addClass('success');
+        $('.footer-newsletter-block').addClass('showNewsLetterSuccess');
     } else {
         status = 'alert-danger';
+	    $('.footer-newsletter-email-block').addClass('isinvalid');
     }
 
-    if ($('.email-signup-message').length === 0) {
-        $('body').append(
-           '<div class="email-signup-message"></div>'
-        );
-    }
-    $('.email-signup-message')
-        .append('<div class="email-signup-alert text-center ' + status + '">' + data.msg + '</div>');
+    $('.email-signup-message').html(data.msg);
 
     setTimeout(function () {
-        $('.email-signup-message').remove();
         button.removeAttr('disabled');
     }, 3000);
 }
-
 module.exports = function () {
-
-
-    $('.subscribe-email').on('click', function (e) {
+	$('.subscribe-email').on('click', function (e) {
         e.preventDefault();
         var url = $(this).data('href');
         var button = $(this);
@@ -53,6 +46,30 @@ module.exports = function () {
             }
         });
     });
+    
+    $('.selectvalid').change(function() {
+        var selectedText = $(this).children("option:selected").val();;
+        if (selectedText != 'G') {
+            $(".subscribe-email").addClass('selvalid');
+        } else {
+            $(".subscribe-email").removeClass('selvalid');
+        }
+    });
+    
+    $('.footer-newsletter-email-success-close').click(function ()  {
+    	$('.footer-newsletter-block').css('display','none');
+    });
+    
+    
+    $('.arrow-up').click(function () {
+		  if ($(this).hasClass("active")) {
+		  	$(this).removeClass('active');
+		    $('.footer-newsletter-block').addClass('showNewsLetter');
+		  } else {
+		  	$(this).addClass('active');
+		  	$('.footer-newsletter-block').removeClass('showNewsLetter');
+		  }
+	});
     
     var i, item = $(".footer-accordion-button");
 	for (i = 0; i < item.length; i++) {

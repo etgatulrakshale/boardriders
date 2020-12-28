@@ -15,8 +15,13 @@ Template Notes:
         <!-- Select <Attribute> Label -->
         <div class="label">
 	        <span class="${attr.id} attribute-name">
-	            ${attr.displayName}
+	            <isprint value="${attr.displayName}"/>: 
 	        </span>
+	        <isloop items="${attr.values}" var="attrValue">
+	            <isif condition="${!(isBundle && product.productType === 'variant' && !attrValue.selected) }">
+	            	<span>${attrValue.displayValue}</span>
+	            </isif>
+	    	</isloop>
         </div>
 
         <!-- Circular Swatch Image Attribute Values -->

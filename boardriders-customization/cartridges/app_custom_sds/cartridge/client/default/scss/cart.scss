@@ -3,6 +3,7 @@
 @import "./mixins";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins/breakpoints";
+@import "~base/cart";
 
 .empty-cart {
 	h1 {
@@ -45,21 +46,38 @@
 	    font-weight: 400;
     }
 }
+
 .cart-page {
-	.cart-product-info:first-child {
-	    border-top: 1px solid #e9e9e9;
+	.cart-page-left-content > div:nth-child(2) {
+		border-top: 1px solid #e9e9e9;
 	}
 	.cart-product-info {
 	    border-bottom: 1px solid #e9e9e9;
 	    .cart-product-item-info-content {
 	    	border-right: 1px solid #e9e9e9;
+	    	.item-image {
+	    		width: 140px;
+	    		height: 100%;
+	    		@include media-breakpoint-down(sm) {
+	    			width: 240px;
+	    		}
+	    		.product-image {
+	    		    height: auto;
+    				max-height: fit-content;
+    				@include media-breakpoint-down(sm) {
+		    			width: 100%;
+		    		}
+	    		}
+	    	}
 	    	.item-attributes {
+	    		over-flow: hidden;
 	    		.line-item-header {
 		    		.line-item-name {
 		    			font-size: 0.875rem;
 					    text-transform: uppercase;
 					    letter-spacing: 0.0625rem;
 					    font-weight: 300;
+					    white-space: unset;
 		    		}
 		    		.line-item-brand {
 		    		    display: block;
@@ -84,9 +102,11 @@
 	    		}
 		    	.product-wishlist-edit {
 		    		.product-edit, .wishlist-edit {
-		   			    letter-spacing: 0.0625rem;
-    					font-size: 0.75rem;
-    					text-decoration: underline;
+		    			a {
+			   			    letter-spacing: 0.0625rem;
+	    					font-size: 0.75rem;
+	    					text-decoration: underline;
+	    				}
 	    			}
 	    		}
 	    	}
@@ -100,6 +120,20 @@
 	    			.quantity-label {
 	    				display: none;
 	    			}
+					.quantity-arrow {
+					    position: relative;
+    					left: 65%;
+    					@include media-breakpoint-down(sm) {
+					    	left: 28%;
+					    }
+    					b {
+						   	border-color: #888 transparent transparent transparent;
+						    border-style: solid;
+						    border-width: 5px 4px 0px 4px;
+						    position: absolute;
+						    top: 50%;
+						}
+					}
 	    			.quantity {
 	    			    background-color: #fff;
 					    border: 2px solid #e4e4e4;
@@ -120,10 +154,12 @@
 		    			display: none;
 		    		}
 	    			.price {
-	    			    font-size: 1rem;
-					    display: block;
-					    font-weight: 300;
-					    text-transform: uppercase;
+	    				.value {
+		    			    font-size: 1rem;
+						    display: block;
+						    font-weight: 300;
+						    text-transform: uppercase;
+						}
 	    			}
 	    		}
 	    		.line-item-total-price {
@@ -144,7 +180,6 @@
 			    right: auto;
 			    padding: 0;
 			    margin: 0;
-			    line-height: 0.75rem;
 			    font-size: 0.75rem;
 			    font-weight: 300;
 			}
@@ -169,7 +204,7 @@
 			.checkout-btn {
 			    background-color: #00AB84;
 			    color: #fff;
-			    padding: 10px;
+			    padding: 15px;
 			    font-size: 14px;
 			    border: 0 !important;
 			    box-shadow: none !important;
@@ -183,7 +218,6 @@
 		    color: #9c9c9c;
 		    font-size: 14px;
 		    font-weight: 300;
-		    border-bottom: 1px solid #e4e4e4;
 		    .order-discount {
 		    	color: #990000;
 		    }
@@ -193,6 +227,8 @@
 		    text-transform: uppercase;
 		    letter-spacing: 0.0625rem;
 		    color: #202020;
+		    font-weight: 500;
+		    border-top: 1px solid #e4e4e4;
 		    .inclusive-tax {
 			    font-size: 14px;
 	    		color: #9c9c9c;
@@ -255,6 +291,10 @@
 		    text-transform: uppercase;
 		    letter-spacing: 0.0625rem;
 		    border-bottom: 1px solid #e4e4e4;
+		    text-align: right;
+		    @include media-breakpoint-down(md) {
+		    	text-align: center;
+		    }
 			h1 {
 				font-size: 1.125rem;
 			}
@@ -290,10 +330,13 @@
 					    font-size: 1.125rem;
 					    color: #e9e9e9;
 					    background-color: transparent;
-					    height: 40px;
+					    line-height: 60px;
+    					height: 60px;
 					    margin-bottom: 10px;
 					    &:focus {
 					    	background-color: white;
+					        border-bottom: 1px solid #006A9F;
+    						color: #272727;
 					    }
 					}
 					.promo-code-btn {
@@ -304,7 +347,7 @@
 		}
 	}
 }
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(sm) {
   .mobile-top-checkout-continue {
 	.checkout-btn {
 	    background-color: #202020;
@@ -317,9 +360,14 @@
 	}
   }
   .cart-page {
-	.cart-product-info:first-child {
-	    border-top: none;
-	}
+	 .cart-page-left-content > div:nth-child(2) {
+		border-top: none;
+	 }
+	 .coupon-error {
+	    font-size: 15px;
+	    color: #DE3333 !important;
+	    background-color: #fae3e3;
+	 }
 	.cart-product-info {
 		.cart-product-item-info-content {
 	    	border-right: none;

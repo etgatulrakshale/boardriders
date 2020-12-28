@@ -1,0 +1,50 @@
+@import "../variables";
+@import "../mixins";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "~base/components/formFields";
+@import "~base/checkout/checkoutLogin";
+
+.account-create-content {
+	.button {
+		&:hover {
+			background-color: #005E35 !important;
+		}
+	}
+}
+.guest-checkout {
+	height: 100%;
+	.guest-checkout-body {
+		position: relative;
+	    height: 100%;
+	    @include media-breakpoint-down(sm) {
+            position: unset;
+    		height: auto;
+    	}
+		h1 {
+		    text-transform: uppercase;
+		    margin: 0;
+		    text-align: center;
+		    font-size: 1.375rem;
+		    line-height: 1.875rem;
+		    letter-spacing: 0.10625rem;
+		    padding: 0;
+		}
+		p {
+		    text-align: center;
+		    font-size: 0.75rem;
+		    letter-spacing: 0.0625rem;
+		    font-weight: 200;
+		}
+		.guest-checkout-link {
+		    position: absolute;
+		    bottom: 0;
+		    right: 0;
+		    padding: 20px 45px;
+		    @include black-green-button;
+		    @include media-breakpoint-down(sm) {
+	            position: unset;
+	    	}
+		}
+	}
+}
